@@ -1,0 +1,25 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Contact, Lightbulb, Mail, Menu, MessageCircle, Sprout, Target, Users, X } from "lucide-react";
+import { useState } from "react";
+
+const nav = [["Home","/"],["About","/about"],["The Lean Nervous System","/lean-nervous-system"],["Blog","/#site-footer"],["Literary Lounge","/literary-lounge"],["Contact Me","/#connect"]];
+
+export function SiteHeader(){
+  const [open,setOpen]=useState(false);
+  return <header className="site-header"><Link className="logo" href="/"><Image src="/art/signature.png" alt="Rajesh Koul" width={210} height={80} priority/></Link><button className="menu-button" aria-label={open?"Close navigation":"Open navigation"} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav className={open?"open":""} aria-label="Primary navigation">{nav.map(([label,href])=><Link key={label} href={href} onClick={()=>setOpen(false)}>{label}</Link>)}</nav></header>
+}
+
+export function SiteFooter(){
+  const explore=[["Home","/"],["About","/about"],["The Lean Nervous System","/lean-nervous-system"],["Blog","/#site-footer"],["Literary Lounge","/literary-lounge"],["Contact Me","/#connect"]];
+  return <footer id="site-footer" className="site-footer"><div className="intent-row"><div className="signature"><Image src="/art/signature.png" alt="Rajesh Koul" width={390} height={150}/><p>THINK · TRANSFORM · LEAD</p></div><div className="intent"><b>MY INTENT</b><h2>Move Beyond Tools. Diagnose Maturity.<br/><span>Design Organisations That Run, Learn,<br/>And Improve — By Themselves.</span></h2><p>Helping organisations evolve from fragmented improvements to connected, adaptive, and future-ready systems.</p></div><div className="connect" id="connect"><b>LET’S CONNECT</b><p>Insights on transformation, leadership,<br/>and the Lean way of thinking.</p><button disabled title="Destination not supplied"><Contact/>Connect on LinkedIn<ArrowRight/></button><button disabled title="Contact destination not supplied"><Mail/>Get in Touch<ArrowRight/></button><button disabled title="Contact destination not supplied"><MessageCircle/>Start a Conversation<ArrowRight/></button></div></div>
+    <div className="footer-dark"><div className="footer-columns"><FooterList title="EXPLORE" links={explore}/><FooterList title="FOCUS AREAS" links={[["Enterprise Transformation","/"],["Industry 4.0","/"],["Lean Systems","/lean-nervous-system"],["Leadership Advisory","/literary-lounge/coaching"],["Organisational Maturity","/"]]}/><FooterList title="KNOWLEDGE & INSIGHTS" links={[["Books I Recommend","/literary-lounge/books"],["Podcast","/literary-lounge/podcast"],["Ideas & Perspectives","/literary-lounge"],["Tools & Frameworks","/"],["Case Examples","/"]]}/><div className="about-footer"><h3>ABOUT RAJESH KOUL</h3><p>Rajesh Koul is a global transformation leader with over three decades of experience in leading large-scale enterprise transformations, leadership development, and operational excellence.</p><p>His mission is to help mid-sized organisations — the backbone of the Indian economy — grow with confidence, compete globally, and evolve into resilient, world-class enterprises.</p><Image src="/art/footer-portrait.jpg" alt="Leader looking across a mountain landscape" fill sizes="300px"/></div></div>
+      <div className="values"><Value icon={<Lightbulb/>} title="Thought Leadership" text="Ideas rooted in experience and real-world impact."/><Value icon={<Target/>} title="Practical Impact" text="Actionable frameworks that deliver results."/><Value icon={<Users/>} title="People First" text="Building capability and a culture of continuous improvement."/><Value icon={<Sprout/>} title="Sustainable Growth" text="For resilient organisations and a better tomorrow."/></div>
+      <div className="copyright"><span>© 2025 Rajesh Koul. All rights reserved.</span><span>Privacy Policy　 |　 Terms of Use</span><em>Keep Learning. Keep Improving.</em></div>
+    </div></footer>
+}
+
+function FooterList({title,links}:{title:string,links:string[][]}){return <div className="footer-list"><h3>{title}</h3>{links.map(([label,href])=><Link key={label} href={href}>{label}<ArrowRight/></Link>)}</div>}
+function Value({icon,title,text}:{icon:React.ReactNode,title:string,text:string}){return <div className="value">{icon}<p><b>{title}</b><span>{text}</span></p></div>}
