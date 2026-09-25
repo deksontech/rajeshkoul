@@ -13,7 +13,7 @@ const expertise = ["TECHNOLOGY ENABLED TRANSFORMATION", "BUSINESS PROCESS ADVISO
 
 export default function Home() {
   return <>
-    <SiteHeader />
+    <div className="home-navigation"><SiteHeader /></div>
     <main>
       <section className="hero home-hero">
         <div className="hero-copy">
