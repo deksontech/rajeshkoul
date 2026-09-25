@@ -34,13 +34,18 @@ for (const [name, source, extract] of jobs) {
 
 const footerSource = path.resolve("../../../../Downloads/bottom image for all pages minus lean nervous system.png");
 await sharp(footerSource)
-  .extract({ left: 1370, top: 350, width: 302, height: 380 })
+  .extract({ left: 1400, top: 354, width: 272, height: 372 })
   .jpeg({ quality: 90, mozjpeg: true })
   .toFile(path.join(outputRoot, "footer-portrait.jpg"));
+
+await sharp(footerSource)
+  .extract({ left: 0, top: 288, width: 1672, height: 66 })
+  .png()
+  .toFile(path.join(outputRoot, "footer-top-wave.png"));
 
 await sharp(footerSource)
   .extract({ left: 70, top: 60, width: 390, height: 150 })
   .png()
   .toFile(path.join(outputRoot, "signature.png"));
 
-console.log(`Created ${jobs.length + 2} extracted assets in ${outputRoot}`);
+console.log(`Created ${jobs.length + 3} extracted assets in ${outputRoot}`);
