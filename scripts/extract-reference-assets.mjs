@@ -55,6 +55,11 @@ await sharp(authorSource)
   .toFile(path.join(outputRoot, "home-author-card-wave.png"));
 
 await sharp(authorSource)
+  .extract({ left: 470, top: 106, width: 60, height: 332 })
+  .png()
+  .toFile(path.join(outputRoot, "home-author-card-side.png"));
+
+await sharp(authorSource)
   .extract({ left: 1250, top: 463, width: 293, height: 116 })
   .png()
   .toFile(path.join(outputRoot, "home-author-mission-art.png"));
@@ -69,4 +74,4 @@ await sharp(authorSource)
   .png()
   .toFile(path.join(outputRoot, "home-author-wave-right.png"));
 
-console.log(`Created ${jobs.length + 7} extracted assets in ${outputRoot}`);
+console.log(`Created ${jobs.length + 8} extracted assets in ${outputRoot}`);
