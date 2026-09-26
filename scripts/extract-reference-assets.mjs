@@ -48,4 +48,25 @@ await sharp(footerSource)
   .png()
   .toFile(path.join(outputRoot, "signature.png"));
 
-console.log(`Created ${jobs.length + 3} extracted assets in ${outputRoot}`);
+const authorSource = path.join(sourceRoot, "home page/Home -2.png");
+await sharp(authorSource)
+  .extract({ left: 155, top: 350, width: 375, height: 88 })
+  .png()
+  .toFile(path.join(outputRoot, "home-author-card-wave.png"));
+
+await sharp(authorSource)
+  .extract({ left: 1250, top: 463, width: 293, height: 116 })
+  .png()
+  .toFile(path.join(outputRoot, "home-author-mission-art.png"));
+
+await sharp(authorSource)
+  .extract({ left: 0, top: 719, width: 600, height: 222 })
+  .png()
+  .toFile(path.join(outputRoot, "home-author-wave-left.png"));
+
+await sharp(authorSource)
+  .extract({ left: 1072, top: 719, width: 600, height: 222 })
+  .png()
+  .toFile(path.join(outputRoot, "home-author-wave-right.png"));
+
+console.log(`Created ${jobs.length + 7} extracted assets in ${outputRoot}`);

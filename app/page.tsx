@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BarChart3, BookOpen, Cog, Globe2, Handshake, Layers3, Lightbulb, Network, Target, Users } from "lucide-react";
+import { ArrowRight, BarChart3, BookOpen, ChevronDown, Cog, Globe2, Handshake, Layers3, Lightbulb, Network, Target, Users } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 const pillars = [
@@ -35,12 +35,13 @@ export default function Home() {
           <div><p className="eyebrow blue">ABOUT THE AUTHOR</p><h2>RAJESH KOUL</h2><p className="tagline">GLOBAL TRANSFORMATION LEADER <i/> ENTERPRISE SYSTEMS THINKER <i/> BUILDER OF SCALABLE EXCELLENCE</p>
             <p><b>Rajesh Koul</b> is a global transformation leader with over three decades of experience in leading large-scale enterprise transformations, leadership development, and operational excellence. He has driven impact across industrial manufacturing, financial services, healthcare, GCCs, and government sectors.</p>
             <p>Having led cross-border programs for Fortune 500 organisations, he builds transformation functions from the ground up—helping leaders translate strategy into execution, scale with resilience, and create lasting value.</p>
-            <p>Rajesh blends Lean, digital, and change leadership to design connected, adaptive, and future-ready operating systems.</p>
+            <p>Rajesh blends Lean, digital, and change leadership to design connected, adaptive, and future-ready operating systems.<br/>He partners with CXOs, Boards, and public sector leaders to shape organisations that run better, compete stronger, and improve continuously.</p>
           </div>
         </div>
-        <div className="mission-bar"><Target/><div><b>MISSION</b><p>To help mid-sized organisations — the backbone of the Indian economy — grow with confidence, compete globally, and evolve into resilient, world-class enterprises through disciplined, human-centred transformation.</p></div></div>
+        <div className="mission-bar"><Target/><div><b>MISSION</b><p>To help mid-sized organisations — the backbone of the Indian economy — grow with confidence, compete globally, and evolve into resilient, world-class enterprises through disciplined, human-centred transformation, with a strong focus on building connected, adaptive, and future-ready operating systems.</p></div></div>
         <div className="mini-grid"><Mini icon={<Network/>} title="SYSTEMS THINKER" text="Transforms complexity into cohesive, enterprise-wide operating systems."/><Mini icon={<BarChart3/>} title="STRATEGY TO IMPACT" text="Aligns strategy, operations, and people for measurable results."/><Mini icon={<Lightbulb/>} title="LEAN + DIGITAL" text="Combines lean, digital, and innovation for scalable impact."/><Mini icon={<Users/>} title="PEOPLE & CULTURE" text="Builds capability, ownership, and cultures that learn and adapt."/></div>
-        <Link className="button centered" href="/lean-nervous-system">Explore The Lean Nervous System <ArrowRight/></Link>
+        <Link className="button centered author-cta" href="/lean-nervous-system">Explore The Lean Nervous System <ArrowRight/></Link>
+        <div className="author-bottom-nav"><p>IDEAS <i/> INSIGHTS <i/> EXECUTION <i/> LASTING VALUE</p><Link href="#expertise" aria-label="Continue to areas of expertise"><ChevronDown/></Link></div>
       </section>
 
       <section className="section split-section" id="expertise">
