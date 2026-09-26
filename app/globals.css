@@ -179,6 +179,11 @@
 .expertise-section .button svg{width:24px;height:24px}
 .expertise-section .image-panel{position:absolute;z-index:1;right:0;top:0;width:46.8%;height:941px}
 .expertise-section .image-panel img{object-fit:fill}
-@media(min-width:1673px){.expertise-section{padding-left:6.22vw;padding-right:0}.expertise-section .expertise-copy{width:46.98vw}}
+@media(min-width:1673px){
+  .expertise-section{padding-left:calc((100vw - 1672px)/2 + 104px);padding-right:0}
+  .expertise-section::after{width:calc((100vw - 1672px)/2 + 890px)}
+  .expertise-section .expertise-copy{width:786px}
+  .expertise-section .image-panel{width:calc((100vw - 1672px)/2 + 782px)}
+}
 @media(max-width:1200px) and (min-width:769px){.expertise-section{height:820px;min-height:820px;padding:58px 0 0 4.5%}.expertise-section .expertise-copy{width:50vw}.expertise-section .display{font-size:46px}.expertise-section .expertise-list b{font-size:15px}.expertise-section .image-panel{width:45%;height:820px}.expertise-section::after{width:55%;height:92px;background-size:100% 92px}.expertise-section .button{width:290px;height:66px;min-height:66px;font-size:16px}}
 @media(max-width:768px){.expertise-section{height:auto;min-height:0;padding:52px 22px 0;display:flex;flex-direction:column;background:radial-gradient(circle at 30% 18%,#fff 0,#f5f9ff 72%,#edf4ff 100%)}.expertise-section::after{display:none}.expertise-section .expertise-copy{width:100%;order:1}.expertise-section .eyebrow{font-size:12px}.expertise-section .display{margin:30px 0;font-size:39px;line-height:1.08}.expertise-section .expertise-list>div{height:74px;min-height:74px;grid-template-columns:72px 1fr 28px;padding:0 12px 0 8px}.expertise-section .expertise-list>div>span{width:58px;height:56px}.expertise-section .expertise-list>div>span svg{width:34px;height:34px}.expertise-section .expertise-list b{height:auto;min-height:34px;padding-left:18px;font-size:14px;white-space:normal}.expertise-section .expertise-list>div>svg{width:22px;height:22px}.expertise-section .button{width:100%;height:64px;min-height:64px;padding:0 30px;font-size:16px}.expertise-section .image-panel{position:relative;order:2;right:auto;top:auto;width:calc(100% + 44px);height:auto;aspect-ratio:782/941;margin:34px 0 0 -22px}.expertise-section .image-panel img{object-fit:cover}}
