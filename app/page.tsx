@@ -40,7 +40,8 @@ export default function Home() {
         </div>
         <div className="mission-bar"><Target/><div><b>MISSION</b><p>To help mid-sized organisations — the backbone of the Indian economy — grow with confidence, compete globally, and evolve into resilient, world-class enterprises through disciplined, human-centred transformation, with a strong focus on building connected, adaptive, and future-ready operating systems.</p></div></div>
         <div className="mini-grid"><Mini icon={<Network/>} title="SYSTEMS THINKER" text="Transforms complexity into cohesive, enterprise-wide operating systems."/><Mini icon={<BarChart3/>} title="STRATEGY TO IMPACT" text="Aligns strategy, operations, and people for measurable results."/><Mini icon={<Lightbulb/>} title="LEAN + DIGITAL" text="Combines lean, digital, and innovation for scalable impact."/><Mini icon={<Users/>} title="PEOPLE & CULTURE" text="Builds capability, ownership, and cultures that learn and adapt."/></div>
-        <Link className="button centered author-cta" href="/lean-nervous-system">Explore The Lean Nervous System <ArrowRight/></Link>
+        <div className="author-wave-art" aria-hidden="true" />
+        <Link className="button centered author-cta" id="author-cta" href="/lean-nervous-system">Explore The Lean Nervous System <ArrowRight/></Link>
         <div className="author-bottom-nav" id="author-bottom"><p>IDEAS <i/> INSIGHTS <i/> EXECUTION <i/> LASTING VALUE</p><Link href="#expertise" aria-label="Continue to areas of expertise"><ChevronDown/></Link></div>
       </section>
 

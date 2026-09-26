@@ -74,4 +74,33 @@ await sharp(authorSource)
   .png()
   .toFile(path.join(outputRoot, "home-author-wave-right.png"));
 
-console.log(`Created ${jobs.length + 8} extracted assets in ${outputRoot}`);
+const bottomWave = await sharp(authorSource)
+  .extract({ left: 0, top: 719, width: 1672, height: 222 })
+  .ensureAlpha()
+  .raw()
+  .toBuffer({ resolveWithObject: true });
+
+function blendRect(data, width, channels, left, top, right, bottom) {
+  for (let y = top; y < bottom; y += 1) {
+    const leftOffset = (y * width + left - 1) * channels;
+    const rightOffset = (y * width + right) * channels;
+    for (let x = left; x < right; x += 1) {
+      const amount = (x - left + 1) / (right - left + 1);
+      const offset = (y * width + x) * channels;
+      for (let channel = 0; channel < channels; channel += 1) {
+        data[offset + channel] = Math.round(
+          data[leftOffset + channel] * (1 - amount) + data[rightOffset + channel] * amount,
+        );
+      }
+    }
+  }
+}
+
+blendRect(bottomWave.data, bottomWave.info.width, bottomWave.info.channels, 590, 0, 1082, 122);
+blendRect(bottomWave.data, bottomWave.info.width, bottomWave.info.channels, 804, 122, 870, 205);
+
+await sharp(bottomWave.data, { raw: bottomWave.info })
+  .png()
+  .toFile(path.join(outputRoot, "home-author-bottom-wave.png"));
+
+console.log(`Created ${jobs.length + 9} extracted assets in ${outputRoot}`);
