@@ -10,7 +10,7 @@ await fs.mkdir(outputRoot, { recursive: true });
 const jobs = [
   ["home-hero.jpg", "home page/Home -1.png", { left: 780, top: 0, width: 892, height: 941 }],
   ["home-author-card.jpg", "home page/Home -2.png", { left: 130, top: 100, width: 405, height: 355 }],
-  ["home-expertise.jpg", "home page/Home -3.png", { left: 855, top: 105, width: 817, height: 760 }],
+  ["home-expertise.jpg", "home page/Home -3.png", { left: 890, top: 0, width: 782, height: 941 }],
   ["home-book.jpg", "home page/Home -4.png", { left: 790, top: 65, width: 810, height: 710 }],
   ["digilean.jpg", "home page/Home-6.png", { left: 720, top: 0, width: 1285, height: 784 }],
   ["mission-card-1.jpg", "home page/Home -6.99999999.png", { left: 162, top: 316, width: 428, height: 190 }],
@@ -103,4 +103,14 @@ await sharp(bottomWave.data, { raw: bottomWave.info })
   .png()
   .toFile(path.join(outputRoot, "home-author-bottom-wave.png"));
 
-console.log(`Created ${jobs.length + 9} extracted assets in ${outputRoot}`);
+await sharp(path.join(sourceRoot, "home page/Home -3.png"))
+  .extract({ left: 890, top: 0, width: 782, height: 941 })
+  .png()
+  .toFile(path.join(outputRoot, "home-expertise.png"));
+
+await sharp(path.join(sourceRoot, "home page/Home -3.png"))
+  .extract({ left: 0, top: 835, width: 890, height: 106 })
+  .png()
+  .toFile(path.join(outputRoot, "home-expertise-bottom-left.png"));
+
+console.log(`Created ${jobs.length + 11} extracted assets in ${outputRoot}`);

@@ -45,12 +45,12 @@ export default function Home() {
         <div className="author-bottom-nav" id="author-bottom"><p>IDEAS <i/> INSIGHTS <i/> EXECUTION <i/> LASTING VALUE</p><Link href="#expertise" aria-label="Continue to areas of expertise"><ChevronDown/></Link></div>
       </section>
 
-      <section className="section split-section" id="expertise">
-        <div><p className="eyebrow">AREAS OF EXPERTISE</p><h2 className="display">From Strategy to Execution<br/><span>Across the Enterprise</span></h2>
+      <section className="section split-section expertise-section" id="expertise">
+        <div className="expertise-copy"><p className="eyebrow">AREAS OF EXPERTISE</p><h2 className="display">From Strategy to Execution<br/><span>Across the Enterprise</span></h2>
           <div className="expertise-list">{expertise.map((x,i)=><div key={x}><span>{[Cog,Layers3,BarChart3,Target,Users].map((I,j)=>j===i?<I key={j}/>:null)}</span><b>{x}</b><ArrowRight/></div>)}</div>
           <Link className="button" href="/about">See Full Profile <ArrowRight/></Link>
         </div>
-        <div className="image-panel"><Image src="/art/home-expertise.jpg" alt="Rajesh Koul" fill sizes="(max-width: 800px) 100vw, 50vw"/></div>
+        <div className="image-panel"><Image src="/art/home-expertise.png" alt="Rajesh Koul" fill sizes="(max-width: 800px) 100vw, 47vw"/></div>
       </section>
 
       <section className="section split-section book-section" id="featured-book">
