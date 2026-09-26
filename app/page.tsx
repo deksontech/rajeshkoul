@@ -28,7 +28,7 @@ export default function Home() {
         <div className="hero-art"><Image src="/art/home-hero.jpg" alt="Rajesh Koul against a modern enterprise cityscape" fill priority sizes="(max-width: 800px) 100vw, 55vw" /></div>
       </section>
 
-      <section className="section author-section">
+      <section className="section author-section" id="author">
         <div className="featured-strip"><BookOpen/><b>FEATURED</b><span/>Pre-order “The Lean Nervous System” (Coming Soon)<ArrowRight/></div>
         <div className="author-grid">
           <div className="experience-card"><strong>30+</strong><b>YEARS OF EXPERIENCE</b><div className="rule"/><small>TRANSFORM · LEAD · SUSTAIN</small></div>
@@ -41,7 +41,7 @@ export default function Home() {
         <div className="mission-bar"><Target/><div><b>MISSION</b><p>To help mid-sized organisations — the backbone of the Indian economy — grow with confidence, compete globally, and evolve into resilient, world-class enterprises through disciplined, human-centred transformation, with a strong focus on building connected, adaptive, and future-ready operating systems.</p></div></div>
         <div className="mini-grid"><Mini icon={<Network/>} title="SYSTEMS THINKER" text="Transforms complexity into cohesive, enterprise-wide operating systems."/><Mini icon={<BarChart3/>} title="STRATEGY TO IMPACT" text="Aligns strategy, operations, and people for measurable results."/><Mini icon={<Lightbulb/>} title="LEAN + DIGITAL" text="Combines lean, digital, and innovation for scalable impact."/><Mini icon={<Users/>} title="PEOPLE & CULTURE" text="Builds capability, ownership, and cultures that learn and adapt."/></div>
         <Link className="button centered author-cta" href="/lean-nervous-system">Explore The Lean Nervous System <ArrowRight/></Link>
-        <div className="author-bottom-nav"><p>IDEAS <i/> INSIGHTS <i/> EXECUTION <i/> LASTING VALUE</p><Link href="#expertise" aria-label="Continue to areas of expertise"><ChevronDown/></Link></div>
+        <div className="author-bottom-nav" id="author-bottom"><p>IDEAS <i/> INSIGHTS <i/> EXECUTION <i/> LASTING VALUE</p><Link href="#expertise" aria-label="Continue to areas of expertise"><ChevronDown/></Link></div>
       </section>
 
       <section className="section split-section" id="expertise">
