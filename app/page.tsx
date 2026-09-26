@@ -55,11 +55,12 @@ export default function Home() {
 
       <section className="section split-section book-section" id="featured-book">
         <div><p className="eyebrow">FEATURED BOOK</p><h2 className="display">Digi-e-Lean <em>(Manual)</em></h2><h3>How Industry 4.0 and Lean Thinking<br/>can Revolutionize Organizations</h3>
-          <p className="lead">In today’s swiftly evolving business landscape, the melding of lean methodology with digital transformation becomes crucial for competitiveness. “Digi-e-Lean” is not just a book but a culmination of three decades of transformational expertise, presenting an avant-garde approach to organizational agility and innovation.</p>
-          <div className="book-benefits"><b>⚙<span>Real-World<br/>Frameworks</span></b><b>▥<span>Practical<br/>Case Examples</span></b><b>♢<span>Actionable<br/>Implementation</span></b></div>
+          <p className="lead">In today’s swiftly evolving business landscape, the melding of lean methodology with digital transformation becomes crucial for competitiveness. “Digi-e-Lean” is not just a book but a culmination of three decades of transformational expertise, presenting an avant-garde approach to organizational agility and innovation. It offers a groundbreaking fusion of Lean and Industry 4.0 principles to help organizations achieve higher performance, greater efficiency, and sustainable growth.</p>
+          <div className="book-benefits"><b><Cog/><span>Real-World<br/>Frameworks</span></b><b><BarChart3/><span>Practical<br/>Case Examples</span></b><b><Lightbulb/><span>Actionable<br/>Implementation</span></b></div>
           <button className="button">Request for Frameworks & Models <ArrowRight/></button>
         </div>
         <div className="image-panel contain"><Image src="/art/home-book.jpg" alt="Digi-e-Lean book by Rajesh Koul" fill sizes="(max-width: 800px) 100vw, 50vw"/></div>
+        <div className="book-bottom-nav"><p><span>LEAN</span><i/><span>INDUSTRY 4.0</span><i/><span>TRANSFORMATION</span><i/><span>COMPETITIVENESS</span><i/><span>SUSTAINABLE GROWTH</span></p><b><i/>IDEAS TODAY.<br/>HIGHER PERFORMANCE TOMORROW.</b></div>
       </section>
 
       <section className="section digilean">
