@@ -63,9 +63,10 @@ export default function Home() {
         <div className="book-bottom-nav"><p><span>LEAN</span><i/><span>INDUSTRY 4.0</span><i/><span>TRANSFORMATION</span><i/><span>COMPETITIVENESS</span><i/><span>SUSTAINABLE GROWTH</span></p><b><i/>IDEAS TODAY.<br/>HIGHER PERFORMANCE TOMORROW.</b></div>
       </section>
 
-      <section className="section digilean">
-        <div><p className="eyebrow">DIGITAL × LEAN × INNOVATION</p><h2>DIGILEAN <span>NEXUS</span></h2><h3>MODERN METHODS<br/>TIMELESS RESULTS</h3><p>Integrating the discipline of Lean with the power of digital transformation and innovation to create adaptive, resilient and high-performing organisations.</p></div>
-        <div className="image-panel"><Image src="/art/digilean.jpg" alt="Digital Lean Innovation pathway" fill sizes="(max-width: 800px) 100vw, 60vw"/></div>
+      <section className="section digilean nexus-section" id="digilean-nexus">
+        <div className="nexus-copy"><p className="eyebrow">DIGITAL × LEAN × INNOVATION</p><h2>DIGILEAN <span>NEXUS</span></h2><h3>MODERN METHODS<br/>TIMELESS RESULTS</h3><p>Integrating the discipline of Lean with the power of digital transformation and innovation to create adaptive, resilient and high-performing organisations.</p></div>
+        <div className="nexus-left-art" aria-hidden="true"><Image src="/art/home-nexus-left-art.png" alt="" fill sizes="36vw"/></div>
+        <div className="image-panel"><Image src="/art/digilean.jpg" alt="Digital Lean Innovation pathway" fill sizes="(max-width: 800px) 100vw, 64vw"/></div>
       </section>
 
       <section className="section mission-section" id="mission">

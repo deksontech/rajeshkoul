@@ -220,3 +220,51 @@
 }
 @media(max-width:1200px) and (min-width:769px){.book-section{height:auto;min-height:900px;padding:52px 4.5% 96px}.book-section>div:first-child{width:52%}.book-section .display{font-size:47px}.book-section h3{font-size:29px}.book-section .lead{width:100%;font-size:17px}.book-section .book-benefits{width:100%;grid-template-columns:repeat(3,1fr)}.book-section .button{width:48vw;padding:0 30px;font-size:14px}.book-section .image-panel{left:auto;right:0;top:80px;width:48%;height:auto;aspect-ratio:810/710}.book-section::after{bottom:56px}.book-section .book-bottom-nav{left:4.5%;right:4.5%;font-size:11px}.book-section .book-bottom-nav p{gap:15px;font-size:10px}}
 @media(max-width:768px){.book-section{height:auto;min-height:0;padding:52px 22px 42px;display:flex;flex-direction:column}.book-section::before,.book-section::after{display:none}.book-section>div:first-child{width:100%;order:1}.book-section .display{font-size:42px}.book-section h3{font-size:27px}.book-section .lead{width:100%;font-size:17px}.book-section .book-benefits{width:100%;height:auto;grid-template-columns:1fr;gap:18px}.book-section .book-benefits b{padding:16px 0}.book-section .book-benefits b:not(:last-child){border-right:0;border-bottom:1px solid #cbd6e8}.book-section .button{width:100%;padding:0 24px;font-size:14px;letter-spacing:.08em}.book-section .image-panel{position:relative;order:2;left:auto;top:auto;width:calc(100% + 44px);height:auto;aspect-ratio:810/710;margin:32px 0 0 -22px}.book-section .book-bottom-nav{position:relative;order:3;left:auto;right:auto;bottom:auto;height:auto;display:block;margin-top:28px}.book-section .book-bottom-nav p{flex-wrap:wrap;gap:12px 18px;line-height:1.5;white-space:normal}.book-section .book-bottom-nav>b{margin-top:22px}}
+
+/* DigiLean Nexus reconstructed to the supplied 2005 x 784 reference. */
+.nexus-section{position:relative;display:block;width:100vw;max-width:none;height:784px;min-height:784px;padding:0;overflow:hidden;background:radial-gradient(circle at 19% 42%,#fff 0,#f8fbff 56%,#edf5ff 100%)}
+.nexus-section .nexus-copy{position:absolute;z-index:4;left:max(5.536vw,calc((100vw - 2005px)/2 + 111px));top:70px;width:650px;height:430px}
+.nexus-section .eyebrow{position:absolute;left:0;top:0;margin:0;font-size:14px;line-height:18px;font-weight:500;letter-spacing:.37em;color:#26467c}
+.nexus-section .eyebrow::after{content:"";position:absolute;left:0;top:35px;width:129px;height:3px;background:linear-gradient(90deg,#087ef5,#7136fb,#ed13d6)}
+.nexus-section h2{position:absolute;left:0;top:83px;width:850px;margin:0;font-size:111px;line-height:1;font-weight:700;letter-spacing:-.045em;color:#06194d;white-space:nowrap}
+.nexus-section h2 span{background:linear-gradient(90deg,#087ef5,#5834f3 48%,#ed13d6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nexus-section h3{position:absolute;left:1px;top:197px;margin:0;font-size:43px;line-height:1.15;font-weight:400;letter-spacing:.185em;color:#25477b;white-space:nowrap}
+.nexus-section .nexus-copy>p:last-child{position:absolute;left:2px;top:315px;width:650px;margin:0;font-size:22px;line-height:1.33;font-weight:400;letter-spacing:.005em;color:#48628d}
+.nexus-section .nexus-copy>p:last-child::after{content:"";display:none;width:134px;height:3px;margin-top:20px;background:linear-gradient(90deg,#087ef5,#7136fb,#ed13d6)}
+.nexus-section .image-panel{position:absolute;z-index:1;left:35.91%;top:0;width:64.09%;height:784px}
+.nexus-section .image-panel::before{content:"";position:absolute;z-index:2;left:0;top:132px;width:275px;height:120px;background:linear-gradient(90deg,#fbfdff 0,#fbfdff 74%,rgba(251,253,255,0) 100%);pointer-events:none}
+.nexus-section .image-panel img{z-index:1;object-fit:fill}
+.nexus-section .nexus-left-art{position:absolute;z-index:2;left:0;top:465px;width:calc(35.91% + 30px);height:319px;-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 30px),transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 30px),transparent 100%)}
+.nexus-section .nexus-left-art img{object-fit:fill}
+@media(min-width:2006px){
+  .nexus-section .image-panel{left:calc((100vw - 2005px)/2 + 720px);width:1285px}
+  .nexus-section .nexus-left-art{left:calc((100vw - 2005px)/2);width:750px}
+}
+@media(max-width:1200px) and (min-width:769px){
+  .nexus-section{height:650px;min-height:650px}
+  .nexus-section .nexus-copy{left:4.5%;top:54px;width:48%;height:470px}
+  .nexus-section .eyebrow{font-size:12px}
+  .nexus-section h2{top:80px;width:auto;font-size:52px}
+  .nexus-section h3{top:164px;font-size:31px;letter-spacing:.13em}
+  .nexus-section .nexus-copy>p:last-child{top:255px;width:92%;font-size:18px}
+  .nexus-section .nexus-copy>p:last-child::after{display:block}
+  .nexus-section .nexus-left-art{display:none}
+  .nexus-section .image-panel{left:48%;width:52%;height:650px}
+  .nexus-section .image-panel::before{display:none}
+  .nexus-section .image-panel img{object-fit:cover;object-position:right center}
+}
+@media(max-width:768px){
+  .nexus-section{height:auto;min-height:0;padding:52px 22px 0;display:flex;flex-direction:column}
+  .nexus-section .nexus-copy{position:relative;left:auto;top:auto;width:100%;height:auto;order:1}
+  .nexus-section .eyebrow,.nexus-section h2,.nexus-section h3,.nexus-section .nexus-copy>p:last-child{position:relative;left:auto;top:auto;width:auto;white-space:normal}
+  .nexus-section .eyebrow{font-size:12px}
+  .nexus-section .eyebrow::after{position:relative;display:block;top:auto;margin-top:17px}
+  .nexus-section h2{margin:42px 0 18px;font-size:43px;line-height:1.04}
+  .nexus-section h3{margin:0 0 24px;font-size:29px;line-height:1.23;letter-spacing:.11em}
+  .nexus-section .nexus-copy>p:last-child{font-size:17px;line-height:1.55}
+  .nexus-section .nexus-copy>p:last-child::after{display:block;margin-top:20px}
+  .nexus-section .nexus-left-art{display:none}
+  .nexus-section .image-panel{position:relative;left:auto;top:auto;order:2;width:calc(100% + 44px);height:auto;aspect-ratio:1.35;margin:32px 0 0 -22px}
+  .nexus-section .image-panel::before{display:none}
+  .nexus-section .image-panel img{object-fit:cover;object-position:right center}
+}
