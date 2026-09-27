@@ -342,7 +342,7 @@
 /* Pillar summary reconstructed to the supplied 2103 x 748 reference. */
 .quote-section{position:relative;isolation:isolate;width:100vw;max-width:none;height:748px;min-height:748px;margin:0;padding:0;overflow:hidden;text-align:center;background:radial-gradient(circle at 50% 34%,#fff 0,#f9fcff 48%,#edf6ff 100%)}
 .quote-section::after{content:"";position:absolute;z-index:0;left:0;bottom:0;width:100%;height:448px;background:url('/art/home-quote-wave.png') center bottom/100% 448px no-repeat;pointer-events:none}
-.quote-section p{position:absolute;z-index:2;left:8.75%;top:152px;width:79.94%;height:329px;margin:0;padding:76px 58px 72px;border:2px solid transparent;border-radius:38px;background:linear-gradient(rgba(251,253,255,.97),rgba(251,253,255,.97)) padding-box,linear-gradient(90deg,#79baff,#b5a5ff 53%,#ef75e8) border-box;font-size:31px;line-height:1.72;font-weight:400;letter-spacing:-.012em;color:#071b4c}
+.quote-section p{position:absolute;z-index:2;left:8.75%;top:152px;width:79.94%;height:329px;margin:0;padding:76px 58px 72px;border:2px solid transparent;border-radius:38px;background:linear-gradient(#fbfdff,#fbfdff) padding-box,linear-gradient(90deg,#79baff,#b5a5ff 53%,#ef75e8) border-box;font-size:31px;line-height:1.72;font-weight:400;letter-spacing:-.012em;color:#071b4c}
 .quote-section p::before,.quote-section p::after{content:"";position:absolute;width:160px;height:128px;background-image:radial-gradient(circle,#8bc4ff 2px,transparent 2.4px);background-size:29px 29px;opacity:.72;pointer-events:none}
 .quote-section p::before{left:-169px;top:-88px}
 .quote-section p::after{right:-190px;top:66px}
