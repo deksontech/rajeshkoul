@@ -338,3 +338,31 @@
   .nexus-section .image-panel::before{display:none}
   .nexus-section .image-panel img{object-fit:cover;object-position:right center}
 }
+
+/* Pillar summary reconstructed to the supplied 2103 x 748 reference. */
+.quote-section{position:relative;isolation:isolate;width:100vw;max-width:none;height:748px;min-height:748px;margin:0;padding:0;overflow:hidden;text-align:center;background:radial-gradient(circle at 50% 34%,#fff 0,#f9fcff 48%,#edf6ff 100%)}
+.quote-section::after{content:"";position:absolute;z-index:0;left:50%;bottom:0;transform:translateX(-50%);width:2103px;height:448px;background:url('/art/home-quote-wave.png') center bottom/2103px 448px no-repeat;pointer-events:none}
+.quote-section p{position:absolute;z-index:2;left:8.75%;top:152px;width:79.94%;height:329px;margin:0;padding:76px 58px 72px;border:2px solid transparent;border-radius:38px;background:linear-gradient(rgba(251,253,255,.97),rgba(251,253,255,.97)) padding-box,linear-gradient(90deg,#79baff,#b5a5ff 53%,#ef75e8) border-box;font-size:31px;line-height:1.72;font-weight:400;letter-spacing:-.012em;color:#071b4c}
+.quote-section p::before,.quote-section p::after{content:"";position:absolute;width:160px;height:128px;background-image:radial-gradient(circle,#8bc4ff 2px,transparent 2.4px);background-size:29px 29px;opacity:.72;pointer-events:none}
+.quote-section p::before{left:-169px;top:-88px}
+.quote-section p::after{right:-190px;top:66px}
+.quote-section p span{font-weight:700;background:linear-gradient(90deg,#087ef5,#5338f2 52%,#ed13d6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.quote-section p b{font-weight:700;color:#061846}
+.quote-section .rule{position:absolute;z-index:3;left:50%;top:414px;transform:translateX(-50%);width:236px;height:8px;margin:0;border-radius:999px;background:linear-gradient(90deg,#087ef5,#6635f5 57%,#ed13d6)}
+@media(min-width:2104px){
+  .quote-section p{left:calc((100vw - 2103px)/2 + 184px);width:1681px}
+}
+@media(max-width:1200px) and (min-width:769px){
+  .quote-section{height:620px;min-height:620px}
+  .quote-section::after{width:100%;height:320px;background-size:auto 320px}
+  .quote-section p{left:6%;top:100px;width:88%;height:300px;padding:62px 42px 70px;font-size:25px;line-height:1.62;border-radius:30px}
+  .quote-section p::before{left:-105px;top:-70px}.quote-section p::after{right:-105px;top:62px}
+  .quote-section .rule{top:340px;width:190px;height:6px}
+}
+@media(max-width:768px){
+  .quote-section{height:auto;min-height:620px;padding:70px 22px 230px}
+  .quote-section::after{width:100%;height:240px;background-size:auto 240px}
+  .quote-section p{position:relative;left:auto;top:auto;width:100%;height:auto;padding:44px 24px 82px;border-radius:24px;font-size:22px;line-height:1.5;letter-spacing:-.01em}
+  .quote-section p::before,.quote-section p::after{display:none}
+  .quote-section .rule{position:relative;left:auto;top:auto;transform:none;width:120px;height:5px;margin:-54px auto 0}
+}

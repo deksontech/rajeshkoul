@@ -74,7 +74,7 @@ export default function Home() {
         <div className="pillar-grid">{pillars.map((p,i)=><article key={p.n}><Image src={p.image} alt="" width={430} height={190}/><span className="pillar-icon">{[Target,Users,BarChart3].map((Icon,j)=>j===i?<Icon key={j}/>:null)}</span><div><small>{p.n}</small><h3>{p.title}</h3><p>{p.text}</p><a href="#mission">LEARN MORE <ArrowRight/></a></div></article>)}</div>
       </section>
 
-      <section className="quote-section"><p>Through these pillars, my mission is to catalyze <span>individual and organizational growth,</span><br className="desktop"/> fostering <b>purpose, engagement, and innovation</b> as the cornerstones of transformative<br className="desktop"/> journeys in the dynamic landscape of today’s world.</p><div className="rule"/></section>
+      <section className="quote-section" id="pillar-summary"><p>Through these pillars, my mission is to catalyze <span>individual and organizational growth,</span><br className="desktop"/> fostering <b>purpose, engagement, and innovation</b> as the cornerstones of transformative<br className="desktop"/> journeys in the dynamic landscape of today’s world.</p><div className="rule"/></section>
 
       <section className="section core-section"><p className="eyebrow centered-label">CORE EXPERTISE</p><h2>End-to-end Growth, Transformation & <span>Value Creation</span></h2><p className="subtitle">Ideas. Capabilities. Execution. Measurable Impact.</p>
         <div className="core-panel"><div className="core-tabs">{["Growth & Strategy","Shared Services & GCC","Tech Transformation","ESG & Value Creation","Operational Excellence"].map((x,i)=><button className={i===0?"active":""} aria-disabled={i!==0} key={x}><b>0{i+1}</b>{x}<ArrowRight/></button>)}</div>
