@@ -253,6 +253,76 @@
   .nexus-section .image-panel::before{display:none}
   .nexus-section .image-panel img{object-fit:cover;object-position:right center}
 }
+
+/* Mission section reconstructed to the supplied 1672 x 941 reference. */
+.mission-section{position:relative;isolation:isolate;display:block;width:100vw;max-width:none;height:941px;min-height:941px;padding:0;overflow:hidden;background:radial-gradient(circle at 20% 24%,#fff 0,#f8fbff 58%,#edf5ff 100%)}
+.mission-section::after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:0;height:420px;background:url('/art/home-author-bottom-wave.png') center bottom/100% 420px no-repeat;pointer-events:none}
+.mission-section .mission-heading{position:absolute;z-index:2;left:max(9.808vw,calc((100vw - 1672px)/2 + 164px));top:47px;width:1345px;height:226px;display:grid;grid-template-columns:824px 1fr;gap:0;align-items:start}
+.mission-section .mission-heading::before,.mission-section .mission-heading::after{content:"";position:absolute;width:80px;height:112px;background-image:radial-gradient(circle,#bdd7ff 1.3px,transparent 1.6px);background-size:16px 16px;opacity:.65;pointer-events:none}
+.mission-section .mission-heading::before{left:-154px;top:274px}
+.mission-section .mission-heading::after{right:-104px;top:150px}
+.mission-section .mission-heading>div:first-child{width:824px}
+.mission-section .mission-heading .eyebrow{margin:0;font-size:13px;line-height:17px;font-weight:500;letter-spacing:.39em;color:#53658f}
+.mission-section .mission-heading .eyebrow::after{content:"";display:block;width:126px;height:3px;margin-top:13px;background:linear-gradient(90deg,#087ef5,#7136fb,#ed13d6)}
+.mission-section .mission-heading h2{margin:15px 0 1px;font-size:45px;line-height:1.02;font-weight:700;letter-spacing:-.025em;color:#071b4c;white-space:nowrap}
+.mission-section .mission-heading h2 span{display:inline-block}
+.mission-section .mission-heading .mission-first{font-size:50px}
+.mission-section .mission-heading .mission-gradient{font-size:48px;background:linear-gradient(90deg,#087ef5,#5735f2 50%,#ed13d6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mission-section .mission-heading .mission-final{font-size:47px}
+.mission-section .mission-heading>div:first-child>p:last-child{margin:0;font-size:22px;line-height:1.25;font-weight:400;letter-spacing:.01em;color:#53658f}
+.mission-section .mission-heading i{height:20px;margin:0 12px;vertical-align:-3px}
+.mission-section .mission-intro{min-height:206px;margin-top:17px;padding:0 0 0 34px;border-left:3px solid transparent;border-image:linear-gradient(#087ef5,#ed13d6) 1;color:#53658f}
+.mission-section .mission-intro p{margin:0 0 12px;font-size:17px;line-height:1.27;font-weight:400}
+.mission-section .mission-intro b{color:#5330f2;font-weight:700}
+.mission-section .pillar-grid{position:absolute;z-index:2;left:max(9.749vw,calc((100vw - 1672px)/2 + 163px));top:316px;width:1347px;height:550px;display:grid;grid-template-columns:428px 422px 425px;gap:36px;margin:0}
+.mission-section .pillar-grid article{position:relative;height:550px;border:1px solid #d3def0;border-radius:12px;background:rgba(255,255,255,.94);overflow:hidden;box-shadow:0 18px 38px rgba(50,77,137,.05)}
+.mission-section .pillar-grid article>img{display:block;width:100%;height:190px;object-fit:cover}
+.mission-section .pillar-icon{position:absolute;z-index:3;left:50%;top:148px;transform:translateX(-50%);width:80px;height:80px;border:4px solid #fff;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#087ef5,#6f35fb 62%,#ed13d6);color:#fff;box-shadow:0 10px 18px rgba(74,58,208,.18)}
+.mission-section .pillar-icon svg{width:39px;height:39px;stroke-width:1.9}
+.mission-section .pillar-grid article>div{position:relative;height:360px;padding:34px 31px 22px 49px}
+.mission-section .pillar-grid small{display:block;font-size:14px;line-height:18px;color:#c42be7}
+.mission-section .pillar-grid small::after{content:"";display:block;width:31px;height:2px;margin-top:9px;background:linear-gradient(90deg,#7437f7,#ed13d6)}
+.mission-section .pillar-grid h3{min-height:0;margin:12px 0 26px;font-size:22px;line-height:1.08;font-weight:700;letter-spacing:-.015em;color:#071b4c}
+.mission-section .pillar-grid article:nth-child(2) h3{max-width:280px}
+.mission-section .pillar-grid article:not(:first-child) h3{margin-bottom:16px}
+.mission-section .pillar-grid p{min-height:0;margin:0;font-size:13px;line-height:1.32;font-weight:400;letter-spacing:-.01em;color:#53658f}
+.mission-section .pillar-grid a{position:absolute;left:49px;bottom:30px;display:flex;align-items:center;gap:14px;font-size:16px;line-height:22px;font-weight:600;color:#1268f1}
+.mission-section .pillar-grid a svg{width:22px;height:22px}
+@media(min-width:1673px){
+  .mission-section .mission-heading{left:calc((100vw - 1672px)/2 + 164px)}
+  .mission-section .pillar-grid{left:calc((100vw - 1672px)/2 + 163px)}
+}
+@media(max-width:1200px) and (min-width:769px){
+  .mission-section{height:auto;min-height:900px;padding:52px 4% 95px}
+  .mission-section::after{height:330px;background-size:100% 330px}
+  .mission-section .mission-heading{position:relative;left:auto;top:auto;width:100%;height:auto;grid-template-columns:55% 45%}
+  .mission-section .mission-heading>div:first-child{width:100%}
+  .mission-section .mission-heading h2{font-size:34px;white-space:normal}
+  .mission-section .mission-heading .mission-first,.mission-section .mission-heading .mission-gradient,.mission-section .mission-heading .mission-final{font-size:34px}
+  .mission-section .mission-heading>div:first-child>p:last-child{font-size:17px}
+  .mission-section .mission-intro{margin-top:10px;padding-left:24px}.mission-section .mission-intro p{font-size:15px}
+  .mission-section .pillar-grid{position:relative;left:auto;top:auto;width:100%;height:auto;grid-template-columns:repeat(3,1fr);margin-top:34px;gap:18px}
+  .mission-section .pillar-grid article{height:580px}.mission-section .pillar-grid article>div{height:390px;padding:31px 26px 22px}
+  .mission-section .pillar-grid h3{font-size:18px}.mission-section .pillar-grid p{font-size:14px}.mission-section .pillar-grid a{left:26px}
+}
+@media(max-width:768px){
+  .mission-section{height:auto;min-height:0;padding:52px 22px 96px}
+  .mission-section::after{height:210px;background-size:auto 210px}
+  .mission-section .mission-heading{position:relative;left:auto;top:auto;width:100%;height:auto;display:block}
+  .mission-section .mission-heading::before,.mission-section .mission-heading::after{display:none}
+  .mission-section .mission-heading>div:first-child{width:100%}
+  .mission-section .mission-heading h2{margin-top:22px;font-size:34px;line-height:1.12;white-space:normal}
+  .mission-section .mission-heading .mission-first,.mission-section .mission-heading .mission-gradient,.mission-section .mission-heading .mission-final{font-size:34px}
+  .mission-section .mission-heading>div:first-child>p:last-child{font-size:17px;line-height:1.65}
+  .mission-section .mission-heading i{height:16px;margin:0 8px}
+  .mission-section .mission-intro{min-height:0;margin-top:28px;padding:24px 0 0;border-left:0;border-top:2px solid #7237f6}
+  .mission-section .mission-intro p{font-size:16px;line-height:1.5}
+  .mission-section .pillar-grid{position:relative;left:auto;top:auto;width:100%;height:auto;grid-template-columns:1fr;gap:24px;margin-top:34px}
+  .mission-section .pillar-grid article{height:auto;min-height:565px}
+  .mission-section .pillar-grid article>img{height:190px}
+  .mission-section .pillar-grid article>div{height:auto;min-height:375px;padding:31px 28px 72px}
+  .mission-section .pillar-grid h3{font-size:21px}.mission-section .pillar-grid p{font-size:15px}.mission-section .pillar-grid a{left:28px;bottom:24px}
+}
 @media(max-width:768px){
   .nexus-section{height:auto;min-height:0;padding:52px 22px 0;display:flex;flex-direction:column}
   .nexus-section .nexus-copy{position:relative;left:auto;top:auto;width:100%;height:auto;order:1}
