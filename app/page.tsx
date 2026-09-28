@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BarChart3, BookOpen, ChevronDown, Cog, Globe2, Handshake, Layers3, Lightbulb, Network, Target, Users } from "lucide-react";
+import { ArrowRight, BarChart3, BookOpen, ChevronDown, Cog, Globe2, Handshake, ImageIcon, Layers3, Lightbulb, Network, Target, Users } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 const pillars = [
@@ -82,7 +82,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section lean-teaser"><p className="eyebrow gold">EXPLORE THE LEAN NERVOUS SYSTEM</p><h2>A Practical Blueprint for <span>Sustainable Excellence</span></h2><p>Rajesh Koul, a seasoned practitioner in Lean and Industry 4.0 methodologies, is recognized as a thought leader in business and transformation.</p><div className="placeholder-row"><div aria-label="Book artwork placeholder supplied in reference"><BookOpen/></div><div aria-label="Book artwork placeholder supplied in reference"><BookOpen/></div><blockquote>“Organizations, like human beings, need a nervous system—one that senses, responds, learns, and evolves.”</blockquote></div></section>
+      <section className="blueprint-section" id="lean-blueprint">
+        <span className="blueprint-dots" aria-hidden="true" />
+        <div className="blueprint-circuit" aria-hidden="true"><Image src="/art/home-blueprint-circuit.png" alt="" fill sizes="430px" /></div>
+        <header className="blueprint-header">
+          <p className="blueprint-eyebrow"><i/>EXPLORE THE LEAN NERVOUS SYSTEM<i/></p>
+          <h2>A Practical Blueprint for <span>Sustainable Excellence</span></h2>
+          <p>Rajesh Koul, a seasoned practitioner in Lean and Industry 4.0 methodologies, is recognized as a thought leader<br className="desktop"/> in business and transformation. As an award-winning business transformation expert and author, his works delve into<br className="desktop"/> facets of business advisory, transformation, program management, digital transformation, and Lean methodologies.</p>
+        </header>
+        <div className="blueprint-artworks">
+          <div className="blueprint-placeholder" aria-label="First book artwork placeholder supplied in reference"><ImageIcon aria-hidden="true"/></div>
+          <div className="blueprint-placeholder" aria-label="Second book artwork placeholder supplied in reference"><ImageIcon aria-hidden="true"/></div>
+        </div>
+        <blockquote className="blueprint-quote"><span aria-hidden="true">“</span><p>Organizations, like<br/>human beings, need a<br/>nervous system—one that<br/>senses, responds, learns,<br/>and evolves.</p><i aria-hidden="true"/></blockquote>
+        <div className="blueprint-wave" aria-hidden="true"><Image src="/art/home-blueprint-wave.png" alt="" fill sizes="100vw" /></div>
+      </section>
     </main>
     <SiteFooter />
   </>;
