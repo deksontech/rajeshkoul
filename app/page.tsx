@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BarChart3, BookOpen, ChevronDown, Cog, Globe2, Handshake, ImageIcon, Layers3, Lightbulb, Network, Target, Users } from "lucide-react";
+import { ArrowRight, BarChart3, BookOpen, ChevronDown, Cog, Globe2, Handshake, ImageIcon, Layers3, Leaf, Lightbulb, Network, Target, Users } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 const pillars = [
@@ -96,6 +96,29 @@ export default function Home() {
         </div>
         <blockquote className="blueprint-quote"><span aria-hidden="true">“</span><p>Organizations, like<br/>human beings, need a<br/>nervous system—one that<br/>senses, responds, learns,<br/>and evolves.</p><i aria-hidden="true"/></blockquote>
         <div className="blueprint-wave" aria-hidden="true"><Image src="/art/home-blueprint-wave.png" alt="" fill sizes="100vw" /></div>
+      </section>
+
+      <section className="leadership-section" id="transformation-leadership">
+        <span className="leadership-dots leadership-dots--left" aria-hidden="true" />
+        <span className="leadership-dots leadership-dots--right" aria-hidden="true" />
+        <aside className="leadership-side leadership-side--left" aria-label="Transformation priorities"><span>PEOPLE</span><span>PROCESSES</span><span>INNOVATION</span><span>SUSTAINABILITY</span><i/></aside>
+        <aside className="leadership-side leadership-side--right" aria-label="Transformation outcomes"><span>SIMPLIFY</span><span>TRANSFORM</span><span>ENABLE</span><span>GROW</span><i/></aside>
+        <header className="leadership-header">
+          <p className="leadership-kicker">EXPERTISE <b/> EXPERIENCE <b/> EXCELLENCE</p>
+          <i className="leadership-accent" aria-hidden="true" />
+          <h2>Global Transformation Leader<br/>for <span>Lean, Digital &amp; Sustainable Growth</span></h2>
+          <p>I help organizations simplify complexity, build lean and digital operations, and achieve<br className="desktop"/> sustainable performance through proven frameworks and deep expertise. My 30+ years<br className="desktop"/> of experience at enterprise and MSME levels is dedicated to building the ‘Lean Nervous System’.</p>
+        </header>
+        <div className="leadership-actions">
+          <Link className="leadership-button leadership-button--primary" href="/lean-nervous-system">BUILD AN INTELLIGENT ORGANIZATION <ArrowRight/></Link>
+          <Link className="leadership-button leadership-button--outline" href="#connect">CONNECT FOR INSIGHTS <ArrowRight/></Link>
+        </div>
+        <div className="leadership-benefits" aria-label="Transformation benefits">
+          <div><span><Users/></span><p>Work across<br/>enterprises and MSMEs</p></div>
+          <div><span><BarChart3/></span><p>Drive measurable<br/>business impact</p></div>
+          <div><span><Leaf/></span><p>Enable resilient,<br/>future-ready organizations</p></div>
+        </div>
+        <div className="leadership-wave" aria-hidden="true"><Image src="/art/home-leadership-wave-clean.png" alt="" fill sizes="100vw" /></div>
       </section>
     </main>
     <SiteFooter />
