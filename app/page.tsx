@@ -59,7 +59,7 @@ export default function Home() {
           <div className="book-benefits"><b><Cog/><span>Real-World<br/>Frameworks</span></b><b><BarChart3/><span>Practical<br/>Case Examples</span></b><b><Lightbulb/><span>Actionable<br/>Implementation</span></b></div>
           <button className="button">Request for Frameworks & Models <ArrowRight/></button>
         </div>
-        <div className="image-panel contain"><Image src="/art/home-book.jpg" alt="Digi-e-Lean book by Rajesh Koul" fill sizes="(max-width: 800px) 100vw, 50vw"/></div>
+        <div className="image-panel book-art-panel" tabIndex={0}><Image src="/art/digi-e-lean-book.png" alt="Digi-e-Lean book by Rajesh Koul" fill sizes="(max-width: 800px) 100vw, 50vw"/></div>
         <div className="book-bottom-nav"><p><span>LEAN</span><i/><span>INDUSTRY 4.0</span><i/><span>TRANSFORMATION</span><i/><span>COMPETITIVENESS</span><i/><span>SUSTAINABLE GROWTH</span></p><b><i/>IDEAS TODAY.<br/>HIGHER PERFORMANCE TOMORROW.</b></div>
       </section>
 

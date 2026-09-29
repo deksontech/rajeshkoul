@@ -329,6 +329,9 @@
 .book-section .button svg{width:25px;height:25px}
 .book-section .image-panel{position:absolute;z-index:1;left:790px;top:64px;width:810px;height:710px}
 .book-section .image-panel img{object-fit:fill}
+.book-section .book-art-panel{top:90px;height:auto;aspect-ratio:23/17;overflow:hidden;cursor:zoom-in;outline:none}
+.book-section .book-art-panel img{object-fit:cover;transform:scale(1);transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+.book-section .book-art-panel:hover img,.book-section .book-art-panel:focus img{transform:scale(1.15)}
 .book-section .book-bottom-nav{position:absolute;z-index:3;left:112px;right:112px;bottom:21px;height:38px;display:flex;align-items:center;justify-content:space-between;color:#53658f}
 .book-section .book-bottom-nav p{display:flex;align-items:center;gap:34px;margin:0;font-size:13px;line-height:1;letter-spacing:.2em;white-space:nowrap}
 .book-section .book-bottom-nav p i{width:2px;height:22px;background:linear-gradient(#087ef5,#ed13d6)}
@@ -473,3 +476,6 @@
 @media(min-width:2104px){.pillar-statement__card{left:calc((100vw - 2103px)/2 + 184px);width:1681px}.pillar-statement__wave{left:50%;right:auto;transform:translateX(-50%);width:2103px}}
 @media(max-width:1200px) and (min-width:769px){.pillar-statement{height:620px}.pillar-statement__card{left:6%;top:100px;width:88%;height:300px;border-radius:30px}.pillar-statement__card p{padding:0 42px 35px;font-size:25px;line-height:1.62}.pillar-statement__accent{bottom:52px;width:190px;height:6px}.pillar-statement__wave{height:320px}.pillar-statement__dots--left{left:10px;top:45px}.pillar-statement__dots--right{right:10px;top:190px}}
 @media(max-width:768px){.pillar-statement{height:auto;min-height:650px;padding:70px 22px 230px}.pillar-statement__card{position:relative;left:auto;top:auto;width:100%;height:auto;min-height:360px;border-radius:24px}.pillar-statement__card p{padding:42px 22px 92px;font-size:22px;line-height:1.5}.pillar-statement__accent{bottom:58px;width:120px;height:5px}.pillar-statement__dots{display:none}.pillar-statement__wave{height:240px}}
+
+@media(max-width:1200px){.book-section .book-art-panel{aspect-ratio:23/17}}
+@media(prefers-reduced-motion:reduce){.book-section .book-art-panel img{transition:none}}
