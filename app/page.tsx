@@ -118,7 +118,7 @@ export default function Home() {
           <div><span><BarChart3/></span><p>Drive measurable<br/>business impact</p></div>
           <div><span><Leaf/></span><p>Enable resilient,<br/>future-ready organizations</p></div>
         </div>
-        <div className="leadership-wave" aria-hidden="true"><Image src="/art/home-leadership-wave-v2.png" alt="" fill sizes="100vw" /></div>
+        <div className="leadership-wave" aria-hidden="true"><Image src="/art/home-leadership-wave-v3.png" alt="" fill sizes="100vw" /></div>
       </section>
     </main>
     <SiteFooter />
