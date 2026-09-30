@@ -463,19 +463,9 @@
   .nexus-section .image-panel img{object-fit:cover;object-position:right center}
 }
 
-/* Pillar statement rebuilt from scratch from the supplied 2103 x 748 reference. */
-.pillar-statement{position:relative;isolation:isolate;width:100vw;height:748px;overflow:hidden;background:radial-gradient(ellipse at 50% 28%,#fff 0,#f9fcff 53%,#edf6ff 100%);color:#071b4c}
-.pillar-statement__card{position:absolute;z-index:3;left:8.75%;top:152px;width:79.94%;height:329px;border:2px solid transparent;border-radius:38px;background:linear-gradient(#fbfdff,#fbfdff) padding-box,linear-gradient(90deg,#79baff,#b5a5ff 53%,#ef75e8) border-box;display:flex;align-items:center;justify-content:center;text-align:center}
-.pillar-statement__card p{margin:0;padding:0 54px 32px;font-size:31px;line-height:1.72;font-weight:400;letter-spacing:-.012em;color:#071b4c}
-.pillar-statement__card strong{font-weight:700;background:linear-gradient(90deg,#087ef5,#5338f2 52%,#ed13d6);-webkit-background-clip:text;background-clip:text;color:transparent}
-.pillar-statement__card b{font-weight:700;color:#061846}
-.pillar-statement__accent{position:absolute;left:50%;bottom:55px;transform:translateX(-50%);width:236px;height:8px;border-radius:999px;background:linear-gradient(90deg,#087ef5,#6635f5 57%,#ed13d6)}
-.pillar-statement__dots{position:absolute;z-index:1;width:160px;height:128px;background-image:radial-gradient(circle,#8bc4ff 2px,transparent 2.4px);background-size:29px 29px;opacity:.72}
-.pillar-statement__dots--left{left:18px;top:75px}.pillar-statement__dots--right{right:18px;top:225px}
-.pillar-statement__wave{position:absolute;z-index:1;left:0;right:0;bottom:0;height:448px}.pillar-statement__wave img{object-fit:fill}
-@media(min-width:2104px){.pillar-statement__card{left:calc((100vw - 2103px)/2 + 184px);width:1681px}.pillar-statement__wave{left:50%;right:auto;transform:translateX(-50%);width:2103px}}
-@media(max-width:1200px) and (min-width:769px){.pillar-statement{height:620px}.pillar-statement__card{left:6%;top:100px;width:88%;height:300px;border-radius:30px}.pillar-statement__card p{padding:0 42px 35px;font-size:25px;line-height:1.62}.pillar-statement__accent{bottom:52px;width:190px;height:6px}.pillar-statement__wave{height:320px}.pillar-statement__dots--left{left:10px;top:45px}.pillar-statement__dots--right{right:10px;top:190px}}
-@media(max-width:768px){.pillar-statement{height:auto;min-height:650px;padding:70px 22px 230px}.pillar-statement__card{position:relative;left:auto;top:auto;width:100%;height:auto;min-height:360px;border-radius:24px}.pillar-statement__card p{padding:42px 22px 92px;font-size:22px;line-height:1.5}.pillar-statement__accent{bottom:58px;width:120px;height:5px}.pillar-statement__dots{display:none}.pillar-statement__wave{height:240px}}
+/* The supplied artwork is used intact so the section matches the reference exactly. */
+.pillar-statement-image{width:100%;max-width:2103px;margin:0 auto;overflow:hidden;background:#eef6ff;line-height:0}
+.pillar-statement-image img{display:block;width:100%;height:auto}
 
 @media(max-width:1200px){.book-section .book-art-panel{aspect-ratio:23/17}}
 @media(prefers-reduced-motion:reduce){.book-section .book-art-panel img{transition:none}}

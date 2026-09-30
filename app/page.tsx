@@ -126,14 +126,8 @@ export default function Home() {
 }
 
 function PillarStatement() {
-  return <section className="pillar-statement" id="pillar-summary">
-    <span className="pillar-statement__dots pillar-statement__dots--left" aria-hidden="true" />
-    <span className="pillar-statement__dots pillar-statement__dots--right" aria-hidden="true" />
-    <div className="pillar-statement__card">
-      <p>Through these pillars, my mission is to catalyze <strong>individual and organizational growth,</strong><br className="desktop"/> fostering <b>purpose, engagement, and innovation</b> as the cornerstones of transformative<br className="desktop"/> journeys in the dynamic landscape of today’s world.</p>
-      <span className="pillar-statement__accent" aria-hidden="true" />
-    </div>
-    <div className="pillar-statement__wave" aria-hidden="true"><Image src="/art/home-statement-wave.png" alt="" fill sizes="100vw" /></div>
+  return <section className="pillar-statement-image" id="pillar-summary">
+    <Image src="/art/home-pillar-statement-full.png" alt="Through these pillars, my mission is to catalyze individual and organizational growth, fostering purpose, engagement, and innovation." width={2103} height={748} sizes="100vw" />
   </section>
 }
 
