@@ -10,10 +10,11 @@ export const metadata = {
 
 const latest = [
   {
-    category: "Enterprise Transformation",
-    title: "Why Transformation Stalls Between Strategy and Execution",
-    excerpt: "The hardest part of transformation is rarely the ambition. It is building the connected operating system that turns intent into everyday action.",
-    image: "/art/home-hero.jpg",
+    category: "GCC Maturity",
+    title: "From Execution Engines to Enterprise Intelligence",
+    excerpt: "A leadership narrative on how Global Capability Centres evolve from efficient delivery engines into systems that sense, learn and influence enterprise outcomes.",
+    image: "/art/execution-enterprise-hero.png",
+    href: "/blogs/from-execution-engines-to-enterprise-intelligence",
     featured: true,
   },
   {
@@ -108,8 +109,8 @@ export default function BlogsPage() {
       <section className="blogs-section" id="latest">
         <SectionHeading eyebrow="LATEST THINKING" title="Latest Insights"/>
         <article className="blogs-feature">
-          <div className="blogs-feature-copy"><p className="blogs-category">{latest[0].category}</p><h2>{latest[0].title}</h2><p>{latest[0].excerpt}</p><ReadLink/></div>
-          <Link href="/blogs" className="blogs-feature-media" aria-label={`Read ${latest[0].title}`}><Image src={latest[0].image} alt="Transformation leadership and organisational growth" fill sizes="(max-width: 900px) 100vw, 42vw" priority/></Link>
+          <div className="blogs-feature-copy"><p className="blogs-category">{latest[0].category}</p><h2>{latest[0].title}</h2><p>{latest[0].excerpt}</p><ReadLink href={latest[0].href}/></div>
+          <Link href={latest[0].href} className="blogs-feature-media" aria-label={`Read ${latest[0].title}`}><Image src={latest[0].image} alt="Industrial execution evolving into a digitally intelligent enterprise" fill sizes="(max-width: 900px) 100vw, 42vw" priority/></Link>
         </article>
         <div className="blogs-grid-with-news">
           <div className="blogs-card-grid">{latest.slice(1).map((item)=><ArticleCard key={item.title} {...item}/>)}</div>
@@ -147,4 +148,4 @@ function ArticleCard({category,title,excerpt,image}:{category:string,title:strin
   return <article className="blog-card"><Link className="blog-card-media" href="/blogs" aria-label={`Read ${title}`}><Image src={image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw"/></Link><div><p className="blogs-category">{category}</p><h3>{title}</h3><p>{excerpt}</p><ReadLink/></div></article>;
 }
 
-function ReadLink(){return <Link className="blogs-read" href="/blogs">Read the article <ArrowRight/></Link>}
+function ReadLink({href="/blogs"}:{href?:string}){return <Link className="blogs-read" href={href}>Read the article <ArrowRight/></Link>}
