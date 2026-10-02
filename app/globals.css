@@ -216,7 +216,7 @@
 .about-live-hero{position:relative;isolation:isolate;width:100%;height:min(941px,56.28vw);min-height:730px;margin:0;overflow:hidden;background:#fff}
 .about-live-reference{position:absolute;inset:0;z-index:0;pointer-events:none}
 .about-live-reference img{object-fit:fill}
-.about-live-mask{position:absolute;z-index:1;inset:0;background:#fff;clip-path:polygon(0 0,57.5% 0,57.5% 60%,54% 76%,54% 100%,0 100%);pointer-events:none}
+.about-live-mask{position:absolute;z-index:1;inset:-10px;background:#fff;clip-path:polygon(0 0,58% 0,58% 57%,54.5% 72%,49% 85%,42.5% 100%,0 100%);filter:blur(10px);pointer-events:none}
 .about-live-dots{position:absolute;z-index:3;left:1.9%;top:3.2%;width:112px;height:91px;background-image:radial-gradient(circle,#2c91f7 2px,transparent 2.4px);background-size:26px 26px;opacity:.68}
 .about-live-copy{position:relative;z-index:4;width:52%;padding-top:clamp(112px,8.67vw,145px);margin-left:6.9%}
 .about-live-eyebrow{position:relative;margin:0 0 clamp(45px,3.47vw,58px);font-size:clamp(14px,1.08vw,18px);line-height:1;letter-spacing:.31em;font-weight:500;color:#425d89}
@@ -237,7 +237,7 @@
 .about-live-values span{width:67px;height:67px;min-width:67px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#e9f5ff,#f7e4ff);color:#5c3af0}
 .about-live-values>div:first-child span{color:#0877ee}.about-live-values>div:last-child span{color:#e32bc0}
 .about-live-values svg{width:37px;height:37px}.about-live-values b{font-size:clamp(15px,1.02vw,17px);line-height:1.4;font-weight:500;color:#102758;white-space:nowrap}
-.about-live-wave{position:absolute;z-index:2;left:0;right:0;bottom:0;height:min(222px,13.28vw);pointer-events:none;clip-path:inset(0 46% 0 0)}
+.about-live-wave{position:absolute;z-index:2;left:0;right:0;bottom:0;height:min(245px,14.65vw);pointer-events:none;-webkit-mask-image:linear-gradient(90deg,#000 0 47%,rgba(0,0,0,.94) 52%,rgba(0,0,0,.45) 57%,transparent 62%);mask-image:linear-gradient(90deg,#000 0 47%,rgba(0,0,0,.94) 52%,rgba(0,0,0,.45) 57%,transparent 62%)}
 .about-live-wave img{object-fit:fill;object-position:center bottom}
 
 @media(max-width:1250px){.about-live-hero{min-height:700px}.about-live-copy{width:56%;margin-left:5.5%}.about-live-copy h1{font-size:48px}.about-live-lead{font-size:21px}.about-live-tags{gap:11px;font-size:11px}.about-live-values{width:650px}.about-live-values>div{gap:12px}.about-live-values span{width:56px;height:56px;min-width:56px}.about-live-values svg{width:30px;height:30px}.about-live-values b{font-size:14px}}
