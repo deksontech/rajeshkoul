@@ -254,9 +254,7 @@
 
 /* About / biography — rebuilt from the supplied 1672 × 941 reference. */
 .about-bio{position:relative;isolation:isolate;width:100%;height:941px;padding:31px 4.7% 41px;overflow:hidden;background:radial-gradient(circle at 52% 34%,#fff 0 42%,#f7fbff 72%,#eaf5ff 100%)}
-.about-bio::before,.about-bio::after{content:"";position:absolute;z-index:-1;left:0;right:0;pointer-events:none;background:url('/art/home-author-bottom-wave.png') center/100% 100% no-repeat;opacity:.42}
-.about-bio::before{top:-83px;height:230px;transform:scaleY(-1);transform-origin:center}
-.about-bio::after{bottom:-114px;height:250px;opacity:.18}
+.about-bio::after{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:-114px;height:250px;pointer-events:none;background:url('/art/home-author-bottom-wave.png') center/100% 100% no-repeat;opacity:.18}
 .about-bio-top{position:relative;height:608px;display:grid;grid-template-columns:466px minmax(0,1fr);gap:56px}
 .about-bio-visual{position:relative;width:466px;height:608px;border-radius:13px;overflow:hidden;box-shadow:0 18px 45px rgba(76,100,171,.08)}
 .about-bio-visual img{object-fit:fill}
