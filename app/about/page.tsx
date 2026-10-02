@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Cog, Globe2, Leaf, Trophy, UsersRound } from "lucide-react";
+import { ArrowRight, BookOpen, Cog, FileSearch, FileText, Globe2, Layers3, Leaf, Lightbulb, TrendingUp, Trophy, UsersRound } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 export default function About(){return <><SiteHeader/><main>
@@ -42,9 +42,36 @@ export default function About(){return <><SiteHeader/><main>
       <CredentialCard tone="pink" icon={<Trophy/>} title="VALIDATED RECOGNITION" items={[<><b>Certified Expert:</b> Lean Six Sigma Master Black Belt | Design Thinking Practitioner.</>,<><b>Major Awards:</b> Mint TechCircle Transformation Leader (2021 &amp; 2022).</>,<><b>National Quality Champion:</b> QCI, 2020.</>]}/>
     </div>
   </section>
-  <section className="section research-section"><p className="eyebrow centered-label">RESEARCH · FRAMEWORKS · IMPACT</p><h2>Research & <span>Thought Leadership</span></h2><p>Advancing ideas, building frameworks, and enabling real-world transformation.</p><p>Rajesh actively contributes to the discourse on transformation through research, white papers, and applied frameworks. His work focuses on DigiLean, integration of Lean with Industry 4.0, DFSS, Quality 4.0, and Lean Six Sigma for growth.</p><div className="research-flow"><Info icon={<BookOpen/>} title="Books & Frameworks" text="Developing practical frameworks and books that simplify complex transformation challenges."/><Info icon={<BookOpen/>} title="Research & White Papers" text="Contributing research and insights on emerging trends, methods, and best practices."/><Info icon={<Cog/>} title="Industry Applications" text="Translating research into real-world solutions across industries and geographies."/><Info icon={<Trophy/>} title="Thought Leadership" text="Sharing perspectives at industry forums, academic platforms, and leadership communities."/></div><Link className="button centered" href="/literary-lounge">Explore The Research <ArrowRight/></Link></section>
+  <section className="research-showcase" id="research" aria-labelledby="research-showcase-title">
+    <div className="research-side research-side--top" aria-hidden="true">IDEAS<br/>PEOPLE<br/>INDUSTRIES<br/>A BETTER TOMORROW<i/></div>
+    <div className="research-side research-side--bottom-left" aria-hidden="true">LEARN<br/>APPLY<br/>ADAPT<br/>IMPROVE<i/></div>
+    <div className="research-side research-side--bottom-right" aria-hidden="true">KNOWLEDGE<br/>FOR A MORE<br/>RESILIENT<br/>WORLD<i/></div>
+    <header className="research-showcase-header">
+      <p className="research-showcase-kicker">RESEARCH <b/> FRAMEWORKS <b/> IMPACT</p>
+      <span className="research-showcase-accent"/>
+      <h2 id="research-showcase-title">Research &amp; <span>Thought Leadership</span></h2>
+      <p className="research-showcase-subtitle">Advancing ideas, building frameworks, and enabling real-world transformation.</p>
+      <p className="research-showcase-intro">Rajesh actively contributes to the discourse on transformation through research, white papers, and applied frameworks.<br/>His work focuses on DigiLean, integration of Lean with Industry 4.0, DFSS, Quality 4.0, and Lean Six Sigma for growth—<br/>developed in collaboration with global academicians and industry practitioners.</p>
+    </header>
+    <div className="research-pathway" aria-label="Research to impact pathway">
+      <ResearchStage tone="blue" icon={<FileSearch/>} title="RESEARCH" subtitle="INSIGHTS THAT MATTER"/>
+      <ResearchStage tone="violet" icon={<Layers3/>} title="FRAMEWORKS" subtitle="IDEAS INTO STRUCTURE"/>
+      <ResearchStage tone="purple" icon={<Cog/>} title="APPLICATION" subtitle="FROM CONCEPT TO PRACTICE"/>
+      <ResearchStage tone="pink" icon={<TrendingUp/>} title="IMPACT" subtitle="STRONGER, MORE RESILIENT ORGANISATIONS"/>
+    </div>
+    <div className="research-showcase-cards">
+      <ResearchCard tone="blue" icon={<BookOpen/>} title="Books & Frameworks" text="Developing practical frameworks and books that simplify complex transformation challenges."/>
+      <ResearchCard tone="violet" icon={<FileText/>} title="Research & White Papers" text="Contributing research and insights on emerging trends, methods, and best practices in transformation."/>
+      <ResearchCard tone="purple" icon={<Cog/>} title="Industry Applications" text="Translating research into real-world solutions across industries and geographies."/>
+      <ResearchCard tone="pink" icon={<Lightbulb/>} title="Thought Leadership" text="Sharing perspectives at industry forums, academic platforms, and leadership communities."/>
+    </div>
+    <div className="research-recognition"><span><Trophy/></span><b>RECOGNITION</b><i/><p>Includes jury roles in industry-led transformation forums and leadership recognition<br className="desktop"/> at national platforms like Mint TechCircle. This platform brings together Rajesh’s perspectives,<br className="desktop"/> frameworks, and experiences—offering a window into how organisations can evolve into systems<br className="desktop"/> that continuously learn, adapt, and improve.</p></div>
+    <Link className="research-showcase-cta" href="/literary-lounge">EXPLORE THE RESEARCH <ArrowRight/></Link>
+  </section>
   </main><SiteFooter/></>}
 
-function Info({icon,title,text}:{icon:React.ReactNode,title:string,text:string}){return <article className="info-card"><span>{icon}</span><div><h3>{title}</h3><p>{text}</p></div></article>}
-
 function CredentialCard({tone,icon,title,items}:{tone:"blue"|"violet"|"pink";icon:React.ReactNode;title:string;items:React.ReactNode[]}){return <article className={`about-credential about-credential--${tone}`}><div className="about-credential-heading"><span>{icon}</span><h3>{title}</h3></div><ul>{items.map((item,index)=><li key={index}>{item}</li>)}</ul></article>}
+
+function ResearchStage({tone,icon,title,subtitle}:{tone:"blue"|"violet"|"purple"|"pink";icon:React.ReactNode;title:string;subtitle:string}){return <article className={`research-stage research-stage--${tone}`}><span>{icon}</span><h3>{title}</h3><p>{subtitle}</p></article>}
+
+function ResearchCard({tone,icon,title,text}:{tone:"blue"|"violet"|"purple"|"pink";icon:React.ReactNode;title:string;text:string}){return <article className={`research-showcase-card research-showcase-card--${tone}`}><div><span>{icon}</span><h3>{title}</h3></div><p>{text}</p></article>}
