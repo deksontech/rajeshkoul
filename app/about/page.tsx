@@ -5,6 +5,8 @@ import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 export default function About(){return <><SiteHeader/><main>
   <section className="about-live-hero" aria-labelledby="about-live-title">
+    <div className="about-live-reference" aria-hidden="true"><Image src="/art/about-hero-reference.png" alt="" fill priority sizes="100vw"/></div>
+    <div className="about-live-mask" aria-hidden="true"/>
     <div className="about-live-dots" aria-hidden="true"/>
     <div className="about-live-copy">
       <p className="about-live-eyebrow">ABOUT RAJESH KOUL</p>
@@ -18,7 +20,6 @@ export default function About(){return <><SiteHeader/><main>
         <div><span><Leaf/></span><b>Create<br/>Lasting Impact</b></div>
       </div>
     </div>
-    <div className="about-live-portrait"><Image src="/art/about-hero.jpg" alt="Rajesh Koul" fill priority sizes="(max-width: 900px) 100vw, 52vw"/></div>
     <div className="about-live-wave" aria-hidden="true"><Image src="/art/home-author-bottom-wave.png" alt="" fill sizes="100vw"/></div>
   </section>
   <section className="section bio-section" id="journey"><div className="bio-visual"><Image src="/art/about-system.jpg" alt="Purpose, systems and impact framework" fill sizes="(max-width: 800px) 100vw, 34vw"/></div><div><p className="eyebrow">ABOUT THE AUTHOR</p><h2>RAJESH <span>KOUL</span></h2><p className="tagline">AUTHOR <i/> GLOBAL TRANSFORMATION LEADER <i/> STRATEGIC ADVISOR</p><p><b>Rajesh Koul</b> is a global transformation leader known for shaping large-scale enterprise change through a systems-driven approach to business performance. Over the past three decades, he has worked across industries and geographies, contributing to complex transformation journeys that integrate strategy, operations, and technology into cohesive, scalable systems.</p><p>His work has been particularly impactful in building transformation capabilities from the ground up—enabling organisations to move beyond fragmented initiatives toward structured, sustainable excellence.</p><p>Rajesh’s career reflects a deep engagement with the evolving challenges of modern enterprises. Across industrial, service, and public-sector environments, he has focused on addressing transformation holistically—bringing together people, process, technology, and structure to create aligned and resilient operating models.</p></div><Info icon={<Cog/>} title="STRATEGIC FOUNDATION" text="Mechanical Engineering: NIT, India. • MBA: FMS, Delhi University. • Academic Core: Business Management & Engineering."/><Info icon={<Globe2/>} title="GLOBAL PERSPECTIVE" text="Executive Leadership Alumnus: Wharton School of Business, INSEAD, Human Edge, and ISB. Cross-border programs for Fortune 500 organisations."/><Info icon={<Trophy/>} title="VALIDATED RECOGNITION" text="Certified Expert: Lean Six Sigma Master Black Belt. Major Awards: Mint TechCircle Transformation Leader (2021 & 2022)."/></section>
