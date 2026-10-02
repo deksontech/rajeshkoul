@@ -214,9 +214,9 @@
 
 /* About hero rebuilt from the supplied artboard. The large-screen composition is
    the approved artwork itself; mobile gets an intentionally reflowed layout. */
-.about-rebuilt-hero{position:relative;width:100%;max-width:1672px;aspect-ratio:1672/941;margin:-90px auto 0;overflow:hidden;background:#f5faff}
+.about-rebuilt-hero{position:relative;width:100%;max-width:none;aspect-ratio:1672/941;margin:-90px 0 0;overflow:hidden;background:#f5faff}
 .about-rebuilt-desktop{position:absolute;inset:0}
-.about-rebuilt-desktop img{display:block;width:100%;height:100%;object-fit:contain}
+.about-rebuilt-desktop img{display:block;width:100%;height:100%;object-fit:fill}
 .about-rebuilt-desktop-links{position:absolute;inset:0;z-index:3}
 .about-rebuilt-desktop-links a{position:absolute;top:61.42%;height:7.55%;border-radius:8px}
 .about-rebuilt-desktop-links a:first-child{left:6.94%;width:20.4%}
