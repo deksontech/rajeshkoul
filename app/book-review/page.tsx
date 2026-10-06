@@ -7,6 +7,7 @@ const books = [
   {cover:"/art/book-toyota.jpg",href:"/book-review/toyota-way",title:"The Toyota Way",author:"Jeffrey K. Liker",text:"A timeless guide to building a culture of continuous improvement, respect for people, and operational excellence.",tags:["Lean","Operations"]},
   {cover:"/art/book-strategy.jpg",href:"/book-review/reinventing-strategy",title:"Reinventing Strategy",author:"Willie Pietersen",text:"A powerful perspective on strategic learning, adaptability, and creating breakthrough performance.",tags:["Strategy","Leadership"]},
   {cover:"/art/book-product.jpg",href:"/book-review/lean-product-playbook",title:"The Lean Product Playbook",author:"Dan Olsen",text:"A practical guide to building products customers love through experimentation, feedback, and iterative learning.",tags:["Innovation","Product"]},
+  {cover:"/art/book-100-startup.webp",href:"/book-review/the-100-startup",title:"The $100 Startup",author:"Chris Guillebeau",text:"A practical guide to building a small, meaningful business with limited resources, focused action, and customer value.",tags:["Entrepreneurship","Startup"]},
 ];
 
 export default function BookReviewPage(){return <>
