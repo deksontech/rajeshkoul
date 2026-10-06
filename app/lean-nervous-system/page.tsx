@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, ChartNoAxesCombined, CheckCircle2, Layers3, Target, Users } from "lucide-react";
+import { ArrowRight, BarChart3, BookOpen, ChartNoAxesCombined, CheckCircle2, Layers3, Lightbulb, Network, Target, Users, UsersRound } from "lucide-react";
 import { LnsHeader } from "@/components/lns-header";
 
 const actions = [
@@ -33,6 +33,13 @@ const outcomes = [
 ];
 
 const theoryPoints = ["When systems don’t scale with success", "When firefighting replaces discipline", "When effort increases, but outcomes don’t", "When teams optimise their part, not the whole", "And more importantly, how that changes."];
+
+const authorPillars = [
+  { icon: Network, title: "Systems Thinker", text: "Transforms complexity into cohesive, enterprise-wide operating systems." },
+  { icon: BarChart3, title: "Strategy to Impact", text: "Aligns strategy, operations, and execution systems to deliver measurable business outcomes." },
+  { icon: Lightbulb, title: "Lean + Digital", text: "Combines lean, digital, and innovation to design simple, scalable systems that drive impact." },
+  { icon: UsersRound, title: "People & Culture", text: "Builds capability, ownership, and cultures that learn, adapt and sustain performance." },
+];
 const discoveries = ["Why most transformation programs fail—even with the right intent", "How disconnected excellence silently destroys performance", "What it takes to move from reactive chaos to system-driven execution", "How small, local improvements can trigger enterprise-wide, self-sustaining change", "A practical maturity model with 10 groups and 65 elements across the value chain"];
 
 export default function LeanNervousSystem() {
@@ -111,6 +118,36 @@ export default function LeanNervousSystem() {
     </section>
     <section className="lns-curriculum-image" aria-label="Curriculum Overview: Ten Lessons in Excellence">
       <img src="/art/lns-curriculum-overview.png" alt="Curriculum overview showing ten things The Lean Nervous System will teach readers" />
+    </section>
+    <section className="lns-author" aria-labelledby="lns-author-title">
+      <div className="lns-author-inner">
+        <div className="lns-author-feature"><BookOpen aria-hidden="true" /><strong>FEATURED:</strong><span>Pre-order “The Lean Nervous System” (Coming Soon)</span></div>
+
+        <div className="lns-author-main">
+          <div className="lns-author-photo-wrap">
+            <div className="lns-author-photo"><img src="/art/lns-author-portrait.png" alt="Rajesh Koul" /></div>
+            <div className="lns-author-experience"><b>30+</b><strong>YEARS OF<br />EXPERIENCE</strong><i /><span>TRANSFORM<br /><em>•</em> LEAD <em>•</em> SUSTAIN</span></div>
+          </div>
+
+          <div className="lns-author-copy">
+            <p className="lns-author-kicker">ABOUT THE AUTHOR</p>
+            <h2 id="lns-author-title">RAJESH <span>KOUL</span></h2>
+            <p className="lns-author-role">GLOBAL TRANSFORMATION LEADER <i /> ENTERPRISE SYSTEMS THINKER <i /> BUILDER OF SCALABLE EXCELLENCE</p>
+            <div className="lns-author-rule" />
+            <p><strong>Rajesh Koul</strong> is a global transformation leader with over three decades of experience in leading large-scale enterprise transformations, leadership development, and operational excellence across industries. His work focuses on helping organizations move beyond fragmented initiatives to build integrated, high-performing systems that sustain excellence over time.</p>
+            <p>Over the years, Rajesh has worked closely with leadership teams to navigate complexity, scale operations, and unlock performance by aligning strategy, processes, people, and culture into a single, coherent system. His approach combines the principles of Lean with modern digital thinking to create organizations that are not just efficient—but adaptive, intelligent, and future-ready.</p>
+            <p>In The Lean Nervous System, he brings together decades of practical experience to introduce the Lean Maturity Model (LMM)—a structured and original framework that enables leaders to diagnose organizational health, eliminate systemic disconnects, and design enterprises that continuously learn, improve, and respond as one.</p>
+          </div>
+        </div>
+
+        <blockquote className="lns-author-quote"><span>“</span><div><p>Rajesh’s work is guided by a simple belief:</p><b>excellence is not achieved through effort alone—It is engineered through systems.</b></div><span>”</span></blockquote>
+
+        <div className="lns-author-pillars">
+          {authorPillars.map(({ icon: Icon, title, text }) => <article key={title}><span><Icon aria-hidden="true" /></span><div><h3>{title}</h3><i /><p>{text}</p></div></article>)}
+        </div>
+
+        <div className="lns-author-cta-row"><i /><Link href="#lns-title">EXPLORE THE LEAN NERVOUS SYSTEM <ArrowRight aria-hidden="true" /></Link><i /></div>
+      </div>
     </section>
   </div>;
 }
