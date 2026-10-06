@@ -107,10 +107,10 @@ export default function LeanNervousSystem() {
         <article className="lns-domain-list"><div className="lns-story-panel-title"><img src="/art/lns-icons/domains.png" alt="" aria-hidden="true" /><h3>The 10 Domains:</h3></div><div>{domains.map(({ icon, name }) => <p key={name}><img src={icon} alt="" aria-hidden="true" />{name}</p>)}</div></article>
       </div>
 
-      <footer className="lns-story-footer">
-        <p><img src="/art/lns-icons/leaders.png" alt="" aria-hidden="true" />This book is built for leaders who are not looking for more frameworks—but for <strong>clarity, structure, and a way forward.</strong></p>
+      <footer className="lns-story-footer" id="lns-infographic-footer">
+        <p><img src="/art/lns-icons/leaders.png" alt="" aria-hidden="true" /><span>This book is built for leaders who are not looking for more frameworks—but for <strong>clarity, structure, and a way forward.</strong></span></p>
         <div><b>THE LEAN NERVOUS SYSTEM</b><span>A Proven Way to Build Organisations That Think, Sense, and Respond as One</span></div>
-        <p><img src="/art/lns-icons/inevitable.png" alt="" aria-hidden="true" />Because in the end:<strong>You don’t need more initiatives.<br />You need a system that makes excellence inevitable.</strong></p>
+        <p><img src="/art/lns-icons/inevitable.png" alt="" aria-hidden="true" /><span>Because in the end:<strong>You don’t need more initiatives.<br />You need a system that makes excellence inevitable.</strong></span></p>
       </footer>
     </section>
     <section className="lns-architecture-image" aria-label="The Lean Nervous System Architecture">
