@@ -32,5 +32,17 @@ export default function LeanNervousSystem() {
         <p className="lns-mantra"><span />“Build Organisations That Think, Sense, and Respond — As One System”<span /></p>
       </section>
     </main>
+    <section className="lns-purchase" id="purchase-options" aria-labelledby="lns-purchase-title">
+      <div className="lns-purchase-inner">
+        <h2 id="lns-purchase-title">Get Your Copy of <span>The Lean Nervous System</span></h2>
+        <div className="lns-purchase-rule" aria-hidden="true"><i /><b>◇</b><i /></div>
+        <div className="lns-purchase-links">
+          <Link href="/contact">Amazon</Link>
+          <Link href="/contact">Flipkart</Link>
+          <Link href="/contact">Kindle</Link>
+        </div>
+        <p><em>Outside India?</em> <Link href="/contact">Click here for international editions.</Link></p>
+      </div>
+    </section>
   </div>;
 }
