@@ -53,6 +53,9 @@ export default function LeanNervousSystem() {
         <h1 id="lns-title">The Lean<br /><em>Nervous System</em></h1>
         <div className="lns-deck"><h2>“The Operating System for Enterprise Transformation”</h2><p>The Lean Nervous System — enabling organisations to sense early,<br className="lns-desktop-break" /> respond intelligently, and sustain performance.</p></div>
       </section>
+      <div className="lns-book-product" aria-label="The Lean Nervous System book">
+        <img src="/art/lns-book-cutout.png" alt="The Lean Nervous System by Rajesh Koul" />
+      </div>
       <section className="lns-action-grid" aria-label="Lean Nervous System pathways">
         {actions.map(({ icon: Icon, title, body, label, href }) => <article className="lns-action-card" key={title}><Icon aria-hidden="true" /><h2>{title}</h2><p>{body}</p><Link href={href}>{label} <ArrowRight aria-hidden="true" /></Link></article>)}
       </section>
