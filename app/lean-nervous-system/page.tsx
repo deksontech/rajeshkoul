@@ -106,5 +106,8 @@ export default function LeanNervousSystem() {
         <p><img src="/art/lns-icons/inevitable.png" alt="" aria-hidden="true" />Because in the end:<strong>You don’t need more initiatives.<br />You need a system that makes excellence inevitable.</strong></p>
       </footer>
     </section>
+    <section className="lns-architecture-image" aria-label="The Lean Nervous System Architecture">
+      <img src="/art/lns-architecture.png" alt="The Lean Nervous System Architecture showing ten connected enterprise domains around the Lean Maturity Model" />
+    </section>
   </div>;
 }
