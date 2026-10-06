@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, BookOpen, BrainCircuit, ChartNoAxesCombined, CheckCircle2, Factory, FileText, Landmark, Layers3, Leaf, Lightbulb, Network, Target, Users, UsersRound } from "lucide-react";
+import { ArrowRight, BookOpen, ChartNoAxesCombined, CheckCircle2, Layers3, Target, Users } from "lucide-react";
 import { LnsHeader } from "@/components/lns-header";
 
 const actions = [
@@ -14,22 +14,22 @@ const measures = [
 ];
 
 const domains = [
-  { icon: Lightbulb, code: "A.", name: "Catalytic Core" },
-  { icon: BrainCircuit, code: "B.", name: "Design & Innovation" },
-  { icon: Network, code: "C.", name: "Supply Chain" },
-  { icon: Factory, code: "D.", name: "Manufacturing & Operations" },
-  { icon: BadgeCheck, code: "E.", name: "Quality Management" },
-  { icon: Leaf, code: "F.", name: "Energy, Environment & Safety" },
-  { icon: UsersRound, code: "G.", name: "Human Capital" },
-  { icon: ChartNoAxesCombined, code: "H.", name: "Go-to-Market" },
-  { icon: Landmark, code: "I.", name: "Performance & Governance" },
-  { icon: Target, code: "J.", name: "Outcome Performance" },
+  { icon: "/art/lns-icons/domain-catalytic.png", code: "A.", name: "Catalytic Core" },
+  { icon: "/art/lns-icons/domain-design.png", code: "B.", name: "Design & Innovation" },
+  { icon: "/art/lns-icons/domain-supply.png", code: "C.", name: "Supply Chain" },
+  { icon: "/art/lns-icons/domain-manufacturing.png", code: "D.", name: "Manufacturing & Operations" },
+  { icon: "/art/lns-icons/domain-quality.png", code: "E.", name: "Quality Management" },
+  { icon: "/art/lns-icons/domain-energy.png", code: "F.", name: "Energy, Environment & Safety" },
+  { icon: "/art/lns-icons/domain-human.png", code: "G.", name: "Human Capital" },
+  { icon: "/art/lns-icons/domain-market.png", code: "H.", name: "Go-to-Market" },
+  { icon: "/art/lns-icons/domain-governance.png", code: "I.", name: "Performance & Governance" },
+  { icon: "/art/lns-icons/domain-outcome.png", code: "J.", name: "Outcome Performance" },
 ];
 
 const outcomes = [
-  { icon: BrainCircuit, title: "Sense problems early", text: "Detect weak signals and emerging issues before they become disruptions." },
-  { icon: BadgeCheck, title: "Respond intelligently and in real time", text: "Make faster, better decisions and act with clarity across the organisation." },
-  { icon: ChartNoAxesCombined, title: "Sustain performance without constant intervention", text: "Build a system that adapts, stabilises, and improves continuously." },
+  { icon: "/art/lns-icons/sense.png", title: "Sense problems early", text: "Detect weak signals and emerging issues before they become disruptions." },
+  { icon: "/art/lns-icons/respond.png", title: "Respond intelligently and in real time", text: "Make faster, better decisions and act with clarity across the organisation." },
+  { icon: "/art/lns-icons/sustain.png", title: "Sustain performance without constant intervention", text: "Build a system that adapts, stabilises, and improves continuously." },
 ];
 
 const theoryPoints = ["When systems don’t scale with success", "When firefighting replaces discipline", "When effort increases, but outcomes don’t", "When teams optimise their part, not the whole", "And more importantly, how that changes."];
@@ -88,22 +88,22 @@ export default function LeanNervousSystem() {
             <blockquote><span>“</span><small>At its core is a powerful idea:</small><b>Organisations don’t rise to the level of their strategy.<br />They fall to the level of their system.</b><span>”</span></blockquote>
           </div>
           <p className="lns-story-summary">Drawing from decades of real-world transformation experience, this book introduces the <strong>Lean Nervous System</strong> — an integrated architecture that enables organisations to:</p>
-          <div className="lns-outcome-grid">{outcomes.map(({ icon: Icon, title, text }) => <article key={title}><span><Icon aria-hidden="true" /></span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+          <div className="lns-outcome-grid">{outcomes.map(({ icon, title, text }) => <article key={title}><span><img src={icon} alt="" aria-hidden="true" /></span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
         </div>
       </div>
 
-      <p className="lns-story-bridge"><Network aria-hidden="true" />It moves beyond fragmented improvements and presents a coherent model of enterprise maturity, built across interconnected domains — <strong>from design and supply chain to operations, people, governance, and sustainability.</strong></p>
+      <p className="lns-story-bridge"><img src="/art/lns-icons/bridge.png" alt="" aria-hidden="true" />It moves beyond fragmented improvements and presents a coherent model of enterprise maturity, built across interconnected domains — <strong>from design and supply chain to operations, people, governance, and sustainability.</strong></p>
 
       <div className="lns-story-panels">
-        <article><div className="lns-story-panel-title"><FileText aria-hidden="true" /><h3>But this is not just a theory.</h3></div><p>Through the transformation journey of Vijay—an entrepreneur whose growth begins to break his own organisation—you will see what actually happens inside companies:</p><ul>{theoryPoints.map(item => <li key={item}><CheckCircle2 aria-hidden="true" />{item}</li>)}</ul></article>
-        <article><div className="lns-story-panel-title"><Lightbulb aria-hidden="true" /><h3>You will discover:</h3></div><ul>{discoveries.map(item => <li key={item}><CheckCircle2 aria-hidden="true" />{item}</li>)}</ul></article>
-        <article className="lns-domain-list"><div className="lns-story-panel-title"><Layers3 aria-hidden="true" /><h3>The 10 Domains:</h3></div><div>{domains.map(({ icon: Icon, name }) => <p key={name}><Icon aria-hidden="true" />{name}</p>)}</div></article>
+        <article><div className="lns-story-panel-title"><img src="/art/lns-icons/theory.png" alt="" aria-hidden="true" /><h3>But this is not just a theory.</h3></div><p>Through the transformation journey of Vijay—an entrepreneur whose growth begins to break his own organisation—you will see what actually happens inside companies:</p><ul>{theoryPoints.map(item => <li key={item}><CheckCircle2 aria-hidden="true" />{item}</li>)}</ul></article>
+        <article><div className="lns-story-panel-title"><img src="/art/lns-icons/discover.png" alt="" aria-hidden="true" /><h3>You will discover:</h3></div><ul>{discoveries.map(item => <li key={item}><CheckCircle2 aria-hidden="true" />{item}</li>)}</ul></article>
+        <article className="lns-domain-list"><div className="lns-story-panel-title"><img src="/art/lns-icons/domains.png" alt="" aria-hidden="true" /><h3>The 10 Domains:</h3></div><div>{domains.map(({ icon, name }) => <p key={name}><img src={icon} alt="" aria-hidden="true" />{name}</p>)}</div></article>
       </div>
 
       <footer className="lns-story-footer">
-        <p><UsersRound aria-hidden="true" />This book is built for leaders who are not looking for more frameworks—but for <strong>clarity, structure, and a way forward.</strong></p>
+        <p><img src="/art/lns-icons/leaders.png" alt="" aria-hidden="true" />This book is built for leaders who are not looking for more frameworks—but for <strong>clarity, structure, and a way forward.</strong></p>
         <div><b>THE LEAN NERVOUS SYSTEM</b><span>A Proven Way to Build Organisations That Think, Sense, and Respond as One</span></div>
-        <p><Target aria-hidden="true" />Because in the end:<strong>You don’t need more initiatives.<br />You need a system that makes excellence inevitable.</strong></p>
+        <p><img src="/art/lns-icons/inevitable.png" alt="" aria-hidden="true" />Because in the end:<strong>You don’t need more initiatives.<br />You need a system that makes excellence inevitable.</strong></p>
       </footer>
     </section>
   </div>;
