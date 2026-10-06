@@ -119,6 +119,18 @@ export default function LeanNervousSystem() {
     <section className="lns-curriculum-image" aria-label="Curriculum Overview: Ten Lessons in Excellence">
       <img src="/art/lns-curriculum-overview.png" alt="Curriculum overview showing ten things The Lean Nervous System will teach readers" />
     </section>
+    <section className="lns-purchase lns-purchase-dark" aria-labelledby="lns-purchase-dark-title">
+      <div className="lns-purchase-inner">
+        <h2 id="lns-purchase-dark-title">Get Your Copy of <span>The Lean Nervous System</span></h2>
+        <div className="lns-purchase-rule" aria-hidden="true"><i /><b>◇</b><i /></div>
+        <div className="lns-purchase-links">
+          <Link href="/contact">Amazon</Link>
+          <Link href="/contact">Flipkart</Link>
+          <Link href="/contact">Kindle</Link>
+        </div>
+        <p><em>Outside India?</em> <Link href="/contact">Click here for international editions.</Link></p>
+      </div>
+    </section>
     <section className="lns-author" aria-labelledby="lns-author-title">
       <div className="lns-author-inner">
         <div className="lns-author-feature"><BookOpen aria-hidden="true" /><strong>FEATURED:</strong><span>Pre-order “The Lean Nervous System” (Coming Soon)</span></div>
