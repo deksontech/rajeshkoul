@@ -2,16 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Lightbulb, Mail, Menu, MessageCircle, Sprout, Target, Users, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Lightbulb, Mail, Menu, MessageCircle, Sprout, Target, Users, X } from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 const nav = [["Home","/"],["About","/about"],["The Lean Nervous System","/lean-nervous-system"],["Blogs","/blogs"],["Literary Lounge","/literary-lounge"],["Contact Me","/contact"]];
+const literaryNav = [["Book Review","/literary-lounge"],["Personal Leadership & Coaching","/literary-lounge/coaching"],["Courses & Frameworks","/literary-lounge/courses"],["Industry & Campus Talks","/literary-lounge/talks"]];
 
 export function SiteHeader(){
   const [open,setOpen]=useState(false);
   const pathname=usePathname();
-  return <header className="site-header"><Link className="logo" href="/"><Image src="/art/signature.png" alt="Rajesh Koul" width={210} height={80} priority/></Link><button className="menu-button" aria-label={open?"Close navigation":"Open navigation"} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav className={open?"open":""} aria-label="Primary navigation">{nav.map(([label,href])=><Link key={label} href={href} className={pathname===href?"active":""} onClick={()=>setOpen(false)}>{label}</Link>)}</nav></header>
+  return <header className="site-header"><Link className="logo" href="/"><Image src="/art/signature.png" alt="Rajesh Koul" width={210} height={80} priority/></Link><button className="menu-button" aria-label={open?"Close navigation":"Open navigation"} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav className={open?"open":""} aria-label="Primary navigation">{nav.map(([label,href])=>label==="Literary Lounge"?<div className="nav-dropdown" key={label}><Link href={href} className={pathname.startsWith("/literary-lounge")?"active":""} aria-haspopup="true" onClick={()=>setOpen(false)}>{label}<ChevronDown aria-hidden="true"/></Link><div className="nav-submenu" aria-label="Literary Lounge submenu">{literaryNav.map(([subLabel,subHref])=><Link key={subLabel} href={subHref} className={pathname===subHref?"active":""} onClick={()=>setOpen(false)}>{subLabel}</Link>)}</div></div>:<Link key={label} href={href} className={pathname===href?"active":""} onClick={()=>setOpen(false)}>{label}</Link>)}</nav></header>
 }
 
 export function SiteFooter(){
