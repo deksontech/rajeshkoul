@@ -73,10 +73,9 @@ export default function LeanNervousSystem() {
       </header>
 
       <div className="lns-story-top">
-        <div className="lns-domain-ring" aria-label="Ten interconnected domains">
-          <div className="lns-domain-core"><strong>10</strong><b>INTERCONNECTED<br />DOMAINS</b><span>One Integrated System for Enterprise Excellence</span></div>
-          {domains.map(({ icon: Icon, code, name }, index) => <article className={`lns-domain-chip lns-domain-chip-${index + 1}`} key={name}><Icon aria-hidden="true" /><span><b>{code}</b> {name}</span></article>)}
-        </div>
+        <figure className="lns-domain-art-crop">
+          <img src="/art/lns-infographic-original.png" alt="The ten interconnected domains of the Lean Nervous System" />
+        </figure>
 
         <div className="lns-story-copy">
           <div className="lns-story-narrative">
