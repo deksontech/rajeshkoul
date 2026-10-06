@@ -109,5 +109,8 @@ export default function LeanNervousSystem() {
     <section className="lns-architecture-image" aria-label="The Lean Nervous System Architecture">
       <img src="/art/lns-architecture.png" alt="The Lean Nervous System Architecture showing ten connected enterprise domains around the Lean Maturity Model" />
     </section>
+    <section className="lns-curriculum-image" aria-label="Curriculum Overview: Ten Lessons in Excellence">
+      <img src="/art/lns-curriculum-overview.png" alt="Curriculum overview showing ten things The Lean Nervous System will teach readers" />
+    </section>
   </div>;
 }
