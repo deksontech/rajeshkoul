@@ -74,7 +74,7 @@ export default function LeanNervousSystem() {
 
       <div className="lns-story-top">
         <figure className="lns-domain-art-crop">
-          <img src="/art/lns-infographic-original.png" alt="The ten interconnected domains of the Lean Nervous System" />
+          <img src="/art/lns-ten-domains-transparent.png" alt="The ten interconnected domains of the Lean Nervous System" />
         </figure>
 
         <div className="lns-story-copy">
