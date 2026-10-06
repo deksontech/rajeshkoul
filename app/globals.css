@@ -762,7 +762,7 @@
 .book-review-dots{position:absolute;width:115px;height:90px;background-image:radial-gradient(circle,#7db9ff 1.7px,transparent 2px);background-size:17px 17px;opacity:.75;pointer-events:none}
 .book-review-dots-left{left:8px;top:107px}.book-review-dots-review-left{left:8px;top:128px}.book-review-dots-bottom{right:12px;bottom:89px}
 .book-review-list{position:relative;isolation:isolate;min-height:455px;padding:62px 4.75% 70px;background:linear-gradient(105deg,#fff 0,#f8fbff 58%,#eef7ff 100%)}
-.book-review-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.book-review-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .book-review-card{height:323px;display:grid;grid-template-columns:202px minmax(0,1fr);gap:27px;padding:23px 25px;border:1px solid #d7e1f2;border-radius:14px;background:rgba(255,255,255,.92);box-shadow:0 12px 28px rgba(38,65,120,.055);color:inherit;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.book-review-card:hover{transform:translateY(-5px);border-color:#aebff0;box-shadow:0 20px 38px rgba(38,65,120,.12)}
 .book-review-cover{position:relative;align-self:start;width:180px;height:265px;filter:drop-shadow(0 11px 9px rgba(19,32,73,.18))}.book-review-cover img{object-fit:contain}
 .book-review-card-copy{min-width:0;padding-top:3px}.book-review-card h2{margin:0;color:#081644;font-family:Georgia,'Times New Roman',serif;font-size:23px;line-height:1.13;font-weight:700;letter-spacing:-.025em}
