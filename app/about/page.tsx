@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, Cog, FileSearch, FileText, Globe2, Layers3, Leaf,
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 export default function About(){return <><SiteHeader/><main>
+  <div className="about-live-hero-stage">
   <section className="about-live-hero" aria-labelledby="about-live-title">
     <div className="about-live-reference" aria-hidden="true"><Image src="/art/about-hero-reference.png" alt="" fill priority sizes="100vw"/></div>
     <div className="about-live-mask" aria-hidden="true"/>
@@ -22,6 +23,7 @@ export default function About(){return <><SiteHeader/><main>
     </div>
     <div className="about-live-wave" aria-hidden="true"><Image src="/art/home-author-bottom-wave.png" alt="" fill sizes="100vw"/></div>
   </section>
+  </div>
   <section className="about-bio" id="journey" aria-labelledby="about-bio-title">
     <div className="about-bio-top">
       <div className="about-bio-visual"><Image src="/art/about-system.jpg" alt="Purpose, systems and impact framework" fill sizes="(max-width: 760px) 92vw, 466px"/></div>

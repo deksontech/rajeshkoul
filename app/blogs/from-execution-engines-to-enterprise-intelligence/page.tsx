@@ -18,7 +18,7 @@ const sections = [
 
 export default function ExecutionToIntelligenceArticle() {
   return <><SiteHeader/><main className="article-page">
-    <section className="article-hero">
+    <div className="article-hero-stage"><section className="article-hero">
       <Image src="/art/execution-enterprise-hero.png" alt="A path connecting industrial execution with a digitally intelligent enterprise" fill priority sizes="100vw"/>
       <div className="article-hero-shade"/>
       <div className="article-hero-inner">
@@ -28,7 +28,7 @@ export default function ExecutionToIntelligenceArticle() {
         <p className="article-deck">A Leadership Narrative on Enabling GCC Maturity</p>
         <div className="article-byline"><span>By <b>Rajesh Koul</b></span><i/><span><Clock3/> 12 minute read</span></div>
       </div>
-    </section>
+    </section></div>
 
     <div className="article-shell">
       <aside className="article-toc">

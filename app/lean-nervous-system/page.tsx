@@ -45,7 +45,7 @@ const discoveries = ["Why most transformation programs fail—even with the righ
 export default function LeanNervousSystem() {
   return <div className="lns-page">
     <LnsHeader />
-    <main className="lns-hero">
+    <div className="lns-hero-stage"><main className="lns-hero">
       <div className="lns-hero-shade" aria-hidden="true" />
       <div className="lns-request-wrap"><Link className="lns-request" href="/contact">Request for<br />The LNS Framework <ArrowRight aria-hidden="true" /></Link></div>
       <section className="lns-intro" aria-labelledby="lns-title">
@@ -63,7 +63,7 @@ export default function LeanNervousSystem() {
         <div className="lns-measures-inner">{measures.map(({ icon: Icon, value, label, note }) => <article key={label}><span className="lns-measure-icon"><Icon aria-hidden="true" /></span><div><strong>{value}</strong><h2>{label}</h2><p>{note}</p></div></article>)}</div>
         <p className="lns-mantra"><span />“Build Organisations That Think, Sense, and Respond — As One System”<span /></p>
       </section>
-    </main>
+    </main></div>
     <section className="lns-purchase" id="purchase-options" aria-labelledby="lns-purchase-title">
       <div className="lns-purchase-inner">
         <h2 id="lns-purchase-title">Get Your Copy of <span>The Lean Nervous System</span></h2>

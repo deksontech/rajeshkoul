@@ -95,7 +95,7 @@ const themes = [
 
 export default function BlogsPage() {
   return <><SiteHeader/><main className="blogs-page">
-    <section className="blogs-hero">
+    <div className="blogs-hero-stage"><section className="blogs-hero">
       <p className="blogs-kicker">IDEAS · PERSPECTIVES · PRACTICE</p>
       <h1>Blogs</h1>
       <p>Practical thinking for leaders building connected, adaptive, and future-ready organisations.</p>
@@ -103,7 +103,7 @@ export default function BlogsPage() {
         <label><span>Explore by topic</span><select defaultValue="all"><option value="all">All topics</option><option>Lean Transformation</option><option>Digital Excellence</option><option>Leadership</option><option>Growth Systems</option></select></label>
         <label><span>Sort articles</span><select defaultValue="latest"><option value="latest">Latest first</option><option>Featured</option><option>Most read</option></select></label>
       </div>
-    </section>
+    </section></div>
 
     <div className="blogs-main">
       <section className="blogs-section" id="latest">
