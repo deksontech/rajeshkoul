@@ -15,7 +15,7 @@ export default function Home() {
   return <>
     <div className="home-navigation"><SiteHeader /></div>
     <main>
-      <section className="hero home-hero">
+      <div className="home-hero-stage"><section className="hero home-hero">
         <div className="hero-copy">
           <p className="eyebrow">IDEAS <i/> INSIGHTS <i/> EXECUTION <i/> LASTING VALUE</p>
           <h1>Scaling <span>Enterprises</span><br/>Through <span>Lean, Digital</span> &<br/>AI-Led Transformation</h1>
@@ -26,7 +26,7 @@ export default function Home() {
           <p className="trust">TRUSTED BY LEADERS ACROSS MANUFACTURING · CONSULTING · GLOBAL ENTERPRISES</p>
         </div>
         <div className="hero-art"><Image src="/art/home-hero.jpg" alt="Rajesh Koul against a modern enterprise cityscape" fill priority sizes="(max-width: 800px) 100vw, 55vw" /></div>
-      </section>
+      </section></div>
 
       <section className="section author-section" id="author">
         <div className="featured-strip"><BookOpen/><b>FEATURED</b><span/>Pre-order “The Lean Nervous System” (Coming Soon)<ArrowRight/></div>
