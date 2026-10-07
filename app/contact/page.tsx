@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight, BookOpen, Check, GraduationCap, List, Mail, MessageCircle, Network, Phone, Send, TrendingUp, User, Users } from "lucide-react";
-import { SiteHeader } from "@/components/site-shell";
+import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 const reasons = [
   { icon: BookOpen, title: <>Learn About<br/>My Book</>, text: "The Lean Nervous System" },
@@ -41,5 +41,5 @@ export default function ContactPage(){
         {sent&&<p className="contact-success" role="status">Thank you. Your enquiry has been prepared successfully.</p>}
       </form>
     </section>
-  </main></>;
+  </main><SiteFooter/></>;
 }
