@@ -2,11 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight, Grid2X2, List, Newspaper, Search, X } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
-const latest = [
+export const latest = [
   {
     category: "Innovation Management",
     title: "Project Management and Innovation: A Synthesis for Success",
@@ -193,59 +192,7 @@ const themes = [
   ["LD", "Leadership", "People and cultures equipped to learn, adapt, and grow."],
 ];
 
-type BlogView="grid"|"list";
-type BlogSort="latest"|"featured"|"popular"|"title-asc"|"title-desc";
-const BLOG_PAGE_SIZES=[6,9,12,15];
-
 export default function BlogsPage() {
-  const [showAll,setShowAll]=useState(false);
-  const [query,setQuery]=useState("");
-  const [category,setCategory]=useState("all");
-  const [author,setAuthor]=useState("all");
-  const [sort,setSort]=useState<BlogSort>("latest");
-  const [view,setView]=useState<BlogView>("grid");
-  const [page,setPage]=useState(1);
-  const [pageSize,setPageSize]=useState(6);
-
-  const categories=useMemo(()=>Array.from(new Set(latest.map(item=>item.category))).sort((a,b)=>a.localeCompare(b)),[]);
-  const authors=["Rajesh Koul"];
-  const filteredBlogs=useMemo(()=>{
-    const term=query.trim().toLocaleLowerCase();
-    const matches=latest.filter(item=>{
-      const searchable=[item.title,item.category,item.excerpt,...item.topics,"Rajesh Koul"].join(" ").toLocaleLowerCase();
-      return (!term||searchable.includes(term))&&(category==="all"||item.category===category)&&(author==="all"||author==="Rajesh Koul");
-    });
-    if(sort==="featured")return [...matches].sort((a,b)=>Number(b.featured)-Number(a.featured)||b.popularity-a.popularity);
-    if(sort==="popular")return [...matches].sort((a,b)=>b.popularity-a.popularity);
-    if(sort==="title-asc")return [...matches].sort((a,b)=>a.title.localeCompare(b.title));
-    if(sort==="title-desc")return [...matches].sort((a,b)=>b.title.localeCompare(a.title));
-    return matches;
-  },[query,category,author,sort]);
-
-  const pageCount=Math.max(1,Math.ceil(filteredBlogs.length/pageSize));
-  const visibleBlogs=filteredBlogs.slice((page-1)*pageSize,page*pageSize);
-  const firstResult=filteredBlogs.length===0?0:(page-1)*pageSize+1;
-  const lastResult=Math.min(page*pageSize,filteredBlogs.length);
-  const activeFilters=Boolean(query||category!=="all"||author!=="all"||sort!=="latest");
-  const pageItems=useMemo<(number|string)[]>(()=>{
-    if(pageCount<=7)return Array.from({length:pageCount},(_,index)=>index+1);
-    const values:(number|string)[]=[1];
-    if(page>4)values.push("start-ellipsis");
-    for(let value=Math.max(2,page-1);value<=Math.min(pageCount-1,page+1);value++)values.push(value);
-    if(page<pageCount-3)values.push("end-ellipsis");
-    values.push(pageCount);
-    return values;
-  },[page,pageCount]);
-
-  useEffect(()=>{const saved=window.localStorage.getItem("blogs-view");if(saved==="grid"||saved==="list")setView(saved)},[]);
-  useEffect(()=>{setPage(1)},[query,category,author,sort,pageSize]);
-  useEffect(()=>{if(page>pageCount)setPage(pageCount)},[page,pageCount]);
-
-  const chooseView=(next:BlogView)=>{setView(next);window.localStorage.setItem("blogs-view",next)};
-  const clearFilters=()=>{setQuery("");setCategory("all");setAuthor("all");setSort("latest")};
-  const toggleAll=()=>{const next=!showAll;setShowAll(next);window.requestAnimationFrame(()=>document.getElementById(next?"all-blogs":"latest")?.scrollIntoView({behavior:"smooth",block:"start"}))};
-  const goToPage=(next:number)=>{setPage(Math.min(Math.max(next,1),pageCount));document.getElementById("all-blogs")?.scrollIntoView({behavior:"smooth",block:"start"})};
-
   return <><SiteHeader/><main className="blogs-page">
     <div className="blogs-hero-stage"><section className="blogs-hero">
       <p className="blogs-kicker">IDEAS · PERSPECTIVES · PRACTICE</p>
@@ -255,7 +202,7 @@ export default function BlogsPage() {
 
     <div className="blogs-main">
       <section className="blogs-section" id="latest">
-        <SectionHeading eyebrow="LATEST THINKING" title="Latest Insights" onAction={toggleAll} actionLabel={showAll?"Show less":`View all ${latest.length}`}/>
+        <SectionHeading eyebrow="LATEST THINKING" title="Latest Insights" actionHref="/blogs/all/" actionLabel={`View all ${latest.length}`}/>
         <article className="blogs-feature">
           <div className="blogs-feature-copy"><p className="blogs-category">{latest[0].category}</p><h2>{latest[0].title}</h2><p>{latest[0].excerpt}</p><ReadLink href={latest[0].href}/></div>
           <Link href={latest[0].href??"/blogs"} className="blogs-feature-media" aria-label={`Read ${latest[0].title}`}><Image src={latest[0].image} alt="Industrial execution evolving into a digitally intelligent enterprise" fill sizes="(max-width: 900px) 100vw, 42vw" style={{objectFit:"fill",objectPosition:"center",transform:"none",transition:"none"}} priority/></Link>
@@ -264,25 +211,6 @@ export default function BlogsPage() {
           <div className="blogs-card-grid">{latest.slice(1,3).map((item)=><ArticleCard key={item.title} {...item}/>)}</div>
           <aside className="blogs-news-card"><p className="blogs-category">IN THE NEWS</p><h3>Ideas making an impact</h3><div className="blogs-news-list">{inTheNews.map(([category,title])=><Link href="/blogs" key={title}><small>{category}</small><span>{title}</span><ArrowRight/></Link>)}</div></aside>
         </div>
-        {showAll&&<section className="blogs-library" id="all-blogs" aria-label="All blog articles">
-          <div className="book-library-toolbar">
-            <div className="book-library-toolbar-heading"><div><p>ALL ARTICLES</p><h2>Explore every perspective</h2></div><p className="book-library-results" role="status" aria-live="polite">Showing <b>{firstResult}–{lastResult}</b> of <b>{filteredBlogs.length}</b> {filteredBlogs.length===1?"article":"articles"}</p></div>
-            <div className="book-library-controls">
-              <label className="book-library-search"><span className="sr-only">Search blogs</span><Search aria-hidden="true"/><input value={query} onChange={event=>setQuery(event.target.value)} placeholder="Search title, topic, keyword…"/>{query&&<button type="button" onClick={()=>setQuery("")} aria-label="Clear search"><X/></button>}</label>
-              <label><span>Category</span><select value={category} onChange={event=>setCategory(event.target.value)}><option value="all">All categories</option>{categories.map(item=><option value={item} key={item}>{item}</option>)}</select></label>
-              <label><span>Author</span><select value={author} onChange={event=>setAuthor(event.target.value)}><option value="all">All authors</option>{authors.map(item=><option value={item} key={item}>{item}</option>)}</select></label>
-              <label><span>Sort by</span><select value={sort} onChange={event=>setSort(event.target.value as BlogSort)}><option value="latest">Latest first</option><option value="featured">Featured</option><option value="popular">Most read</option><option value="title-asc">Title: A–Z</option><option value="title-desc">Title: Z–A</option></select></label>
-            </div>
-            <div className="book-library-options">
-              <div>{activeFilters&&<button className="book-library-clear" type="button" onClick={clearFilters}><X/> Clear filters</button>}</div>
-              <label className="book-library-page-size"><span>Articles per page</span><select value={pageSize} onChange={event=>setPageSize(Number(event.target.value))}>{BLOG_PAGE_SIZES.map(size=><option value={size} key={size}>{size}</option>)}</select></label>
-              <div className="book-library-view" role="group" aria-label="Choose blog display"><button type="button" aria-label="Grid view" aria-pressed={view==="grid"} onClick={()=>chooseView("grid")}><Grid2X2/></button><button type="button" aria-label="List view" aria-pressed={view==="list"} onClick={()=>chooseView("list")}><List/></button></div>
-            </div>
-          </div>
-          {visibleBlogs.length>0?<div className={`blogs-all-grid is-${view}`}>{visibleBlogs.map(item=><ArticleCard key={item.title} {...item}/>)}</div>:<div className="book-library-empty"><Newspaper/><h2>No matching articles</h2><p>Try another title, author, or category.</p><button type="button" onClick={clearFilters}>Show all blogs</button></div>}
-          {filteredBlogs.length>0&&pageCount>1&&<nav className="book-library-pagination" aria-label="Blog pages"><button type="button" onClick={()=>goToPage(page-1)} disabled={page===1}><ChevronLeft/> Previous</button><div>{pageItems.map(item=>typeof item==="number"?<button type="button" className={item===page?"active":""} aria-current={item===page?"page":undefined} onClick={()=>goToPage(item)} key={item}>{item}</button>:<span aria-hidden="true" key={item}>…</span>)}</div><button type="button" onClick={()=>goToPage(page+1)} disabled={page===pageCount}>Next <ChevronRight/></button></nav>}
-          {filteredBlogs.length>0&&<p className="book-library-page-note">Page {page} of {pageCount}</p>}
-        </section>}
       </section>
 
       <section className="blogs-section blogs-tinted">
@@ -307,11 +235,11 @@ export default function BlogsPage() {
   </main><SiteFooter/></>;
 }
 
-function SectionHeading({eyebrow,title,onAction,actionLabel="View all"}:{eyebrow:string,title:string,onAction?:()=>void,actionLabel?:string}) {
-  return <div className="blogs-section-heading"><div><p>{eyebrow}</p><h2>{title}</h2></div>{onAction?<button type="button" onClick={onAction}>{actionLabel} <ArrowRight/></button>:<Link href="/blogs">View all <ArrowRight/></Link>}</div>;
+function SectionHeading({eyebrow,title,actionHref="/blogs",actionLabel="View all"}:{eyebrow:string,title:string,actionHref?:string,actionLabel?:string}) {
+  return <div className="blogs-section-heading"><div><p>{eyebrow}</p><h2>{title}</h2></div><Link href={actionHref}>{actionLabel} <ArrowRight/></Link></div>;
 }
 
-function ArticleCard({category,title,excerpt,image,href="/blogs",preserveFullImage=false}:{category:string,title:string,excerpt:string,image:string,href?:string,preserveFullImage?:boolean}) {
+export function ArticleCard({category,title,excerpt,image,href="/blogs",preserveFullImage=false}:{category:string,title:string,excerpt:string,image:string,href?:string,preserveFullImage?:boolean}) {
   return <article className="blog-card"><Link className="blog-card-media" href={href} aria-label={`Read ${title}`}><Image src={image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw" style={preserveFullImage?{objectFit:"fill",transform:"none",transition:"none"}:undefined}/></Link><div><p className="blogs-category">{category}</p><h3>{title}</h3><p>{excerpt}</p><ReadLink href={href}/></div></article>;
 }
 
