@@ -1,42 +1,97 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Grid2X2, List, Search, X } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
+import { books } from "./books";
 
-const books = [
-  {cover:"/art/book-toyota.jpg",href:"/book-review/toyota-way",title:"The Toyota Way",author:"Jeffrey K. Liker",text:"A timeless guide to building a culture of continuous improvement, respect for people, and operational excellence.",tags:["Lean","Operations"]},
-  {cover:"/art/book-strategy.jpg",href:"/book-review/reinventing-strategy",title:"Reinventing Strategy",author:"Willie Pietersen",text:"A powerful perspective on strategic learning, adaptability, and creating breakthrough performance.",tags:["Strategy","Leadership"]},
-  {cover:"/art/book-product.jpg",href:"/book-review/lean-product-playbook",title:"The Lean Product Playbook",author:"Dan Olsen",text:"A practical guide to building products customers love through experimentation, feedback, and iterative learning.",tags:["Innovation","Product"]},
-  {cover:"/art/book-100-startup.webp",href:"/book-review/the-100-startup",title:"The $100 Startup",author:"Chris Guillebeau",text:"A practical guide to building a small, meaningful business with limited resources, focused action, and customer value.",tags:["Entrepreneurship","Startup"]},
-  {cover:"/art/book-dynamic-supply-chains.png",href:"/book-review/dynamic-supply-chains",title:"Dynamic Supply Chains",author:"John Gattorna",text:"A people-centric approach to designing responsive supply chains that align strategy, customers, and operational capabilities.",tags:["Supply Chain","Strategy"]},
-  {cover:"/art/book-demand-driven-material-requirements-planning.jpg",href:"/book-review/demand-driven-material-requirements-planning",title:"Demand Driven Material Requirements Planning",author:"Carol Ptak & Chad Smith",text:"A practical method for positioning and managing inventory around real demand, flow, and supply-chain variability.",tags:["Planning","Operations"]},
-  {cover:"/art/book-cradle-to-cradle.jpg",href:"/book-review/cradle-to-cradle",title:"Cradle to Cradle",author:"William McDonough & Michael Braungart",text:"A compelling vision for designing products and systems around continuous reuse instead of waste.",tags:["Sustainability","Design"]},
-  {cover:"/art/book-built-to-last.jpg",href:"/book-review/built-to-last",title:"Built to Last",author:"Jim Collins & Jerry I. Porras",text:"Enduring lessons from visionary companies on preserving a core ideology while stimulating progress.",tags:["Leadership","Strategy"]},
-  {cover:"/art/book-blue-ocean-strategy.jpg",href:"/book-review/blue-ocean-strategy",title:"Blue Ocean Strategy",author:"W. Chan Kim & Renée Mauborgne",text:"A framework for creating uncontested market space through value innovation and strategic differentiation.",tags:["Strategy","Innovation"]},
-  {cover:"/art/book-balanced-sourcing.jpg",href:"/book-review/balanced-sourcing",title:"Balanced Sourcing",author:"Tim Laseter",text:"A strategic guide to balancing cooperation and competition in high-performing supplier relationships.",tags:["Sourcing","Supply Chain"]},
-  {cover:"/art/book-product-design-development.jpg",href:"/book-review/product-design-and-development",title:"Product Design and Development",author:"Karl T. Ulrich & Steven D. Eppinger",text:"A structured, cross-functional approach to creating products from opportunity identification through launch.",tags:["Product","Design"]},
-  {cover:"/art/book-logistics-supply-chain-management.jpg",href:"/book-review/logistics-and-supply-chain-management",title:"Logistics & Supply Chain Management",author:"Martin Christopher",text:"An essential guide to building competitive advantage through responsive logistics and integrated supply chains.",tags:["Logistics","Supply Chain"]},
-  {cover:"/art/book-learning-in-action.jpg",href:"/book-review/learning-in-action",title:"Learning in Action",author:"David A. Garvin",text:"A practical guide to turning organizational learning into repeatable habits, better decisions, and lasting improvement.",tags:["Learning","Leadership"]},
-  {cover:"/art/book-lean-thinking.jpg",href:"/book-review/lean-thinking",title:"Lean Thinking",author:"James P. Womack & Daniel T. Jones",text:"The landmark guide to defining value, improving flow, eliminating waste, and pursuing continuous perfection.",tags:["Lean","Transformation"]},
-  {cover:"/art/book-purchasing-supply-chain-management.jpg",href:"/book-review/purchasing-and-supply-chain-management",title:"Purchasing and Supply Chain Management",author:"Monczka et al.",text:"A comprehensive view of strategic sourcing, supplier relationships, purchasing processes, and supply-chain performance.",tags:["Purchasing","Supply Chain"]},
-  {cover:"/art/book-innovators-dilemma.png",href:"/book-review/the-innovators-dilemma",title:"The Innovator’s Dilemma",author:"Clayton M. Christensen",text:"A landmark explanation of why successful companies can fail when disruptive technologies reshape their markets.",tags:["Innovation","Strategy"]},
-  {cover:"/art/book-knowledge-creating-company.jpg",href:"/book-review/the-knowledge-creating-company",title:"The Knowledge-Creating Company",author:"Ikujiro Nonaka & Hirotaka Takeuchi",text:"A foundational account of how organizations create, share, and convert knowledge into sustained innovation.",tags:["Knowledge","Innovation"]},
-  {cover:"/art/book-product-development-flow.jpg",href:"/book-review/the-principles-of-product-development-flow",title:"The Principles of Product Development Flow",author:"Donald G. Reinertsen",text:"A rigorous guide to improving product development economics through flow, queues, cadence, and rapid feedback.",tags:["Product","Flow"]},
-  {cover:"/art/book-design-everyday-things.jpg",href:"/book-review/the-design-of-everyday-things",title:"The Design of Everyday Things",author:"Donald Norman",text:"A human-centered exploration of how clear affordances, feedback, and thoughtful design make everyday products easier to use.",tags:["Design","Usability"]},
-  {cover:"/art/book-resilient-enterprise.jpg",href:"/book-review/the-resilient-enterprise",title:"The Resilient Enterprise",author:"Yossi Sheffi",text:"A practical examination of how enterprises prepare for disruption, recover quickly, and build competitive resilience.",tags:["Resilience","Risk"]},
-  {cover:"/art/book-fifth-discipline.jpg",href:"/book-review/the-fifth-discipline",title:"The Fifth Discipline",author:"Peter M. Senge",text:"The classic framework for building learning organizations through systems thinking and collective capability.",tags:["Systems","Learning"]},
-  {cover:"/art/book-start-with-why.png",href:"/book-review/start-with-why",title:"Start with Why",author:"Simon Sinek",text:"An influential guide to inspiring action by leading with purpose, belief, and a clear reason for what you do.",tags:["Purpose","Leadership"]},
-];
+type ViewMode="grid"|"list";
+type SortMode="recommended"|"title-asc"|"title-desc"|"author-asc"|"author-desc";
 
-export default function BookReviewPage(){return <>
-  <SiteHeader/>
-  <main className="book-review-page"><div className="book-review-hero-stage"><section className="book-review-hero-section" aria-labelledby="book-review-title">
-    <div className="book-review-art" aria-hidden="true"/><div className="book-review-dots book-review-dots-left" aria-hidden="true"/>
-    <div className="book-review-hero"><p className="book-review-kicker">BOOKS WORTH SHARING</p><h1 id="book-review-title">Ideas That Deserve<span>to Be Passed On</span></h1><p className="book-review-lead">A curated collection of books that have influenced my thinking on<br className="book-review-desktop-break"/> Lean, Strategy, Transformation, Leadership, Innovation, and Business.</p></div>
-    <Link className="book-review-cta" href="#book-review-list">Explore My Library <ArrowRight aria-hidden="true"/></Link>
-  </section></div>
-  <section className="book-review-list" id="book-review-list" aria-label="Featured book reviews"><div className="book-review-dots book-review-dots-review-left" aria-hidden="true"/><div className="book-review-dots book-review-dots-bottom" aria-hidden="true"/>
-    <div className="book-review-cards">{books.map(book=><Link className="book-review-card" href={book.href} target="_blank" rel="noopener noreferrer" aria-label={`Open the ${book.title} review in a new tab`} key={book.title}><div className="book-review-cover"><Image src={book.cover} alt={`Cover of ${book.title}`} fill sizes="(max-width: 700px) 38vw, (max-width: 1100px) 22vw, 180px"/></div><div className="book-review-card-copy"><h2>{book.title}</h2><p className="book-review-author">{book.author}</p><i aria-hidden="true"/><p>{book.text}</p><div className="book-review-tags">{book.tags.map(tag=><span key={tag}>{tag}</span>)}</div><span className="book-review-card-action">My Takeaways <ArrowRight aria-hidden="true"/></span></div></Link>)}</div>
-  </section></main>
-  <SiteFooter/>
-</>}
+const PAGE_SIZES=[9,15,21,30];
+
+export default function BookReviewPage(){
+  const [query,setQuery]=useState("");
+  const [category,setCategory]=useState("all");
+  const [author,setAuthor]=useState("all");
+  const [sort,setSort]=useState<SortMode>("recommended");
+  const [view,setView]=useState<ViewMode>("grid");
+  const [page,setPage]=useState(1);
+  const [pageSize,setPageSize]=useState(15);
+
+  const categories=useMemo(()=>Array.from(new Set(books.flatMap(book=>book.tags))).sort((a,b)=>a.localeCompare(b)),[]);
+  const authors=useMemo(()=>Array.from(new Set(books.map(book=>book.author))).sort((a,b)=>a.localeCompare(b)),[]);
+
+  const filteredBooks=useMemo(()=>{
+    const term=query.trim().toLocaleLowerCase();
+    const matches=books.filter(book=>{
+      const searchable=[book.title,book.author,book.text,...book.tags].join(" ").toLocaleLowerCase();
+      return (!term||searchable.includes(term))&&(category==="all"||book.tags.includes(category))&&(author==="all"||book.author===author);
+    });
+    if(sort==="title-asc")return [...matches].sort((a,b)=>a.title.localeCompare(b.title));
+    if(sort==="title-desc")return [...matches].sort((a,b)=>b.title.localeCompare(a.title));
+    if(sort==="author-asc")return [...matches].sort((a,b)=>a.author.localeCompare(b.author)||a.title.localeCompare(b.title));
+    if(sort==="author-desc")return [...matches].sort((a,b)=>b.author.localeCompare(a.author)||a.title.localeCompare(b.title));
+    return matches;
+  },[query,category,author,sort]);
+
+  const pageCount=Math.max(1,Math.ceil(filteredBooks.length/pageSize));
+  const visibleBooks=filteredBooks.slice((page-1)*pageSize,page*pageSize);
+  const firstResult=filteredBooks.length===0?0:(page-1)*pageSize+1;
+  const lastResult=Math.min(page*pageSize,filteredBooks.length);
+  const activeFilters=Boolean(query||category!=="all"||author!=="all"||sort!=="recommended");
+
+  useEffect(()=>{const saved=window.localStorage.getItem("book-review-view");if(saved==="grid"||saved==="list")setView(saved)},[]);
+  useEffect(()=>{setPage(1)},[query,category,author,sort,pageSize]);
+  useEffect(()=>{if(page>pageCount)setPage(pageCount)},[page,pageCount]);
+
+  const pageItems=useMemo<(number|string)[]>(()=>{
+    if(pageCount<=7)return Array.from({length:pageCount},(_,index)=>index+1);
+    const values:(number|string)[]=[1];
+    if(page>4)values.push("start-ellipsis");
+    const start=Math.max(2,page-1);
+    const end=Math.min(pageCount-1,page+1);
+    for(let value=start;value<=end;value++)values.push(value);
+    if(page<pageCount-3)values.push("end-ellipsis");
+    values.push(pageCount);
+    return values;
+  },[page,pageCount]);
+
+  const chooseView=(next:ViewMode)=>{setView(next);window.localStorage.setItem("book-review-view",next)};
+  const clearFilters=()=>{setQuery("");setCategory("all");setAuthor("all");setSort("recommended")};
+  const goToPage=(next:number)=>{setPage(Math.min(Math.max(next,1),pageCount));document.getElementById("book-review-list")?.scrollIntoView({behavior:"smooth",block:"start"})};
+
+  return <>
+    <SiteHeader/>
+    <main className="book-review-page"><div className="book-review-hero-stage"><section className="book-review-hero-section" aria-labelledby="book-review-title">
+      <div className="book-review-art" aria-hidden="true"/><div className="book-review-dots book-review-dots-left" aria-hidden="true"/>
+      <div className="book-review-hero"><p className="book-review-kicker">BOOKS WORTH SHARING</p><h1 id="book-review-title">Ideas That Deserve<span>to Be Passed On</span></h1><p className="book-review-lead">A curated collection of books that have influenced my thinking on<br className="book-review-desktop-break"/> Lean, Strategy, Transformation, Leadership, Innovation, and Business.</p><div className="book-review-count" aria-label={`${books.length} books reviewed`}><BookOpen aria-hidden="true"/><strong>{books.length}</strong><span>Books<br/>Reviewed</span></div></div>
+      <Link className="book-review-cta" href="#book-review-list">Explore My Library <ArrowRight aria-hidden="true"/></Link>
+    </section></div>
+
+    <section className="book-review-list" id="book-review-list" aria-label="Book review library"><div className="book-review-dots book-review-dots-review-left" aria-hidden="true"/><div className="book-review-dots book-review-dots-bottom" aria-hidden="true"/>
+      <div className="book-library-toolbar">
+        <div className="book-library-toolbar-heading"><div><p>EXPLORE THE LIBRARY</p><h2>Find your next meaningful read</h2></div><p className="book-library-results" role="status" aria-live="polite">Showing <b>{firstResult}–{lastResult}</b> of <b>{filteredBooks.length}</b> {filteredBooks.length===1?"book":"books"}</p></div>
+        <div className="book-library-controls">
+          <label className="book-library-search"><span className="sr-only">Search books</span><Search aria-hidden="true"/><input value={query} onChange={event=>setQuery(event.target.value)} placeholder="Search title, author, topic…"/>{query&&<button type="button" onClick={()=>setQuery("")} aria-label="Clear search"><X/></button>}</label>
+          <label><span>Category</span><select value={category} onChange={event=>setCategory(event.target.value)}><option value="all">All categories</option>{categories.map(item=><option value={item} key={item}>{item}</option>)}</select></label>
+          <label><span>Author</span><select value={author} onChange={event=>setAuthor(event.target.value)}><option value="all">All authors</option>{authors.map(item=><option value={item} key={item}>{item}</option>)}</select></label>
+          <label><span>Sort by</span><select value={sort} onChange={event=>setSort(event.target.value as SortMode)}><option value="recommended">Recommended</option><option value="title-asc">Title: A–Z</option><option value="title-desc">Title: Z–A</option><option value="author-asc">Author: A–Z</option><option value="author-desc">Author: Z–A</option></select></label>
+        </div>
+        <div className="book-library-options">
+          <div>{activeFilters&&<button className="book-library-clear" type="button" onClick={clearFilters}><X/> Clear filters</button>}</div>
+          <label className="book-library-page-size"><span>Books per page</span><select value={pageSize} onChange={event=>setPageSize(Number(event.target.value))}>{PAGE_SIZES.map(size=><option value={size} key={size}>{size}</option>)}</select></label>
+          <div className="book-library-view" role="group" aria-label="Choose book display"><button type="button" aria-label="Grid view" aria-pressed={view==="grid"} onClick={()=>chooseView("grid")}><Grid2X2/></button><button type="button" aria-label="List view" aria-pressed={view==="list"} onClick={()=>chooseView("list")}><List/></button></div>
+        </div>
+      </div>
+
+      {visibleBooks.length>0?<div className={`book-review-cards ${view==="list"?"is-list":"is-grid"}`}>{visibleBooks.map(book=><Link className="book-review-card" href={book.href} target="_blank" rel="noopener noreferrer" aria-label={`Open the ${book.title} review in a new tab`} key={book.title}><div className="book-review-cover"><Image src={book.cover} alt={`Cover of ${book.title}`} fill sizes={view==="list"?"140px":"(max-width: 700px) 38vw, (max-width: 1100px) 22vw, 180px"}/></div><div className="book-review-card-copy"><h2>{book.title}</h2><p className="book-review-author">{book.author}</p><i aria-hidden="true"/><p>{book.text}</p><div className="book-review-tags">{book.tags.map(tag=><span key={tag}>{tag}</span>)}</div><span className="book-review-card-action">My Takeaways <ArrowRight aria-hidden="true"/></span></div></Link>)}</div>:<div className="book-library-empty"><BookOpen/><h2>No matching books</h2><p>Try another title, author, or category.</p><button type="button" onClick={clearFilters}>Show all books</button></div>}
+
+      {filteredBooks.length>0&&pageCount>1&&<nav className="book-library-pagination" aria-label="Book review pages"><button type="button" onClick={()=>goToPage(page-1)} disabled={page===1}><ChevronLeft/> Previous</button><div>{pageItems.map(item=>typeof item==="number"?<button type="button" className={item===page?"active":""} aria-current={item===page?"page":undefined} onClick={()=>goToPage(item)} key={item}>{item}</button>:<span aria-hidden="true" key={item}>…</span>)}</div><button type="button" onClick={()=>goToPage(page+1)} disabled={page===pageCount}>Next <ChevronRight/></button></nav>}
+      {filteredBooks.length>0&&<p className="book-library-page-note">Page {page} of {pageCount}</p>}
+    </section></main>
+    <SiteFooter/>
+  </>;
+}
