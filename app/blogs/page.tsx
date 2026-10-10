@@ -7,6 +7,17 @@ import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 export const latest = [
   {
+    category: "GCC Strategy",
+    title: "GCCs Reimagined: From Extended Enterprise to Intelligence Conduits",
+    excerpt: "How Global Capability Centres can evolve from execution engines into intelligence conduits that sense, synthesize, and steer the global enterprise.",
+    image: "/art/gccs-reimagined-intelligence-conduits.png",
+    href: "/blogs/gccs-reimagined-from-extended-enterprise-to-intelligence-conduits/",
+    topics: ["leadership", "digital", "growth"],
+    featured: true,
+    popularity: 100,
+    preserveFullImage: true,
+  },
+  {
     category: "Innovation Management",
     title: "Project Management and Innovation: A Synthesis for Success",
     excerpt: "From visionary ideas to purposeful execution: how project and programme management can transform innovation into sustainable value.",
@@ -205,7 +216,7 @@ export default function BlogsPage() {
         <SectionHeading eyebrow="LATEST THINKING" title="Latest Insights" actionHref="/blogs/all/" actionLabel={`View all ${latest.length}`}/>
         <article className="blogs-feature">
           <div className="blogs-feature-copy"><p className="blogs-category">{latest[0].category}</p><h2>{latest[0].title}</h2><p>{latest[0].excerpt}</p><ReadLink href={latest[0].href}/></div>
-          <Link href={latest[0].href??"/blogs"} className="blogs-feature-media" aria-label={`Read ${latest[0].title}`}><Image src={latest[0].image} alt="Industrial execution evolving into a digitally intelligent enterprise" fill sizes="(max-width: 900px) 100vw, 42vw" style={{objectFit:"fill",objectPosition:"center",transform:"none",transition:"none"}} priority/></Link>
+          <Link href={latest[0].href??"/blogs"} className="blogs-feature-media" aria-label={`Read ${latest[0].title}`}><Image src={latest[0].image} alt={latest[0].title} fill sizes="(max-width: 900px) 100vw, 42vw" style={{objectFit:"fill",objectPosition:"center",transform:"none",transition:"none"}} priority/></Link>
         </article>
         <div className="blogs-grid-with-news">
           <div className="blogs-card-grid">{latest.slice(1,3).map((item)=><ArticleCard key={item.title} {...item}/>)}</div>
