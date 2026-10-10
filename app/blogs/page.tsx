@@ -161,7 +161,7 @@ export default function BlogsPage() {
         <SectionHeading eyebrow="LATEST THINKING" title="Latest Insights"/>
         <article className="blogs-feature">
           <div className="blogs-feature-copy"><p className="blogs-category">{visibleLatest[0].category}</p><h2>{visibleLatest[0].title}</h2><p>{visibleLatest[0].excerpt}</p><ReadLink href={visibleLatest[0].href}/></div>
-          <Link href={visibleLatest[0].href??"/blogs"} className="blogs-feature-media" aria-label={`Read ${visibleLatest[0].title}`}><Image src={visibleLatest[0].image} alt="Industrial execution evolving into a digitally intelligent enterprise" fill sizes="(max-width: 900px) 100vw, 42vw" style={{objectFit:"contain",objectPosition:"center",transform:"none",transition:"none"}} priority/></Link>
+          <Link href={visibleLatest[0].href??"/blogs"} className="blogs-feature-media" aria-label={`Read ${visibleLatest[0].title}`}><Image src={visibleLatest[0].image} alt="Industrial execution evolving into a digitally intelligent enterprise" fill sizes="(max-width: 900px) 100vw, 42vw" style={{objectFit:"fill",objectPosition:"center",transform:"none",transition:"none"}} priority/></Link>
         </article>
         <div className="blogs-grid-with-news">
           <div className="blogs-card-grid">{visibleLatest.slice(1).map((item)=><ArticleCard key={item.title} {...item}/>)}</div>
