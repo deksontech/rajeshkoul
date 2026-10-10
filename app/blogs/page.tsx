@@ -8,6 +8,16 @@ import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 const latest = [
   {
+    category: "Innovation Management",
+    title: "Project Management and Innovation: A Synthesis for Success",
+    excerpt: "From visionary ideas to purposeful execution: how project and programme management can transform innovation into sustainable value.",
+    image: "/art/project-management-innovation-roadmap.png",
+    href: "/blogs/project-management-and-innovation-a-synthesis-for-success",
+    featured: true,
+    popularity: 97,
+    topics: ["leadership", "growth"],
+  },
+  {
     category: "GCC Maturity",
     title: "From Execution Engines to Enterprise Intelligence",
     excerpt: "A leadership narrative on how Global Capability Centres evolve from efficient delivery engines into systems that sense, learn and influence enterprise outcomes.",
@@ -188,8 +198,8 @@ function SectionHeading({eyebrow,title}:{eyebrow:string,title:string}) {
   return <div className="blogs-section-heading"><div><p>{eyebrow}</p><h2>{title}</h2></div><Link href="/blogs">View all <ArrowRight/></Link></div>;
 }
 
-function ArticleCard({category,title,excerpt,image}:{category:string,title:string,excerpt:string,image:string}) {
-  return <article className="blog-card"><Link className="blog-card-media" href="/blogs" aria-label={`Read ${title}`}><Image src={image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw"/></Link><div><p className="blogs-category">{category}</p><h3>{title}</h3><p>{excerpt}</p><ReadLink/></div></article>;
+function ArticleCard({category,title,excerpt,image,href="/blogs"}:{category:string,title:string,excerpt:string,image:string,href?:string}) {
+  return <article className="blog-card"><Link className="blog-card-media" href={href} aria-label={`Read ${title}`}><Image src={image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw"/></Link><div><p className="blogs-category">{category}</p><h3>{title}</h3><p>{excerpt}</p><ReadLink href={href}/></div></article>;
 }
 
 function ReadLink({href="/blogs"}:{href?:string}){return <Link className="blogs-read" href={href}>Read the article <ArrowRight/></Link>}
