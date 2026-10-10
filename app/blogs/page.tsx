@@ -18,6 +18,50 @@ const latest = [
     topics: ["leadership", "growth"],
   },
   {
+    category: "Lean Leadership",
+    title: "How to Establish a Lean Thinking Mindset in Organizations",
+    excerpt: "Building a culture where purpose guides decisions, people solve problems, and continuous improvement becomes part of everyday work.",
+    image: "/art/lean-thinking-in-action.png",
+    href: "/blogs/how-to-establish-a-lean-thinking-mindset-in-organizations",
+    featured: true,
+    popularity: 95,
+    topics: ["lean", "leadership"],
+    preserveFullImage: true,
+  },
+  {
+    category: "Lean Thinking",
+    title: "Lean Thinking: Customer Value, People First, A Better Tomorrow",
+    excerpt: "Building a purpose-driven organisation through continuous improvement, mutual respect, and a relentless focus on customer value.",
+    image: "/art/lean-thinking.png",
+    href: "/blogs/lean-thinking-customer-value-people-first-a-better-tomorrow",
+    featured: true,
+    popularity: 94,
+    topics: ["lean", "leadership"],
+    preserveFullImage: true,
+  },
+  {
+    category: "Quality 4.0",
+    title: "Evolution of Quality 4.0: From Inspection to Intelligent Quality Management",
+    excerpt: "How quality has evolved from detecting defects to designing intelligent, connected, and continuously improving systems.",
+    image: "/art/evolution-of-quality-4.png",
+    href: "/blogs/evolution-of-quality-4-0",
+    featured: true,
+    popularity: 93,
+    topics: ["digital", "lean"],
+    preserveFullImage: true,
+  },
+  {
+    category: "Enterprise Lean",
+    title: "Enterprise-Level Lean Design: Moving Beyond Silos to End-to-End Value Creation",
+    excerpt: "Why sustainable transformation requires organisations to optimise the whole enterprise, rather than individual processes in isolation.",
+    image: "/art/enterprise-level-lean-design.png",
+    href: "/blogs/enterprise-level-lean-design",
+    featured: true,
+    popularity: 92,
+    topics: ["lean", "growth"],
+    preserveFullImage: true,
+  },
+  {
     category: "GCC Maturity",
     title: "From Execution Engines to Enterprise Intelligence",
     excerpt: "A leadership narrative on how Global Capability Centres evolve from efficient delivery engines into systems that sense, learn and influence enterprise outcomes.",
@@ -198,8 +242,8 @@ function SectionHeading({eyebrow,title}:{eyebrow:string,title:string}) {
   return <div className="blogs-section-heading"><div><p>{eyebrow}</p><h2>{title}</h2></div><Link href="/blogs">View all <ArrowRight/></Link></div>;
 }
 
-function ArticleCard({category,title,excerpt,image,href="/blogs"}:{category:string,title:string,excerpt:string,image:string,href?:string}) {
-  return <article className="blog-card"><Link className="blog-card-media" href={href} aria-label={`Read ${title}`}><Image src={image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw"/></Link><div><p className="blogs-category">{category}</p><h3>{title}</h3><p>{excerpt}</p><ReadLink href={href}/></div></article>;
+function ArticleCard({category,title,excerpt,image,href="/blogs",preserveFullImage=false}:{category:string,title:string,excerpt:string,image:string,href?:string,preserveFullImage?:boolean}) {
+  return <article className="blog-card"><Link className="blog-card-media" href={href} aria-label={`Read ${title}`}><Image src={image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw" style={preserveFullImage?{objectFit:"fill",transform:"none",transition:"none"}:undefined}/></Link><div><p className="blogs-category">{category}</p><h3>{title}</h3><p>{excerpt}</p><ReadLink href={href}/></div></article>;
 }
 
 function ReadLink({href="/blogs"}:{href?:string}){return <Link className="blogs-read" href={href}>Read the article <ArrowRight/></Link>}
