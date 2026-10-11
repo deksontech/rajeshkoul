@@ -6,9 +6,6 @@ import { SiteFooter, SiteHeader } from "@/components/site-shell";
 export default function About(){return <><SiteHeader/><main>
   <div className="about-live-hero-stage">
   <section className="about-live-hero" aria-labelledby="about-live-title">
-    <div className="about-live-reference" aria-hidden="true"><Image src="/art/about-hero-reference.png" alt="" fill priority sizes="100vw"/></div>
-    <div className="about-live-mask" aria-hidden="true"/>
-    <div className="about-live-dots" aria-hidden="true"/>
     <div className="about-live-copy">
       <p className="about-live-eyebrow">ABOUT RAJESH KOUL</p>
       <h1 id="about-live-title">Building Organisations<br/>That <span>Learn, Adapt &amp; Grow</span></h1>
@@ -21,6 +18,9 @@ export default function About(){return <><SiteHeader/><main>
         <div><span><Leaf/></span><b>Create<br/>Lasting Impact</b></div>
       </div>
     </div>
+    <div className="about-live-portrait"><Image src="/art/about-hero-portrait.png" alt="Rajesh Koul" fill priority sizes="(max-width: 900px) 100vw, 48vw"/></div>
+    <div className="about-live-side about-live-side--top" aria-hidden="true">SIMPLIFY<br/>TRANSFORM<br/>ENABLE<br/>GROW<i/></div>
+    <div className="about-live-side about-live-side--middle" aria-hidden="true"><em>Ideas<br/>to Impact</em><i/></div>
     <div className="about-live-wave" aria-hidden="true"><Image src="/art/home-author-bottom-wave.png" alt="" fill sizes="100vw"/></div>
   </section>
   </div>
