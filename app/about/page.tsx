@@ -21,7 +21,6 @@ export default function About(){return <><SiteHeader/><main>
     <div className="about-live-portrait"><Image src="/art/about-hero-portrait.png" alt="Rajesh Koul" fill priority sizes="(max-width: 900px) 100vw, 48vw"/></div>
     <div className="about-live-side about-live-side--top" aria-hidden="true">SIMPLIFY<br/>TRANSFORM<br/>ENABLE<br/>GROW<i/></div>
     <div className="about-live-side about-live-side--middle" aria-hidden="true"><em>Ideas<br/>to Impact</em><i/></div>
-    <div className="about-live-wave" aria-hidden="true"><Image src="/art/home-author-bottom-wave.png" alt="" fill sizes="100vw"/></div>
   </section>
   </div>
   <section className="about-bio" id="journey" aria-labelledby="about-bio-title">
