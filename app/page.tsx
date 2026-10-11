@@ -82,8 +82,6 @@ export default function Home() {
       </section>
 
       <section className="blueprint-section" id="lean-blueprint">
-        <span className="blueprint-dots" aria-hidden="true" />
-        <div className="blueprint-circuit" aria-hidden="true"><Image src="/art/home-blueprint-circuit.png" alt="" fill sizes="430px" /></div>
         <header className="blueprint-header">
           <p className="blueprint-eyebrow"><i/>EXPLORE THE LEAN NERVOUS SYSTEM<i/></p>
           <h2>A Practical Blueprint for <span>Sustainable Excellence</span></h2>
@@ -94,7 +92,6 @@ export default function Home() {
           <div className="blueprint-placeholder" aria-label="Second book artwork placeholder supplied in reference"><ImageIcon aria-hidden="true"/></div>
         </div>
         <blockquote className="blueprint-quote"><span aria-hidden="true">“</span><p>Organizations, like<br/>human beings, need a<br/>nervous system—one that<br/>senses, responds, learns,<br/>and evolves.</p><i aria-hidden="true"/></blockquote>
-        <div className="blueprint-wave" aria-hidden="true"><Image src="/art/home-blueprint-wave.png" alt="" fill sizes="100vw" /></div>
       </section>
 
       <section className="leadership-section" id="transformation-leadership">
