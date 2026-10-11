@@ -24,7 +24,7 @@ export default function Home() {
           <div className="actions"><Link className="button" href="#expertise">Enterprise Health Lab <ArrowRight/></Link><Link className="button outline" href="#featured-book">Explore My Books <ArrowRight/></Link></div>
           <p className="trust">TRUSTED BY LEADERS ACROSS MANUFACTURING · CONSULTING · GLOBAL ENTERPRISES</p>
         </div>
-        <div className="hero-art"><Image src="/art/home-hero-portrait.png" alt="Rajesh Koul" fill priority sizes="(max-width: 800px) 100vw, 55vw" /></div>
+        <div className="hero-art"><Image src="/art/home-hero-portrait-full.png" alt="Rajesh Koul" fill priority sizes="(max-width: 800px) 100vw, 55vw" style={{ objectFit: "contain", objectPosition: "right bottom" }} /></div>
       </section></div>
 
       <section className="section author-section" id="author">
@@ -49,7 +49,7 @@ export default function Home() {
           <ExpertiseAccordion />
           <Link className="button" href="/about">See Full Profile <ArrowRight/></Link>
         </div>
-        <div className="image-panel"><Image src="/art/home-expertise-portrait.png" alt="Rajesh Koul" fill sizes="(max-width: 800px) 100vw, 47vw"/></div>
+        <div className="image-panel"><Image src="/art/home-expertise-portrait-full.png" alt="Rajesh Koul" fill sizes="(max-width: 800px) 100vw, 47vw" style={{ objectFit: "contain", objectPosition: "right bottom" }}/></div>
       </section>
 
       <section className="section split-section book-section" id="featured-book">

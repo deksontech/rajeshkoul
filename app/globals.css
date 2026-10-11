@@ -333,7 +333,7 @@
 .home-hero::after{display:none}
 .home-hero .hero-copy{z-index:3;width:740px}
 .home-hero .hero-art{left:780px;right:0;top:0;width:auto;height:941px}
-.home-hero .hero-art img{object-fit:contain;object-position:right bottom;transform:scale(.92);transform-origin:right bottom}
+.home-hero .hero-art img{object-fit:contain;object-position:right bottom;transform:scale(.94);transform-origin:right bottom}
 .home-hero .hero-art:after{display:none}
 .home-hero .eyebrow{margin:0;font-size:13px;line-height:17px;font-weight:600;letter-spacing:.34em}
 .home-hero .eyebrow::after{content:"";display:block;width:55px;height:3px;margin-top:20px;background:linear-gradient(90deg,#087ef5,#ed13d6)}
@@ -424,7 +424,7 @@
 .expertise-section .button{width:329px;height:74px;min-height:74px;margin:0;border-radius:8px;padding:0 47px;font-size:18px;font-weight:500;letter-spacing:.02em;box-shadow:0 14px 30px rgba(78,60,225,.13)}
 .expertise-section .button svg{width:24px;height:24px}
 .expertise-section .image-panel{position:absolute;z-index:1;right:0;top:0;width:46.8%;height:941px}
-.expertise-section .image-panel img{object-fit:contain;object-position:right bottom;transform:scale(.92);transform-origin:right bottom}
+.expertise-section .image-panel img{object-fit:contain;object-position:right bottom;transform:scale(.94);transform-origin:right bottom}
 @media(min-width:1673px){
   .expertise-section{padding-left:calc((100vw - 1672px)/2 + 104px);padding-right:0}
   .expertise-section::after{width:calc((100vw - 1672px)/2 + 890px)}
