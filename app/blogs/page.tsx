@@ -7,6 +7,17 @@ import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 export const latest = [
   {
+    category: "GCC Leadership",
+    title: "GCCs Reimagined Part II: A Leadership Narrative on Enabling GCC Maturity",
+    excerpt: "How leaders enable the journey from earned credibility and local reinvention to enterprise-wide intelligence and strategic influence.",
+    image: "/art/gccs-reimagined-intelligence-conduits-part-2.png",
+    href: "/blogs/gccs-reimagined-part-ii-enabling-gcc-maturity/",
+    topics: ["leadership", "digital", "growth"],
+    featured: true,
+    popularity: 101,
+    preserveFullImage: true,
+  },
+  {
     category: "GCC Strategy",
     title: "GCCs Reimagined: From Extended Enterprise to Intelligence Conduits",
     excerpt: "How Global Capability Centres can evolve from execution engines into intelligence conduits that sense, synthesize, and steer the global enterprise.",
