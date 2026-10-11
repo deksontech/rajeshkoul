@@ -95,8 +95,6 @@ export default function Home() {
       </section>
 
       <section className="leadership-section" id="transformation-leadership">
-        <span className="leadership-dots leadership-dots--left" aria-hidden="true" />
-        <span className="leadership-dots leadership-dots--right" aria-hidden="true" />
         <aside className="leadership-side leadership-side--left" aria-label="Transformation priorities"><span>PEOPLE</span><span>PROCESSES</span><span>INNOVATION</span><span>SUSTAINABILITY</span><i/></aside>
         <aside className="leadership-side leadership-side--right" aria-label="Transformation outcomes"><span>SIMPLIFY</span><span>TRANSFORM</span><span>ENABLE</span><span>GROW</span><i/></aside>
         <header className="leadership-header">
@@ -114,7 +112,6 @@ export default function Home() {
           <div><span><BarChart3/></span><p>Drive measurable<br/>business impact</p></div>
           <div><span><Leaf/></span><p>Enable resilient,<br/>future-ready organizations</p></div>
         </div>
-        <div className="leadership-wave" aria-hidden="true"><Image src="/art/home-leadership-wave-v3.png" alt="" fill sizes="100vw" /></div>
       </section>
     </main>
     <SiteFooter />
@@ -124,6 +121,10 @@ export default function Home() {
 function PillarStatement() {
   return <section className="pillar-statement-image" id="pillar-summary">
     <Image src="/art/home-pillar-statement-full.png" alt="Through these pillars, my mission is to catalyze individual and organizational growth, fostering purpose, engagement, and innovation." width={2103} height={748} sizes="100vw" />
+    <div className="pillar-statement-mobile">
+      <p>Through these pillars, my mission is to catalyze <strong>individual and organizational growth</strong>, fostering <strong>purpose, engagement, and innovation</strong> as the cornerstones of transformative journeys in today&apos;s dynamic world.</p>
+      <i aria-hidden="true" />
+    </div>
   </section>
 }
 
