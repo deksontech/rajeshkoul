@@ -505,10 +505,10 @@
 }
 
 /* Mission section reconstructed to the supplied 1672 x 941 reference. */
-.mission-section{position:relative;isolation:isolate;display:block;width:100vw;max-width:none;height:941px;min-height:941px;padding:0;overflow:hidden;background:radial-gradient(circle at 20% 24%,#fff 0,#f8fbff 58%,#edf5ff 100%)}
-.mission-section::after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:0;height:420px;background:url('/art/home-author-bottom-wave.png') center bottom/100% 420px no-repeat;pointer-events:none}
+.mission-section{position:relative;isolation:isolate;display:block;width:100vw;max-width:none;height:941px;min-height:941px;padding:0;overflow:hidden;background:url('/art/home-mission-background.png') center center/100% 100% no-repeat}
+.mission-section::after{display:none}
 .mission-section .mission-heading{position:absolute;z-index:2;left:max(9.808vw,calc((100vw - 1672px)/2 + 164px));top:47px;width:1345px;height:226px;display:grid;grid-template-columns:824px 1fr;gap:0;align-items:start}
-.mission-section .mission-heading::before,.mission-section .mission-heading::after{content:"";position:absolute;width:80px;height:112px;background-image:radial-gradient(circle,#bdd7ff 1.3px,transparent 1.6px);background-size:16px 16px;opacity:.65;pointer-events:none}
+.mission-section .mission-heading::before,.mission-section .mission-heading::after{display:none}
 .mission-section .mission-heading::before{left:-154px;top:274px}
 .mission-section .mission-heading::after{right:-104px;top:150px}
 .mission-section .mission-heading>div:first-child{width:824px}
@@ -544,7 +544,6 @@
 }
 @media(max-width:1200px) and (min-width:769px){
   .mission-section{height:auto;min-height:900px;padding:52px 4% 95px}
-  .mission-section::after{height:330px;background-size:100% 330px}
   .mission-section .mission-heading{position:relative;left:auto;top:auto;width:100%;height:auto;grid-template-columns:55% 45%}
   .mission-section .mission-heading>div:first-child{width:100%}
   .mission-section .mission-heading h2{font-size:34px;white-space:normal}
@@ -557,7 +556,6 @@
 }
 @media(max-width:768px){
   .mission-section{height:auto;min-height:0;padding:52px 22px 96px}
-  .mission-section::after{height:210px;background-size:auto 210px}
   .mission-section .mission-heading{position:relative;left:auto;top:auto;width:100%;height:auto;display:block}
   .mission-section .mission-heading::before,.mission-section .mission-heading::after{display:none}
   .mission-section .mission-heading>div:first-child{width:100%}
