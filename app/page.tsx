@@ -2,14 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BarChart3, BookOpen, ChevronDown, Cog, Globe2, Handshake, ImageIcon, Layers3, Leaf, Lightbulb, Network, Target, Users } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
+import { ExpertiseAccordion } from "@/components/expertise-accordion";
 
 const pillars = [
   { n: "Pillar 01", title: "IGNITING PURPOSEFUL TRANSFORMATIONS", text: "My first pillar focuses on igniting meaningful transformations by embedding a deep sense of purpose in individuals and organizations. Through tailored strategies and coaching, I unlock latent potential, align goals with a greater mission, and build a shared commitment to impactful change at every level.", image: "/art/mission-card-1.jpg" },
   { n: "Pillar 02", title: "CULTIVATING COLLABORATIVE INNOVATION MINDSETS", text: "The second pillar revolves around cultivating collaborative innovation mindsets. I create environments where diverse perspectives converge, nurturing a culture of creativity, collaboration, and shared problem-solving. By leveraging tools and methodologies, I ensure they contribute to collective intelligence and sustainable value creation.", image: "/art/mission-card-2.jpg" },
   { n: "Pillar 03", title: "GUIDING DIGITAL TRANSFORMATION WITH MEANINGFUL LEADERSHIP", text: "My third pillar centers on guiding digital transformation initiatives with meaningful leadership. Through mentorship, workshops, and resources, I equip individuals with the skills and mindset for effective digital transformation. Technology is embraced as an enabler, with each initiative driven by a clear sense of mission, aligning with the broader vision of transformative success.", image: "/art/mission-card-3.jpg" },
 ];
-
-const expertise = ["TECHNOLOGY ENABLED TRANSFORMATION", "BUSINESS PROCESS ADVISORY", "GROWTH & TRANSFORMATION", "OPERATIONAL EXCELLENCE", "SERVICE DELIVERY"];
 
 export default function Home() {
   return <>
@@ -47,7 +46,7 @@ export default function Home() {
 
       <section className="section split-section expertise-section" id="expertise">
         <div className="expertise-copy"><p className="eyebrow">AREAS OF EXPERTISE</p><h2 className="display">From Strategy to Execution<br/><span>Across the Enterprise</span></h2>
-          <div className="expertise-list">{expertise.map((x,i)=><div key={x}><span>{[Cog,Layers3,BarChart3,Target,Users].map((I,j)=>j===i?<I key={j}/>:null)}</span><b>{x}</b><ArrowRight/></div>)}</div>
+          <ExpertiseAccordion />
           <Link className="button" href="/about">See Full Profile <ArrowRight/></Link>
         </div>
         <div className="image-panel"><Image src="/art/home-expertise.png" alt="Rajesh Koul" fill sizes="(max-width: 800px) 100vw, 47vw"/></div>
