@@ -43,6 +43,13 @@ const authorPillars = [
 ];
 const discoveries = ["Why most transformation programs fail—even with the right intent", "How disconnected excellence silently destroys performance", "What it takes to move from reactive chaos to system-driven execution", "How small, local improvements can trigger enterprise-wide, self-sustaining change", "A practical maturity model with 10 groups and 65 elements across the value chain"];
 
+const footerResources = [
+  { eyebrow: "READ", title: "The Lean Nervous System", text: "The definitive guide to connected, adaptive and resilient enterprises.", image: "/art/lns-footer-book.png", href: "#purchase-options", tone: "dark" },
+  { eyebrow: "DIAGNOSE", title: "Enterprise Health Scan", text: "See organisational maturity clearly and identify what must evolve next.", image: "/art/lns-footer-health-scan.png", href: "/contact", tone: "light" },
+  { eyebrow: "APPLY", title: "Frameworks & Models", text: "Turn the Lean Nervous System into disciplined, repeatable execution.", image: "/art/lns-footer-playbook.png", href: "/contact", tone: "dark" },
+  { eyebrow: "EXPLORE", title: "Insights & Resources", text: "Practical tools for diagnosis, alignment, innovation and maturity.", image: "/art/lns-footer-resources.png", href: "/blogs", tone: "light" },
+];
+
 export default function LeanNervousSystem() {
   return <div className="lns-page">
     <LnsHeader />
@@ -165,5 +172,31 @@ export default function LeanNervousSystem() {
         <div className="lns-author-cta-row"><i /><Link href="#lns-title">EXPLORE THE LEAN NERVOUS SYSTEM <ArrowRight aria-hidden="true" /></Link><i /></div>
       </div>
     </section>
+    <footer className="lns-footer" aria-labelledby="lns-footer-title">
+      <div className="lns-footer-inner">
+        <header className="lns-footer-heading">
+          <div><p>CONTINUE THE JOURNEY</p><h2 id="lns-footer-title">From insight to <span>enterprise excellence.</span></h2></div>
+          <p>Explore the book, diagnose organisational health, and put the Lean Nervous System into practice.</p>
+        </header>
+
+        <div className="lns-footer-resources">
+          {footerResources.map((resource) => <Link className="lns-footer-card" href={resource.href} key={resource.title}>
+            <figure className={`lns-footer-image lns-footer-image--${resource.tone}`}><img src={resource.image} alt={resource.title} /></figure>
+            <div><small>{resource.eyebrow}</small><h3>{resource.title}</h3><p>{resource.text}</p><span>EXPLORE <ArrowRight aria-hidden="true" /></span></div>
+          </Link>)}
+        </div>
+
+        <section className="lns-footer-cta" aria-label="Request the Lean Nervous System framework">
+          <div><small>BUILD THE SYSTEM. NOT ANOTHER INITIATIVE.</small><p>Ready to move from fragmented improvement to self-sustaining excellence?</p></div>
+          <Link href="/contact">REQUEST THE LNS FRAMEWORK <ArrowRight aria-hidden="true" /></Link>
+        </section>
+
+        <div className="lns-footer-bottom">
+          <div className="lns-footer-brand"><b>RAJESH KOUL</b><span>HUMAN-CENTRED TRANSFORMATION</span></div>
+          <nav aria-label="Lean Nervous System footer navigation"><Link href="/">Home</Link><Link href="/about">About</Link><Link href="/lean-nervous-system">The Lean Nervous System</Link><Link href="/blogs">Insights</Link><Link href="/contact">Contact</Link></nav>
+          <p>© 2026 Rajesh Koul <i /> <span>Privacy Policy</span> <i /> <span>Terms of Use</span></p>
+        </div>
+      </div>
+    </footer>
   </div>;
 }
