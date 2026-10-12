@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, BarChart3, BookOpen, ChartNoAxesCombined, CheckCircle2, Layers3, Lightbulb, Network, Target, Users, UsersRound } from "lucide-react";
 import { LnsHeader } from "@/components/lns-header";
+import { LnsHeroDeck } from "@/components/lns-hero-deck";
 
 const actions = [
   { icon: BookOpen, title: "Don’t Just Manage. Build an Organisation That Thinks.", body: "A definitive guide to Organisational Maturity & Enterprise Health.", label: "PURCHASE THE BOOK", href: "/contact" },
@@ -51,7 +52,7 @@ export default function LeanNervousSystem() {
       <section className="lns-intro" aria-labelledby="lns-title">
         <p className="lns-kicker">THE DEFINITIVE GUIDE <span /></p>
         <h1 id="lns-title">The Lean<br /><em>Nervous System</em></h1>
-        <div className="lns-deck"><h2>“The Operating System for Enterprise Transformation”</h2><p>The Lean Nervous System — enabling organisations to sense early,<br className="lns-desktop-break" /> respond intelligently, and sustain performance.</p></div>
+        <LnsHeroDeck />
       </section>
       <div className="lns-book-product" aria-label="The Lean Nervous System book">
         <img src="/art/lns-book-cutout.png" alt="The Lean Nervous System by Rajesh Koul" />

@@ -1000,3 +1000,17 @@
   .core-tabs button{min-width:220px;height:64px;scroll-snap-align:start}
   .core-tabs button:hover{transform:none}
 }
+
+/* Rotating Lean Nervous System hero messages */
+.lns-deck{min-height:118px}
+.lns-deck-message{transition:opacity .42s ease,transform .42s ease,filter .42s ease}
+.lns-deck-message.is-exiting{opacity:0;transform:translateY(8px);filter:blur(2px)}
+.lns-deck-dots{display:flex;gap:8px;margin-top:16px}
+.lns-deck-dots button{width:23px;height:3px;padding:0;border:0;border-radius:999px;background:rgba(247,198,79,.3);cursor:pointer;transition:width .25s ease,background .25s ease}
+.lns-deck-dots button.active{width:40px;background:#f7c64f}
+.lns-deck-dots button:focus-visible{outline:2px solid #f7c64f;outline-offset:4px}
+
+@media(max-width:1500px){.lns-deck{min-height:108px}}
+@media(max-width:900px){.lns-deck{min-height:124px}}
+@media(max-width:600px){.lns-deck{min-height:158px}.lns-deck-dots{margin-top:13px}}
+@media(prefers-reduced-motion:reduce){.lns-deck-message{transition:none}}
