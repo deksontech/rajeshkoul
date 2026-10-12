@@ -1022,7 +1022,11 @@
 @media(max-width:650px){.lns-footer{padding:58px 18px 25px}.lns-footer-heading h2{font-size:37px}.lns-footer-heading>p{font-size:15px}.lns-footer-resources{grid-template-columns:1fr}.lns-footer-image{height:290px}.lns-footer-card p{min-height:0}.lns-footer-cta{align-items:stretch;flex-direction:column;padding:25px 22px}.lns-footer-cta p{font-size:21px}.lns-footer-cta>a{width:100%;min-width:0}.lns-footer-bottom{gap:24px}.lns-footer-bottom nav{gap:12px 20px}.lns-footer-bottom nav a{font-size:11px}.lns-footer-bottom>p{line-height:1.9}}
 @media(prefers-reduced-motion:reduce){.lns-footer-card,.lns-footer-image img,.lns-footer-card>div>span svg{transition:none}.lns-footer-card:hover{transform:none}}
 
-/* Keep the two portrait book mockups fully visible inside their landscape card stages. */
-.lns-footer-image--dark img{width:72%;height:72%;object-fit:contain;object-position:center;transform:scale(.78)}
-.lns-footer-card:hover .lns-footer-image--dark img{transform:scale(.81)}
-@media(max-width:650px){.lns-footer-image--dark img{width:72%;height:72%;transform:scale(.82)}.lns-footer-card:hover .lns-footer-image--dark img{transform:scale(.82)}}
+/* Let the portrait mockups fill their stages while only trimming their empty black canvases. */
+.lns-footer-image--dark{position:relative}
+.lns-footer-image--dark img{position:absolute;left:50%;top:50%;width:auto;object-fit:contain;object-position:center}
+.lns-footer-card:nth-child(1) .lns-footer-image--dark img{height:92%;transform:translate(-50%,-50%)}
+.lns-footer-card:nth-child(1):hover .lns-footer-image--dark img{transform:translate(-50%,-50%) scale(1.02)}
+.lns-footer-card:nth-child(3) .lns-footer-image--dark img{height:130%;transform:translate(-50%,-50%)}
+.lns-footer-card:nth-child(3):hover .lns-footer-image--dark img{transform:translate(-50%,-50%) scale(1.02)}
+@media(max-width:650px){.lns-footer-card:nth-child(1) .lns-footer-image--dark img{height:92%;transform:translate(-50%,-50%)}.lns-footer-card:nth-child(1):hover .lns-footer-image--dark img{transform:translate(-50%,-50%)}.lns-footer-card:nth-child(3) .lns-footer-image--dark img{height:124%;transform:translate(-50%,-50%)}.lns-footer-card:nth-child(3):hover .lns-footer-image--dark img{transform:translate(-50%,-50%)}}
