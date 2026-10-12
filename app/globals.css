@@ -986,3 +986,17 @@
 @media(max-width:560px){
   .book-review-count{gap:9px;margin-top:15px;padding:8px 13px 8px 9px}.book-review-count svg{width:27px;height:27px}.book-review-count strong{font-size:27px}.book-review-count span{font-size:9px}.book-library-page-size span{font-size:10px}.book-library-page-size{gap:7px}.book-library-page-size select{padding-right:22px}.book-library-toolbar{margin-bottom:22px}.book-review-cards.is-grid{grid-template-columns:1fr}.book-library-pagination{margin-top:28px}
 }
+
+/* Interactive core expertise */
+.core-tabs button{cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.core-tabs button:hover{transform:translateX(3px);box-shadow:0 8px 24px rgba(23,49,107,.09)}
+.core-tabs button:focus-visible{outline:3px solid rgba(70,83,244,.32);outline-offset:2px}
+.core-tabs button svg{width:19px;justify-self:end}
+.core-content{animation:corePanelIn .28s ease both}
+@keyframes corePanelIn{from{opacity:.25;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+@media(max-width:768px){
+  .core-tabs{display:flex;overflow-x:auto;gap:10px;padding:16px;border-right:0;border-bottom:1px solid #d6e0ef;scroll-snap-type:x proximity;scrollbar-width:thin}
+  .core-tabs button{min-width:220px;height:64px;scroll-snap-align:start}
+  .core-tabs button:hover{transform:none}
+}

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BarChart3, BookOpen, ChevronDown, Cog, Globe2, Handshake, Layers3, Leaf, Lightbulb, Network, Target, Users } from "lucide-react";
+import { ArrowRight, BarChart3, BookOpen, ChevronDown, Cog, Leaf, Lightbulb, Network, Target, Users } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 import { ExpertiseAccordion } from "@/components/expertise-accordion";
+import { CoreExpertiseTabs } from "@/components/core-expertise-tabs";
 
 const pillars = [
   { n: "Pillar 01", title: "IGNITING PURPOSEFUL TRANSFORMATIONS", text: "My first pillar focuses on igniting meaningful transformations by embedding a deep sense of purpose in individuals and organizations. Through tailored strategies and coaching, I unlock latent potential, align goals with a greater mission, and build a shared commitment to impactful change at every level.", image: "/art/mission-card-1.jpg" },
@@ -75,10 +76,8 @@ export default function Home() {
 
       <PillarStatement />
 
-      <section className="section core-section"><p className="eyebrow centered-label">CORE EXPERTISE</p><h2>End-to-end Growth, Transformation & <span>Value Creation</span></h2><p className="subtitle">Ideas. Capabilities. Execution. Measurable Impact.</p>
-        <div className="core-panel"><div className="core-tabs">{["Growth & Strategy","Shared Services & GCC","Tech Transformation","ESG & Value Creation","Operational Excellence"].map((x,i)=><button className={i===0?"active":""} aria-disabled={i!==0} key={x}><b>0{i+1}</b>{x}<ArrowRight/></button>)}</div>
-          <div className="core-content"><h3><b>01</b> Growth & Strategy</h3><p>Designing growth blueprints that align markets and offerings.</p><div className="core-cards"><Mini icon={<BarChart3/>} title="Sales Growth Strategy" text="Predictable revenue acceleration and performance rhythms."/><Mini icon={<Globe2/>} title="Market Expansion" text="Structured entry plans for new geographies and white spaces."/><Mini icon={<Handshake/>} title="Strategic Alliances" text="Governing partnerships that unlock ecosystem capabilities."/><Mini icon={<Layers3/>} title="M&A Integration" text="Aligning culture and operating models for synergy."/></div></div>
-        </div>
+      <section className="section core-section" id="core-expertise"><p className="eyebrow centered-label">CORE EXPERTISE</p><h2>End-to-end Growth, Transformation & <span>Value Creation</span></h2><p className="subtitle">Ideas. Capabilities. Execution. Measurable Impact.</p>
+        <CoreExpertiseTabs />
       </section>
 
       <section className="blueprint-section" id="lean-blueprint">
