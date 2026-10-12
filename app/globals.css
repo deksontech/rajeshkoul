@@ -31,8 +31,8 @@
 .blueprint-header h2 span{background:linear-gradient(90deg,#087df6,#4939ef 55%,#d91ed9);-webkit-background-clip:text;background-clip:text;color:transparent}
 .blueprint-header>p:last-child{margin:0 auto;color:#31436d;font-size:18px;font-weight:400;line-height:1.55;letter-spacing:-.015em}
 .blueprint-artworks{position:absolute;z-index:3;top:312px;left:calc(50% - 358px);display:grid;grid-template-columns:346px 346px;gap:60px}
-.blueprint-placeholder{height:461px;border:2px solid transparent;border-radius:15px;background:linear-gradient(rgba(249,251,255,.94),rgba(249,251,255,.94)) padding-box,linear-gradient(135deg,#55b5ff,#a875f8 55%,#ef63e2) border-box;display:grid;place-items:center;color:#a5a8f1}
-.blueprint-placeholder svg{width:100px;height:100px;stroke-width:1.35;opacity:.74}
+.blueprint-placeholder{height:461px;border:2px solid transparent;border-radius:15px;background:linear-gradient(rgba(249,251,255,.94),rgba(249,251,255,.94)) padding-box,linear-gradient(135deg,#55b5ff,#a875f8 55%,#ef63e2) border-box;display:grid;place-items:center;overflow:hidden;color:#a5a8f1}
+.blueprint-cover{display:block;width:auto;max-width:100%;height:100%;object-fit:contain}
 .blueprint-quote{position:absolute;z-index:3;top:407px;left:calc(50% + 499px);width:315px;height:257px;margin:0;border:1px solid #e6c47d;border-radius:15px;background:rgba(255,255,255,.28);padding:34px 31px;font-family:'Times New Roman',serif;font-size:25px;font-style:italic;line-height:1.32;text-align:left;color:#07194d}
 .blueprint-quote>span{position:absolute;left:-3px;top:-28px;color:#be8826;font-family:Georgia,'Times New Roman',serif;font-size:80px;font-style:normal;line-height:1}
 .blueprint-quote p{margin:0}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BarChart3, BookOpen, ChevronDown, Cog, Globe2, Handshake, ImageIcon, Layers3, Leaf, Lightbulb, Network, Target, Users } from "lucide-react";
+import { ArrowRight, BarChart3, BookOpen, ChevronDown, Cog, Globe2, Handshake, Layers3, Leaf, Lightbulb, Network, Target, Users } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 import { ExpertiseAccordion } from "@/components/expertise-accordion";
 
@@ -88,8 +88,8 @@ export default function Home() {
           <p>Rajesh Koul, a seasoned practitioner in Lean and Industry 4.0 methodologies, is recognized as a thought leader<br className="desktop"/> in business and transformation. As an award-winning business transformation expert and author, his works delve into<br className="desktop"/> facets of business advisory, transformation, program management, digital transformation, and Lean methodologies.</p>
         </header>
         <div className="blueprint-artworks">
-          <div className="blueprint-placeholder" aria-label="First book artwork placeholder supplied in reference"><ImageIcon aria-hidden="true"/></div>
-          <div className="blueprint-placeholder" aria-label="Second book artwork placeholder supplied in reference"><ImageIcon aria-hidden="true"/></div>
+          <div className="blueprint-placeholder"><Image className="blueprint-cover" src="/art/lean-nervous-system-front-cover.jpg" alt="Front cover of The Lean Nervous System by Rajesh Koul" width={1066} height={1600} sizes="(max-width: 768px) calc(100vw - 76px), 346px" /></div>
+          <div className="blueprint-placeholder"><Image className="blueprint-cover" src="/art/lean-nervous-system-back-cover.jpg" alt="Back cover of The Lean Nervous System by Rajesh Koul" width={1000} height={1600} sizes="(max-width: 768px) calc(100vw - 76px), 346px" /></div>
         </div>
         <blockquote className="blueprint-quote"><span aria-hidden="true">“</span><p>Organizations, like<br/>human beings, need a<br/>nervous system—one that<br/>senses, responds, learns,<br/>and evolves.</p><i aria-hidden="true"/></blockquote>
       </section>
