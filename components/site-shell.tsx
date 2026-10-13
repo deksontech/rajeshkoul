@@ -1,7 +1,8 @@
 "use client";
 
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext production RSC navigation is incompatible with next/link in this deployment. */
+
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight, ChevronDown, Lightbulb, Mail, Menu, MessageCircle, Sprout, Target, Users, X } from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -12,7 +13,7 @@ const literaryNav = [["Book Review","/book-review"],["Personal Leadership & Coac
 export function SiteHeader(){
   const [open,setOpen]=useState(false);
   const pathname=usePathname();
-  return <header className="site-header"><Link className="logo" href="/"><Image src="/art/header-logo.png" alt="Rajesh Koul — Human-Centred Transformation" width={2172} height={724} priority/></Link><button className="menu-button" aria-label={open?"Close navigation":"Open navigation"} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav className={open?"open":""} aria-label="Primary navigation">{nav.map(([label,href])=>label==="Literary Lounge"?<div className="nav-dropdown" key={label}><Link href={href} className={pathname.startsWith("/literary-lounge")||literaryNav.some(([,subHref])=>pathname===subHref)?"active":""} aria-haspopup="true" onClick={()=>setOpen(false)}>{label}<ChevronDown aria-hidden="true"/></Link><div className="nav-submenu" aria-label="Literary Lounge submenu">{literaryNav.map(([subLabel,subHref])=><Link key={subLabel} href={subHref} className={pathname===subHref?"active":""} onClick={()=>setOpen(false)}>{subLabel}</Link>)}</div></div>:<Link key={label} href={href} className={pathname===href?"active":""} onClick={()=>setOpen(false)}>{label}</Link>)}</nav></header>
+  return <header className="site-header"><a className="logo" href="/"><Image src="/art/header-logo.png" alt="Rajesh Koul — Human-Centred Transformation" width={2172} height={724} priority/></a><button className="menu-button" aria-label={open?"Close navigation":"Open navigation"} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav className={open?"open":""} aria-label="Primary navigation">{nav.map(([label,href])=>label==="Literary Lounge"?<div className="nav-dropdown" key={label}><a href={href} className={pathname.startsWith("/literary-lounge")||literaryNav.some(([,subHref])=>pathname===subHref)?"active":""} aria-haspopup="true" onClick={()=>setOpen(false)}>{label}<ChevronDown aria-hidden="true"/></a><div className="nav-submenu" aria-label="Literary Lounge submenu">{literaryNav.map(([subLabel,subHref])=><a key={subLabel} href={subHref} className={pathname===subHref?"active":""} onClick={()=>setOpen(false)}>{subLabel}</a>)}</div></div>:<a key={label} href={href} className={pathname===href?"active":""} onClick={()=>setOpen(false)}>{label}</a>)}</nav></header>
 }
 
 export function SiteFooter(){
@@ -24,5 +25,5 @@ export function SiteFooter(){
     </div></footer>
 }
 
-function FooterList({title,links}:{title:string,links:string[][]}){return <div className="footer-list"><h3>{title}</h3>{links.map(([label,href])=><Link key={label} href={href}>{label}<ArrowRight/></Link>)}</div>}
+function FooterList({title,links}:{title:string,links:string[][]}){return <div className="footer-list"><h3>{title}</h3>{links.map(([label,href])=><a key={label} href={href}>{label}<ArrowRight/></a>)}</div>}
 function Value({icon,title,text}:{icon:React.ReactNode,title:string,text:string}){return <div className="value">{icon}<p><b>{title}</b><span>{text}</span></p></div>}
