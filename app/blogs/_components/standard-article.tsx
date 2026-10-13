@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext production RSC navigation is incompatible with next/link in this deployment. */
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Clock3, Compass, Layers3, Lightbulb, Target } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 import articleData from "../_data/additional-articles.json";
@@ -17,7 +17,7 @@ export function StandardArticle({article}:{article:Article}){
     <div className="article-hero-stage"><section className="article-hero source-article-hero">
       <Image src={article.image} alt={article.title} fill priority sizes="100vw" style={{objectFit:"fill",objectPosition:"center",transform:"none"}}/>
       <h1 className="sr-only">{article.title}</h1>
-      <Link className="article-back source-article-back" href="/blogs"><ArrowLeft/> Back to Blogs</Link>
+      <a className="article-back source-article-back" href="/blogs"><ArrowLeft/> Back to Blogs</a>
       <div className="source-article-meta"><span>{article.category}</span><i/><span>By <b>Rajesh Koul</b></span><i/><span><Clock3/> {article.readTime}</span></div>
     </section></div>
     <div className="article-shell source-article-shell">
@@ -35,7 +35,7 @@ export function StandardArticle({article}:{article:Article}){
         </section>)}
         <section className="article-conclusion"><p className="article-eyebrow">THE ESSENTIAL IDEA</p><h2>{article.subtitle}</h2><p>Progress becomes sustainable when purpose, people, processes and management systems reinforce one another.</p></section>
         {article.references.length>0&&<section className="pm-references"><p className="article-eyebrow">REFERENCES</p><ol>{article.references.map(reference=><li key={reference}>{reference}</li>)}</ol></section>}
-        <section className="article-related"><div><p className="article-eyebrow">EXPLORE MORE</p><h2>More ideas on connected, adaptive and future-ready organisations</h2><p>Continue through the latest insights and practical frameworks.</p></div><Link href="/blogs">All blogs <ArrowUpRight/></Link></section>
+        <section className="article-related"><div><p className="article-eyebrow">EXPLORE MORE</p><h2>More ideas on connected, adaptive and future-ready organisations</h2><p>Continue through the latest insights and practical frameworks.</p></div><a href="/blogs">All blogs <ArrowUpRight/></a></section>
         <footer className="article-author"><div className="article-author-mark">RK</div><div><p>Written by</p><h2>Rajesh Koul</h2><span>Transformation, Innovation and DigiLean Thought Leadership</span></div></footer>
         <p className="article-disclaimer"><b>Disclaimer:</b> The views and opinions expressed in this article are personal and do not necessarily reflect those of any organisations associated with the author.</p>
       </article>

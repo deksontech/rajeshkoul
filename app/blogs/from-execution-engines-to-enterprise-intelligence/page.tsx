@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext production RSC navigation is incompatible with next/link in this deployment. */
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, BrainCircuit, Clock3, Gauge, Network, Sparkles } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
@@ -22,7 +22,7 @@ export default function ExecutionToIntelligenceArticle() {
       <Image src="/art/execution-enterprise-hero.png" alt="A path connecting industrial execution with a digitally intelligent enterprise" fill priority sizes="100vw"/>
       <div className="article-hero-shade"/>
       <div className="article-hero-inner">
-        <Link className="article-back" href="/blogs"><ArrowLeft/> Back to Blogs</Link>
+        <a className="article-back" href="/blogs"><ArrowLeft/> Back to Blogs</a>
         <p className="article-label">LEADERSHIP · GCC MATURITY · ENTERPRISE INTELLIGENCE</p>
         <h1>From Execution Engines to <span>Enterprise Intelligence</span></h1>
         <p className="article-deck">A Leadership Narrative on Enabling GCC Maturity</p>

@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext production RSC navigation is incompatible with next/link in this deployment. */
 import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -99,7 +99,7 @@ export default function ProjectManagementInnovationArticle() {
       <Image src="/art/project-management-innovation-roadmap.png" alt="A roadmap connecting vision, strategy, programmes, projects, execution and value" fill priority sizes="100vw"/>
       <div className="article-hero-shade"/>
       <div className="article-hero-inner">
-        <Link className="article-back" href="/blogs"><ArrowLeft/> Back to Blogs</Link>
+        <a className="article-back" href="/blogs"><ArrowLeft/> Back to Blogs</a>
         <p className="article-label">INNOVATION · PROJECT MANAGEMENT · P2M</p>
         <h1>Project Management and Innovation: <span>A Synthesis for Success</span></h1>
         <p className="article-deck">From visionary ideas to purposeful execution</p>
@@ -280,7 +280,7 @@ export default function ProjectManagementInnovationArticle() {
 
         <section className="article-related">
           <div><p className="article-eyebrow">CONTINUE EXPLORING</p><h2>From Execution Engines to Enterprise Intelligence</h2><p>A leadership narrative on enabling GCC maturity.</p></div>
-          <Link href="/blogs/from-execution-engines-to-enterprise-intelligence">Read next <ArrowUpRight/></Link>
+          <a href="/blogs/from-execution-engines-to-enterprise-intelligence">Read next <ArrowUpRight/></a>
         </section>
 
         <footer className="article-author">

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext production RSC navigation is incompatible with next/link in this deployment. */
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ChevronLeft, ChevronRight, Grid2X2, List, Newspaper, Search, X } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
@@ -59,7 +59,7 @@ export default function AllBlogsPage(){
 
   return <><SiteHeader/><main className="blogs-page blogs-catalogue-page">
     <section className="blogs-catalogue-hero">
-      <div><Link href="/blogs/"><ArrowLeft/> Back to Blogs</Link><p className="blogs-kicker">IDEAS · PERSPECTIVES · PRACTICE</p><h1>All Blogs</h1><p>Explore the complete collection of practical perspectives on transformation, leadership, Lean thinking, innovation, and sustainable growth.</p></div>
+      <div><a href="/blogs/"><ArrowLeft/> Back to Blogs</a><p className="blogs-kicker">IDEAS · PERSPECTIVES · PRACTICE</p><h1>All Blogs</h1><p>Explore the complete collection of practical perspectives on transformation, leadership, Lean thinking, innovation, and sustainable growth.</p></div>
     </section>
     <section className="blogs-catalogue" id="all-blogs" aria-label="All blog articles">
       <div className="book-library-toolbar">

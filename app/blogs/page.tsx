@@ -1,7 +1,7 @@
 "use client";
 
+/* eslint-disable @next/next/no-html-link-for-pages -- Vinext production RSC navigation is incompatible with next/link in this deployment. */
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
@@ -227,11 +227,11 @@ export default function BlogsPage() {
         <SectionHeading eyebrow="LATEST THINKING" title="Latest Insights" actionHref="/blogs/all/" actionLabel={`View all ${latest.length}`}/>
         <article className="blogs-feature">
           <div className="blogs-feature-copy"><p className="blogs-category">{latest[0].category}</p><h2>{latest[0].title}</h2><p>{latest[0].excerpt}</p><ReadLink href={latest[0].href}/></div>
-          <Link href={latest[0].href??"/blogs"} className="blogs-feature-media" aria-label={`Read ${latest[0].title}`}><Image src={latest[0].image} alt={latest[0].title} fill sizes="(max-width: 900px) 100vw, 42vw" style={{objectFit:"fill",objectPosition:"center",transform:"none",transition:"none"}} priority/></Link>
+          <a href={latest[0].href??"/blogs"} className="blogs-feature-media" aria-label={`Read ${latest[0].title}`}><Image src={latest[0].image} alt={latest[0].title} fill sizes="(max-width: 900px) 100vw, 42vw" style={{objectFit:"fill",objectPosition:"center",transform:"none",transition:"none"}} priority/></a>
         </article>
         <div className="blogs-grid-with-news">
           <div className="blogs-card-grid">{latest.slice(1,3).map((item)=><ArticleCard key={item.title} {...item}/>)}</div>
-          <aside className="blogs-news-card"><p className="blogs-category">IN THE NEWS</p><h3>Ideas making an impact</h3><div className="blogs-news-list">{inTheNews.map(([category,title])=><Link href="/blogs" key={title}><small>{category}</small><span>{title}</span><ArrowRight/></Link>)}</div></aside>
+          <aside className="blogs-news-card"><p className="blogs-category">IN THE NEWS</p><h3>Ideas making an impact</h3><div className="blogs-news-list">{inTheNews.map(([category,title])=><a href="/blogs" key={title}><small>{category}</small><span>{title}</span><ArrowRight/></a>)}</div></aside>
         </div>
       </section>
 
@@ -242,7 +242,7 @@ export default function BlogsPage() {
 
       <section className="blogs-section blogs-news-section">
         <SectionHeading eyebrow="FROM THE FIELD" title="Ideas in Practice"/>
-        <div className="blogs-rows">{news.map(([category,title],index)=><Link href="/blogs" key={title}><span className="blogs-row-number">0{index+1}</span><span><small>{category}</small><strong>{title}</strong></span><ArrowRight/></Link>)}</div>
+        <div className="blogs-rows">{news.map(([category,title],index)=><a href="/blogs" key={title}><span className="blogs-row-number">0{index+1}</span><span><small>{category}</small><strong>{title}</strong></span><ArrowRight/></a>)}</div>
       </section>
 
       <section className="blogs-section blogs-tinted">
@@ -252,17 +252,17 @@ export default function BlogsPage() {
     </div>
 
     <section className="blogs-themes">
-      <div className="blogs-themes-inner"><p className="blogs-kicker">EXPLORE THE IDEAS</p><h2>Transformation, viewed as a <span>connected system.</span></h2><p className="blogs-themes-intro">Browse the themes shaping resilient organisations and sustainable performance.</p><div className="blogs-theme-grid">{themes.map(([initials,title,text])=><Link href="/blogs" key={title}><i>{initials}</i><strong>{title}</strong><span>{text}</span><ArrowRight/></Link>)}</div></div>
+      <div className="blogs-themes-inner"><p className="blogs-kicker">EXPLORE THE IDEAS</p><h2>Transformation, viewed as a <span>connected system.</span></h2><p className="blogs-themes-intro">Browse the themes shaping resilient organisations and sustainable performance.</p><div className="blogs-theme-grid">{themes.map(([initials,title,text])=><a href="/blogs" key={title}><i>{initials}</i><strong>{title}</strong><span>{text}</span><ArrowRight/></a>)}</div></div>
     </section>
   </main><SiteFooter/></>;
 }
 
 function SectionHeading({eyebrow,title,actionHref="/blogs",actionLabel="View all"}:{eyebrow:string,title:string,actionHref?:string,actionLabel?:string}) {
-  return <div className="blogs-section-heading"><div><p>{eyebrow}</p><h2>{title}</h2></div><Link href={actionHref}>{actionLabel} <ArrowRight/></Link></div>;
+  return <div className="blogs-section-heading"><div><p>{eyebrow}</p><h2>{title}</h2></div><a href={actionHref}>{actionLabel} <ArrowRight/></a></div>;
 }
 
 export function ArticleCard({category,title,excerpt,image,href="/blogs",preserveFullImage=false}:{category:string,title:string,excerpt:string,image:string,href?:string,preserveFullImage?:boolean}) {
-  return <article className="blog-card"><Link className="blog-card-media" href={href} aria-label={`Read ${title}`}><Image src={image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw" style={preserveFullImage?{objectFit:"fill",transform:"none",transition:"none"}:undefined}/></Link><div><p className="blogs-category">{category}</p><h3>{title}</h3><p>{excerpt}</p><ReadLink href={href}/></div></article>;
+  return <article className="blog-card"><a className="blog-card-media" href={href} aria-label={`Read ${title}`}><Image src={image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw" style={preserveFullImage?{objectFit:"fill",transform:"none",transition:"none"}:undefined}/></a><div><p className="blogs-category">{category}</p><h3>{title}</h3><p>{excerpt}</p><ReadLink href={href}/></div></article>;
 }
 
-function ReadLink({href="/blogs"}:{href?:string}){return <Link className="blogs-read" href={href}>Read the article <ArrowRight/></Link>}
+function ReadLink({href="/blogs"}:{href?:string}){return <a className="blogs-read" href={href}>Read the article <ArrowRight/></a>}
