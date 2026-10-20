@@ -12,12 +12,11 @@ const pillars = [
 ];
 
 export default function Home() {
-  return <>
+  return <div className="home-page-shell">
     <div className="home-navigation"><SiteHeader /></div>
-    <main>
+    <main className="home-page">
       <div className="home-hero-stage"><section className="hero home-hero">
         <div className="hero-copy">
-          <Image className="home-hero-logo" src="/art/header-logo-transparent.png" alt="Rajesh Koul — Human-Centred Transformation" width={2172} height={724} priority />
           <h1><b>Scaling <span>Enterprises</span> Through</b><b><span>Lean, Digital</span> &amp;</b><b>AI-Led Transformation</b></h1>
           <p className="lead">Helping CXOs and enterprise leaders unlock growth,<br className="desktop"/> improve margins, and build scalable operations<br className="desktop"/> through Lean, Industry 4.0, and AI-led transformation.</p>
           <div className="actions"><Link className="button" href="#expertise">Enterprise Health Lab <ArrowRight/></Link><Link className="button outline" href="#featured-book">Explore My Books <ArrowRight/></Link></div>
@@ -27,12 +26,10 @@ export default function Home() {
         <div className="hero-art"><Image src="/art/home-hero-portrait-full.png" alt="Rajesh Koul" fill priority sizes="(max-width: 800px) 100vw, 55vw" style={{ objectFit: "contain", objectPosition: "right bottom" }} /></div>
       </section></div>
 
-      <div className="home-section-divider" aria-hidden="true" />
-
       <section className="section author-section" id="author">
         <div className="featured-strip"><BookOpen/><b>FEATURED</b><span/>Pre-order “The Lean Nervous System” (Coming Soon)<ArrowRight/></div>
         <div className="author-grid">
-          <div className="experience-card"><strong>30+</strong><b>YEARS OF EXPERIENCE</b><div className="rule"/><small>TRANSFORM · LEAD · SUSTAIN</small></div>
+          <div className="experience-card"><strong>30+</strong><b>YEARS OF EXPERIENCE</b><small>TRANSFORM · LEAD · SUSTAIN</small></div>
           <div><p className="eyebrow blue">ABOUT THE AUTHOR</p><h2>RAJESH KOUL</h2><p className="tagline">GLOBAL TRANSFORMATION LEADER <i/> ENTERPRISE SYSTEMS THINKER <i/> BUILDER OF SCALABLE EXCELLENCE</p>
             <p><b>Rajesh Koul</b> is a global transformation leader with over three decades of experience in leading large-scale enterprise transformations, leadership development, and operational excellence. He has driven impact across industrial manufacturing, financial services, healthcare, GCCs, and government sectors.</p>
             <p>Having led cross-border programs for Fortune 500 organisations, he builds transformation functions from the ground up—helping leaders translate strategy into execution, scale with resilience, and create lasting value.</p>
@@ -42,10 +39,8 @@ export default function Home() {
         <div className="mission-bar"><Target/><div><b>MISSION</b><p>To help mid-sized organisations — the backbone of the Indian economy — grow with confidence, compete globally, and evolve into resilient, world-class enterprises through disciplined, human-centred transformation, with a strong focus on building connected, adaptive, and future-ready operating systems.</p></div></div>
         <div className="mini-grid"><Mini icon={<Network/>} title="SYSTEMS THINKER" text="Transforms complexity into cohesive, enterprise-wide operating systems."/><Mini icon={<BarChart3/>} title="STRATEGY TO IMPACT" text="Aligns strategy, operations, and people for measurable results."/><Mini icon={<Lightbulb/>} title="LEAN + DIGITAL" text="Combines lean, digital, and innovation for scalable impact."/><Mini icon={<Users/>} title="PEOPLE & CULTURE" text="Builds capability, ownership, and cultures that learn and adapt."/></div>
         <Link className="button centered author-cta" id="author-cta" href="/lean-nervous-system">Explore The Lean Nervous System <ArrowRight/></Link>
-        <div className="author-bottom-nav" id="author-bottom"><p>IDEAS <i/> INSIGHTS <i/> EXECUTION <i/> LASTING VALUE</p><Link href="#expertise" aria-label="Continue to areas of expertise"><ChevronDown/></Link></div>
+        <div className="author-bottom-nav" id="author-bottom"><Link href="#expertise" aria-label="Continue to areas of expertise"><ChevronDown/></Link></div>
       </section>
-
-      <div className="home-section-divider" aria-hidden="true" />
 
       <section className="section split-section expertise-section" id="expertise">
         <div className="expertise-copy"><p className="eyebrow">AREAS OF EXPERTISE</p><h2 className="display">From Strategy to Execution<br/><span>Across the Enterprise</span></h2>
@@ -64,12 +59,8 @@ export default function Home() {
         <div className="image-panel book-art-panel" tabIndex={0}><Image src="/art/home-book-mockup.png" alt="Digi-e-Lean book by Rajesh Koul" fill sizes="(max-width: 800px) 100vw, 50vw"/></div>
       </section>
 
-      <div className="home-section-divider" aria-hidden="true" />
-
       <section className="section digilean nexus-section" id="digilean-nexus">
         <div className="nexus-copy"><p className="eyebrow">DIGITAL × LEAN × INNOVATION</p><h2>DIGILEAN <span>NEXUS</span></h2><h3>MODERN METHODS<br/>TIMELESS RESULTS</h3><p>Integrating the discipline of Lean with the power of digital transformation and innovation to create adaptive, resilient and high-performing organisations.</p></div>
-        <div className="nexus-left-art" aria-hidden="true"><Image src="/art/home-nexus-left-art.png" alt="" fill sizes="36vw"/></div>
-        <div className="image-panel"><Image src="/art/digilean.jpg" alt="Digital Lean Innovation pathway" fill sizes="(max-width: 800px) 100vw, 64vw"/></div>
       </section>
 
       <section className="section mission-section" id="mission">
@@ -118,7 +109,7 @@ export default function Home() {
       </section>
     </main>
     <SiteFooter />
-  </>;
+  </div>;
 }
 
 function PillarStatement() {
