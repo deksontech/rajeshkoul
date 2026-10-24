@@ -19,13 +19,20 @@ export default function About(){return <><SiteHeader/><main>
       </div>
     </div>
     <div className="about-live-portrait"><Image src="/art/about-hero-portrait.png" alt="Rajesh Koul" fill priority sizes="(max-width: 900px) 100vw, 48vw"/></div>
-    <div className="about-live-side about-live-side--top" aria-hidden="true">SIMPLIFY<br/>TRANSFORM<br/>ENABLE<br/>GROW<i/></div>
-    <div className="about-live-side about-live-side--middle" aria-hidden="true"><em>Ideas<br/>to Impact</em><i/></div>
   </section>
   </div>
   <section className="about-bio" id="journey" aria-labelledby="about-bio-title">
     <div className="about-bio-top">
-      <div className="about-bio-visual"><Image src="/art/about-system.jpg" alt="Purpose, systems and impact framework" fill sizes="(max-width: 760px) 92vw, 466px"/></div>
+      <div className="about-bio-visual about-bio-experience" aria-label="More than 30 years of transformation experience">
+        <p>THREE DECADES OF IMPACT</p>
+        <div className="about-bio-stat"><strong>30+</strong><span>YEARS OF<br/>EXPERIENCE</span></div>
+        <div className="about-bio-milestones">
+          <div><b>01</b><span>Enterprise<br/><strong>Transformation</strong></span></div>
+          <div><b>02</b><span>Cross-border<br/><strong>Leadership</strong></span></div>
+          <div><b>03</b><span>Systems-led<br/><strong>Performance</strong></span></div>
+        </div>
+        <small>STRATEGY <i>→</i> EXECUTION <i>→</i> IMPACT</small>
+      </div>
       <div className="about-bio-copy">
         <p className="about-bio-eyebrow">ABOUT THE AUTHOR</p>
         <h2 id="about-bio-title">RAJESH <span>KOUL</span></h2>
@@ -35,7 +42,6 @@ export default function About(){return <><SiteHeader/><main>
         <p>His work has been particularly impactful in building transformation capabilities from the ground up—enabling organisations to move beyond fragmented initiatives toward structured, sustainable excellence.</p>
         <p>Rajesh’s career reflects a deep engagement with the evolving challenges of modern enterprises. Across industrial, service, and public-sector environments, he has focused on addressing transformation holistically—bringing together people, process, technology, and structure to create aligned and resilient operating models.</p>
       </div>
-      <div className="about-bio-aside" aria-hidden="true"><em>Ideas<br/>to Impact</em><i/></div>
     </div>
     <div className="about-credentials">
       <CredentialCard tone="blue" icon={<Cog/>} title="STRATEGIC FOUNDATION" items={[<><b>Mechanical Engineering:</b> NIT, India.</>,<><b>MBA:</b> FMS, Delhi University.</>,<><b>Academic Core:</b> Business Management &amp; Engineering.</>]}/>
@@ -44,12 +50,8 @@ export default function About(){return <><SiteHeader/><main>
     </div>
   </section>
   <section className="research-showcase" id="research" aria-labelledby="research-showcase-title">
-    <div className="research-side research-side--top" aria-hidden="true">IDEAS<br/>PEOPLE<br/>INDUSTRIES<br/>A BETTER TOMORROW<i/></div>
-    <div className="research-side research-side--bottom-left" aria-hidden="true">LEARN<br/>APPLY<br/>ADAPT<br/>IMPROVE<i/></div>
-    <div className="research-side research-side--bottom-right" aria-hidden="true">KNOWLEDGE<br/>FOR A MORE<br/>RESILIENT<br/>WORLD<i/></div>
     <header className="research-showcase-header">
       <p className="research-showcase-kicker">RESEARCH <b/> FRAMEWORKS <b/> IMPACT</p>
-      <span className="research-showcase-accent"/>
       <h2 id="research-showcase-title">Research &amp; <span>Thought Leadership</span></h2>
       <p className="research-showcase-subtitle">Advancing ideas, building frameworks, and enabling real-world transformation.</p>
       <p className="research-showcase-intro">Rajesh actively contributes to the discourse on transformation through research, white papers, and applied frameworks.<br/>His work focuses on DigiLean, integration of Lean with Industry 4.0, DFSS, Quality 4.0, and Lean Six Sigma for growth—<br/>developed in collaboration with global academicians and industry practitioners.</p>

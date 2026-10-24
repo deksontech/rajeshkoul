@@ -14,7 +14,7 @@ export function getAdditionalArticle(slug:string){
 export function StandardArticle({article}:{article:Article}){
   const highlights=article.sections.slice(0,4);
   return <><SiteHeader/><main className="article-page source-article-page">
-    <div className="article-hero-stage"><section className="article-hero source-article-hero">
+    <div className="article-hero-stage"><section className={`article-hero source-article-hero${article.slug === "enterprise-level-lean-design" ? " source-article-hero--preserve-aspect" : ""}`}>
       <Image src={article.image} alt={article.title} fill priority sizes="100vw" style={{objectFit:"fill",objectPosition:"center",transform:"none"}}/>
       <h1 className="sr-only">{article.title}</h1>
       <a className="article-back source-article-back" href="/blogs"><ArrowLeft/> Back to Blogs</a>
