@@ -1,17 +1,31 @@
 import Link from "next/link";
-import { ArrowRight, BarChart3, BookOpen, ChartNoAxesCombined, CheckCircle2, Layers3, Lightbulb, Network, Target, Users, UsersRound } from "lucide-react";
+import { ArrowRight, BarChart3, BookOpen, ChartNoAxesCombined, CheckCircle2, Lightbulb, Network, UsersRound } from "lucide-react";
 import { LnsHeader } from "@/components/lns-header";
 import { LnsHeroDeck } from "@/components/lns-hero-deck";
+import { LnsFrameworkViewer } from "@/components/lns-framework-viewer";
+import { LnsArchitectureNavigator } from "@/components/lns-architecture-navigator";
 
 const actions = [
   { icon: BookOpen, title: "Don’t Just Manage. Build an Organisation That Thinks.", body: "A definitive guide to Organisational Maturity & Enterprise Health.", label: "PURCHASE THE BOOK", href: "/contact" },
-  { icon: ChartNoAxesCombined, title: "Diagnose Your Organisation Like a System — Not a Guess.", body: "Measure maturity across 10 domains. Identify hidden drag. Build a roadmap.", label: "ENTERPRISE HEALTH SCAN", href: "/contact" },
+  { icon: ChartNoAxesCombined, title: "Diagnose Your Organisation Like a System — Not a Guess", body: "Measure maturity across 10 domains. Identify hidden drag. Build a roadmap.", label: "ENTERPRISE HEALTH SCAN", href: "https://ehs.rajeshkoul.com/survey/test-survey-pulse" },
 ];
 
 const measures = [
-  { icon: Layers3, value: "10+", label: "ORIGINAL FRAMEWORKS", note: "Practical, field-tested and easy to apply" },
-  { icon: Users, value: "65", label: "ELEMENTS ACROSS THE VALUE CHAIN", note: "From strategy to operations, people to outcomes" },
-  { icon: Target, value: "360°", label: "ORGANISATIONAL MATURITY DIAGNOSTICS", note: "See the full picture. Find what to fix. Prioritise what matters." },
+  { value: "10+", label: "ORIGINAL FRAMEWORKS" },
+  { value: "360°", label: "ORGANISATIONAL HEALTH DIAGNOSTICS" },
+];
+
+const curriculumLessons = [
+  { icon: "/art/lns-icons/domain-design.png", lead: "Pinpoint where", highlight: "hidden disconnects", tail: "are holding your organization back." },
+  { icon: "/art/lns-icons/domain-catalytic.png", lead: "Unlock the", highlight: "Catalytic Core", tail: "that connects your entire enterprise." },
+  { icon: "/art/lns-icons/domains.png", lead: "Diagnose dysfunction through a powerful", highlight: "maturity assessment.", tail: "" },
+  { icon: "/art/lns-icons/sense.png", lead: "Sense critical problems early —", highlight: "no more surprises,", tail: "only signals." },
+  { icon: "/art/lns-icons/domain-governance.png", lead: "Synchronize strategy, operations, and people to", highlight: "move as one.", tail: "" },
+  { icon: "/art/lns-icons/respond.png", lead: "Establish a system that", highlight: "adapts effortlessly", tail: "to change and growth." },
+  { icon: "/art/lns-icons/bridge.png", lead: "Turn silos into a", highlight: "real-time network", tail: "that aligns action." },
+  { icon: "/art/lns-icons/domain-quality.png", lead: "Install systems that", highlight: "protect quality", tail: "and prevent waste." },
+  { icon: "/art/lns-icons/sustain.png", lead: "Ease", highlight: "scaling", tail: "without adding chaos or burnout." },
+  { icon: "/art/lns-icons/domain-energy.png", lead: "Cultivate a", highlight: "learning ecosystem", tail: "that continuously evolves." },
 ];
 
 const domains = [
@@ -55,7 +69,8 @@ export default function LeanNervousSystem() {
     <LnsHeader />
     <div className="lns-hero-stage"><main className="lns-hero">
       <div className="lns-hero-shade" aria-hidden="true" />
-      <div className="lns-request-wrap"><Link className="lns-request" href="/contact">Request for<br />The LNS Framework <ArrowRight aria-hidden="true" /></Link></div>
+      <p className="lns-hero-statement">Move Beyond Tools. <span>Diagnose Maturity.</span> Design Self-Propagating Excellence.</p>
+      <div className="lns-request-wrap"><LnsFrameworkViewer /></div>
       <section className="lns-intro" aria-labelledby="lns-title">
         <p className="lns-kicker">THE DEFINITIVE GUIDE <span /></p>
         <h1 id="lns-title">The Lean<br /><em>Nervous System</em></h1>
@@ -68,8 +83,11 @@ export default function LeanNervousSystem() {
         {actions.map(({ icon: Icon, title, body, label, href }) => <article className="lns-action-card" key={title}><Icon aria-hidden="true" /><h2>{title}</h2><p>{body}</p><Link href={href}>{label} <ArrowRight aria-hidden="true" /></Link></article>)}
       </section>
       <section className="lns-measures" aria-label="Lean Nervous System highlights">
-        <div className="lns-measures-inner">{measures.map(({ icon: Icon, value, label, note }) => <article key={label}><span className="lns-measure-icon"><Icon aria-hidden="true" /></span><div><strong>{value}</strong><h2>{label}</h2><p>{note}</p></div></article>)}</div>
-        <p className="lns-mantra"><span />“Build Organisations That Think, Sense, and Respond — As One System”<span /></p>
+        <div className="lns-measures-inner">
+          <article><strong>{measures[0].value}</strong><h2>{measures[0].label}</h2></article>
+          <p className="lns-mantra">“Build Organisations That Think, Sense, and Respond — As One System”</p>
+          <article><strong>{measures[1].value}</strong><h2>{measures[1].label}</h2></article>
+        </div>
       </section>
     </main></div>
     <section className="lns-purchase" id="purchase-options" aria-labelledby="lns-purchase-title">
@@ -124,11 +142,31 @@ export default function LeanNervousSystem() {
         <p><img src="/art/lns-icons/inevitable.png" alt="" aria-hidden="true" /><span>Because in the end:<strong>You don’t need more initiatives.<br />You need a system that makes excellence inevitable.</strong></span></p>
       </footer>
     </section>
-    <section className="lns-architecture-image" aria-label="The Lean Nervous System Architecture">
-      <img src="/art/lns-architecture.png" alt="The Lean Nervous System Architecture showing ten connected enterprise domains around the Lean Maturity Model" />
+    <section className="lns-architecture" aria-labelledby="lns-architecture-title">
+      <header className="lns-architecture-heading">
+        <p>AN INTEGRATED MATURITY MODEL</p>
+        <h2 id="lns-architecture-title">The Lean Nervous System <span>Architecture</span></h2>
+        <p>A connected enterprise system where foundational discipline, sensing capability, execution, governance, and market responsiveness work together as one.</p>
+      </header>
+      <LnsArchitectureNavigator />
     </section>
-    <section className="lns-curriculum-image" aria-label="Curriculum Overview: Ten Lessons in Excellence">
-      <img src="/art/lns-curriculum-overview.png" alt="Curriculum overview showing ten things The Lean Nervous System will teach readers" />
+    <section className="lns-curriculum" aria-labelledby="lns-curriculum-title">
+      <header className="lns-curriculum-heading">
+        <p>CURRICULUM OVERVIEW</p>
+        <h2 id="lns-curriculum-title">10 Things <span>This Book Will Teach You</span></h2>
+        <p>Master the architecture of excellence</p>
+      </header>
+      <div className="lns-curriculum-grid">
+        {curriculumLessons.map(({ icon, lead, highlight, tail }, index) => <article key={highlight}>
+          <div className="lns-curriculum-card-top"><span><img src={icon} alt="" aria-hidden="true" /></span><b>{String(index + 1).padStart(2, "0")}</b></div>
+          <p>{lead} <strong>{highlight}</strong>{tail ? ` ${tail}` : ""}</p>
+          <i aria-hidden="true" />
+        </article>)}
+      </div>
+      <footer className="lns-curriculum-closing">
+        <p>…and most importantly,<br />Build an organization that</p>
+        <strong>thinks, senses &amp; responds as one.</strong>
+      </footer>
     </section>
     <section className="lns-purchase lns-purchase-dark" aria-labelledby="lns-purchase-dark-title">
       <div className="lns-purchase-inner">

@@ -75,7 +75,7 @@ export const latest = [
     category: "Enterprise Lean",
     title: "Enterprise-Level Lean Design: Moving Beyond Silos to End-to-End Value Creation",
     excerpt: "Why sustainable transformation requires organisations to optimise the whole enterprise, rather than individual processes in isolation.",
-    image: "/art/enterprise-level-lean-design.jpeg",
+    image: "/art/enterprise-level-lean-design.png",
     href: "/blogs/enterprise-level-lean-design",
     featured: true,
     popularity: 92,

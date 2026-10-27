@@ -9,11 +9,15 @@ import { usePathname } from "next/navigation";
 
 const nav = [["Home","/"],["About","/about"],["The Lean Nervous System","/lean-nervous-system"],["Blogs","/blogs"],["Literary Lounge","/literary-lounge"],["Contact Me","/contact"]];
 const literaryNav = [["Book Review","/book-review"],["Personal Leadership & Coaching","/personal-leadership-coaching"],["Courses & Frameworks","/courses"],["Industry & Campus Talks","/industry-campus-talks"]];
+const activeNavStyle={borderImage:"none",borderBottomColor:"#825b2a",color:"#825b2a",fontWeight:600} as const;
 
 export function SiteHeader(){
   const [open,setOpen]=useState(false);
   const pathname=usePathname();
-  return <header className="site-header"><a className="logo" href="/"><Image src="/art/header-logo.png" alt="Rajesh Koul — Human-Centred Transformation" width={2172} height={724} priority/></a><button className="menu-button" aria-label={open?"Close navigation":"Open navigation"} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav className={open?"open":""} aria-label="Primary navigation">{nav.map(([label,href])=>label==="Literary Lounge"?<div className="nav-dropdown" key={label}><a href={href} className={pathname.startsWith("/literary-lounge")||literaryNav.some(([,subHref])=>pathname===subHref)?"active":""} aria-haspopup="true" onClick={()=>setOpen(false)}>{label}<ChevronDown aria-hidden="true"/></a><div className="nav-submenu" aria-label="Literary Lounge submenu">{literaryNav.map(([subLabel,subHref])=><a key={subLabel} href={subHref} className={pathname===subHref?"active":""} onClick={()=>setOpen(false)}>{subLabel}</a>)}</div></div>:<a key={label} href={href} className={pathname===href?"active":""} onClick={()=>setOpen(false)}>{label}</a>)}</nav></header>
+  const currentPath=pathname.length>1?pathname.replace(/\/$/,""):pathname;
+  const isActive=(href:string)=>href==="/"?currentPath==="/":currentPath===href||currentPath.startsWith(`${href}/`);
+  const literaryActive=isActive("/literary-lounge")||literaryNav.some(([,subHref])=>isActive(subHref));
+  return <header className="site-header"><a className="logo" href="/"><Image src="/art/header-logo.png" alt="Rajesh Koul — Human-Centred Transformation" width={2172} height={724} priority/></a><button className="menu-button" aria-label={open?"Close navigation":"Open navigation"} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav className={open?"open":""} aria-label="Primary navigation">{nav.map(([label,href])=>label==="Literary Lounge"?<div className="nav-dropdown" key={label}><a href={href} className={literaryActive?"active":""} style={literaryActive?activeNavStyle:undefined} aria-haspopup="true" onClick={()=>setOpen(false)}>{label}<ChevronDown aria-hidden="true"/></a><div className="nav-submenu" aria-label="Literary Lounge submenu">{literaryNav.map(([subLabel,subHref])=><a key={subLabel} href={subHref} className={isActive(subHref)?"active":""} onClick={()=>setOpen(false)}>{subLabel}</a>)}</div></div>:<a key={label} href={href} className={isActive(href)?"active":""} style={isActive(href)?activeNavStyle:undefined} onClick={()=>setOpen(false)}>{label}</a>)}</nav></header>
 }
 
 export function SiteFooter(){

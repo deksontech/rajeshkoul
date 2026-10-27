@@ -7,9 +7,9 @@ import { CoreExpertiseTabs } from "@/components/core-expertise-tabs";
 import { BlueprintBooks } from "@/components/blueprint-books";
 
 const pillars = [
-  { n: "Pillar 01", title: "IGNITING PURPOSEFUL TRANSFORMATIONS", text: "My first pillar focuses on igniting meaningful transformations by embedding a deep sense of purpose in individuals and organizations. Through tailored strategies and coaching, I unlock latent potential, align goals with a greater mission, and build a shared commitment to impactful change at every level." },
-  { n: "Pillar 02", title: "CULTIVATING COLLABORATIVE INNOVATION MINDSETS", text: "The second pillar revolves around cultivating collaborative innovation mindsets. I create environments where diverse perspectives converge, nurturing a culture of creativity, collaboration, and shared problem-solving. By leveraging tools and methodologies, I ensure they contribute to collective intelligence and sustainable value creation." },
-  { n: "Pillar 03", title: "GUIDING DIGITAL TRANSFORMATION WITH MEANINGFUL LEADERSHIP", text: "My third pillar centers on guiding digital transformation initiatives with meaningful leadership. Through mentorship, workshops, and resources, I equip individuals with the skills and mindset for effective digital transformation. Technology is embraced as an enabler, with each initiative driven by a clear sense of mission, aligning with the broader vision of transformative success." },
+  { n: "Pillar 01", icon: Target, outcome: "Purpose → Alignment", title: "Igniting Purposeful Transformations", text: "My first pillar focuses on igniting meaningful transformations by embedding a deep sense of purpose in individuals and organizations. Through tailored strategies and coaching, I unlock latent potential, aligning roles with a greater mission. This approach fosters engagement and a shared commitment to impactful change at every level, creating a ripple effect of positive transformation." },
+  { n: "Pillar 02", icon: Users, outcome: "Collaboration → Innovation", title: "Cultivating Collaborative Innovation Mindsets", text: "The second pillar revolves around cultivating collaborative innovation mindsets. I create environments where diverse perspectives converge, nurturing a culture valuing collaboration, creativity, and shared problem-solving. Empowering individuals with tools and methodologies, I ensure they contribute to the organization's collective intelligence, making innovation a natural outcome of purposeful collaboration." },
+  { n: "Pillar 03", icon: Network, outcome: "Digital → Sustainable Impact", title: "Guiding Digital Transformation with Meaningful Leadership", text: "My third pillar centers on guiding digital transformation initiatives with meaningful leadership. Through mentorship, workshops, and resources, I equip individuals with the skills and mindset for effective digital transformation. Technology is embraced as an enabler, with each digital initiative driven by a clear sense of mission, aligning with the broader vision of transformative success." },
 ];
 
 export default function Home() {
@@ -96,8 +96,15 @@ export default function Home() {
 
       <section className="section mission-section" id="mission">
         <div className="mission-shell">
-          <div className="mission-heading"><div><p className="eyebrow">MISSION STATEMENT</p><h2><span className="mission-first">EMPOWERING</span>{" "}<span className="mission-gradient">PURPOSE-LED,</span>{" "}<span className="mission-final">LEAN &amp; DIGITAL TRANSFORMATION</span></h2><p>People <i/> Processes <i/> Innovation <i/> Sustainable Impact</p></div><div className="mission-intro"><p>As a Transformation Specialist, I empower individuals and organizations to embark on <b>purpose-driven journeys of growth and evolution.</b></p><p>Through dedication, I instill profound purpose, foster engagement, and promote collaborative innovation, guiding lean and digital transformation initiatives to navigate change, inspire innovation, and lead transformative paths to sustained success in today&apos;s evolving landscape.</p></div></div>
-          <div className="pillar-grid">{pillars.map((p)=><article key={p.n} data-step={p.n.slice(-2)}><small>{p.n}</small><h3>{p.title}</h3><p>{p.text}</p><a href="#mission">LEARN MORE</a></article>)}</div>
+          <div className="mission-heading"><div><p className="eyebrow">MISSION STATEMENT</p><h2><span className="mission-first">EMPOWERING</span>{" "}<span className="mission-gradient">PURPOSE-LED,</span>{" "}<span className="mission-final">LEAN &amp; DIGITAL TRANSFORMATION</span></h2><p>People <i/> Processes <i/> Innovation <i/> Sustainable Impact</p></div><div className="mission-intro"><p>As a Transformation Specialist, I empower individuals and organizations to embark on <b>purpose-driven journeys of growth and evolution.</b> Through dedication, I instill profound purpose, foster engagement, and promote collaborative innovation, guiding lean and digital transformation initiatives to navigate change, inspire innovation, and lead transformative paths to sustained success in today&apos;s evolving landscape.</p></div></div>
+          <div className="pillar-journey">
+            <header className="pillar-journey-intro"><p>THREE CONNECTED PILLARS</p><h3>From individual purpose to enterprise-wide impact.</h3></header>
+            <div className="pillar-grid">{pillars.map((p, index)=>{const Icon=p.icon;return <article key={p.n} data-step={p.n.slice(-2)}>
+              <div className="pillar-card-top"><span><Icon/></span><b>{String(index+1).padStart(2,"0")}</b></div>
+              <small>{p.n}</small><h3>{p.title}</h3><p>{p.text}</p>
+              <footer><span>{p.outcome}</span><ArrowRight/></footer>
+            </article>})}</div>
+          </div>
           <div className="mission-conclusion" id="pillar-summary">
             <p>Through these pillars, my mission is to catalyze <strong>individual and organizational growth</strong>, fostering <strong>purpose, engagement, and innovation</strong> as the cornerstones of transformative journeys in today&apos;s dynamic world.</p>
           </div>
