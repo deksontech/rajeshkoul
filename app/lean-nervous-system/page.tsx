@@ -144,7 +144,7 @@ export default function LeanNervousSystem() {
     </section>
     <section className="lns-architecture" aria-labelledby="lns-architecture-title">
       <header className="lns-architecture-heading">
-        <p>AN INTEGRATED MATURITY MODEL</p>
+        <p>CINEMATIC CONSTELLATION</p>
         <h2 id="lns-architecture-title">The Lean Nervous System <span>Architecture</span></h2>
         <p>A connected enterprise system where foundational discipline, sensing capability, execution, governance, and market responsiveness work together as one.</p>
       </header>

@@ -24,7 +24,7 @@ export default function Home() {
           <p className="italic">Bridging strategy and execution through 30 years of transformation leadership across global enterprises.</p>
           <p className="trust"><span>TRUSTED BY LEADERS ACROSS</span><b>MANUFACTURING · CONSULTING · GLOBAL ENTERPRISES</b></p>
         </div>
-        <div className="hero-art"><Image src="/art/home-hero-portrait-full.png" alt="Rajesh Koul" fill priority sizes="(max-width: 800px) 100vw, 55vw" style={{ objectFit: "contain", objectPosition: "center bottom" }} /></div>
+        <div className="hero-art"><Image className="home-hero-portrait-blue" src="/art/home-hero-portrait-blue.png" alt="Rajesh Koul" fill priority sizes="(max-width: 800px) 100vw, 55vw" /></div>
       </section></div>
 
       <section className="section author-section" id="author">

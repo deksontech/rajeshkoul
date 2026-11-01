@@ -18,7 +18,7 @@ export default function About(){return <><SiteHeader/><main>
         <div><span><Leaf/></span><b>Create<br/>Lasting Impact</b></div>
       </div>
     </div>
-    <div className="about-live-portrait"><Image src="/art/about-hero-portrait.png" alt="Rajesh Koul" fill priority sizes="(max-width: 900px) 100vw, 48vw"/></div>
+    <div className="about-live-portrait"><Image src="/art/home-hero-portrait-full.png" alt="Rajesh Koul" fill priority sizes="(max-width: 900px) 100vw, 48vw"/></div>
   </section>
   </div>
   <section className="about-bio" id="journey" aria-labelledby="about-bio-title">
