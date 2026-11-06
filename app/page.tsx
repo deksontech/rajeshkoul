@@ -20,15 +20,15 @@ export default function Home() {
         <div className="hero-copy">
           <h1><b>Scaling <span>Enterprises</span> Through</b><b><span>Lean, Digital</span> &amp; AI-Led</b><b>Transformation</b></h1>
           <p className="lead">Helping CXOs and enterprise leaders unlock growth,<br className="desktop"/> improve margins, and build scalable operations<br className="desktop"/> through Lean, Industry 4.0, and AI-led transformation.</p>
-          <div className="actions"><Link className="button" href="#expertise">Enterprise Health Lab <ArrowRight/></Link><Link className="button outline" href="#featured-book">Explore My Books <ArrowRight/></Link></div>
+          <div className="actions"><a className="button" href="https://ehs.rajeshkoul.com/" target="_blank" rel="noopener noreferrer">Enterprise Health Lab <ArrowRight/></a><Link className="button outline" href="#featured-book">Explore My Books <ArrowRight/></Link></div>
           <p className="italic">Bridging strategy and execution through 30 years of transformation leadership across global enterprises.</p>
           <p className="trust"><span>TRUSTED BY LEADERS ACROSS</span><b>MANUFACTURING · CONSULTING · GLOBAL ENTERPRISES</b></p>
         </div>
-        <div className="hero-art"><Image className="home-hero-portrait-blue" src="/art/home-hero-portrait-blue.png" alt="Rajesh Koul" fill priority sizes="(max-width: 800px) 100vw, 55vw" /></div>
+        <div className="hero-art"><Image className="home-hero-portrait-editorial" src="/art/home-hero-author-teal-clean.png" alt="Rajesh Koul" fill priority sizes="(max-width: 800px) 100vw, 55vw" /></div>
       </section></div>
 
       <section className="section author-section" id="author">
-        <div className="featured-strip"><BookOpen/><b>FEATURED</b><span/>Pre-order “The Lean Nervous System” (Coming Soon)<ArrowRight/></div>
+        <a className="featured-strip" href="https://amzn.in/d/0iodZYXL" target="_blank" rel="noopener noreferrer" aria-label="Pre-order The Lean Nervous System on Amazon"><BookOpen/><b>FEATURED</b><span/>Pre-order “The Lean Nervous System”<ArrowRight/></a>
         <div className="author-grid">
           <div className="experience-card"><strong>30+</strong><b>YEARS OF EXPERIENCE</b><small>TRANSFORM · LEAD · SUSTAIN</small></div>
           <div><p className="eyebrow blue">ABOUT THE AUTHOR</p><h2>RAJESH KOUL</h2><p className="tagline">GLOBAL TRANSFORMATION LEADER <i/> ENTERPRISE SYSTEMS THINKER <i/> BUILDER OF SCALABLE EXCELLENCE</p>
@@ -49,11 +49,9 @@ export default function Home() {
           <Link className="button" href="/about">See Full Profile <ArrowRight/></Link>
         </div>
         <div className="expertise-portrait">
-          <span className="expertise-portrait-index" aria-hidden="true">05</span>
           <div className="expertise-orbit expertise-orbit-one" aria-hidden="true" />
           <div className="expertise-orbit expertise-orbit-two" aria-hidden="true" />
           <div className="image-panel"><Image src="/art/home-expertise-portrait-cutout-v2.png" alt="Rajesh Koul" fill sizes="(max-width: 768px) calc(100vw - 44px), (max-width: 1200px) 42vw, 610px" style={{ objectFit: "contain", objectPosition: "center bottom" }}/></div>
-          <div className="expertise-portrait-caption"><small>INTEGRATED EXPERTISE</small><p>Strategy <i/> Systems <i/> Scale</p></div>
         </div>
       </section>
 

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Rajesh Koul</title>
+  <desc id="logo-desc">Rajesh Koul wordmark with the tagline Building Human-Centered Systems.</desc>
+  <defs>
+    <style>
+      .wordmark {
+        font-family: "Bodoni Bk BT", "Bodoni MT", Didot, Georgia, "Times New Roman", serif;
+        font-size: 225px;
+        font-weight: 400;
+        letter-spacing: -5px;
+      }
+      .tagline {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 42px;
+        font-weight: 600;
+        letter-spacing: 9px;
+      }
+    </style>
+  </defs>
+
+  <g transform="translate(700 0)">
+    <text class="wordmark" x="-28" y="250" text-anchor="end" fill="#071a3c">Rajesh</text>
+    <text class="wordmark" x="5" y="250" text-anchor="start" fill="#bd8428">Koul</text>
+  </g>
+
+  <text class="tagline" x="600" y="358" text-anchor="middle" textLength="850" lengthAdjust="spacingAndGlyphs" fill="#071a3c">BUILDING HUMAN-CENTERED SYSTEMS</text>
+</svg>

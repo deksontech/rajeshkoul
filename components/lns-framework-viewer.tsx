@@ -44,7 +44,7 @@ export function LnsFrameworkViewer() {
 
   return <>
     <button className="lns-request" type="button" onClick={() => { setPage(0); setOpen(true); }}>
-      Request for<br />The LNS Framework
+      Request for The LNS Framework
     </button>
     {open && <div className="lns-framework-modal" role="dialog" aria-modal="true" aria-labelledby="lns-framework-title" onContextMenu={event => event.preventDefault()}>
       <div className="lns-framework-backdrop" aria-hidden="true" onClick={() => setOpen(false)} />

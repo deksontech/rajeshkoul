@@ -31,7 +31,6 @@ export default function About(){return <><SiteHeader/><main>
           <div><b>02</b><span>Cross-border<br/><strong>Leadership</strong></span></div>
           <div><b>03</b><span>Systems-led<br/><strong>Performance</strong></span></div>
         </div>
-        <small>STRATEGY <i>→</i> EXECUTION <i>→</i> IMPACT</small>
       </div>
       <div className="about-bio-copy">
         <p className="about-bio-eyebrow">ABOUT THE AUTHOR</p>
@@ -68,8 +67,8 @@ export default function About(){return <><SiteHeader/><main>
       <ResearchCard tone="purple" icon={<Cog/>} title="Industry Applications" text="Translating research into real-world solutions across industries and geographies."/>
       <ResearchCard tone="pink" icon={<Lightbulb/>} title="Thought Leadership" text="Sharing perspectives at industry forums, academic platforms, and leadership communities."/>
     </div>
-    <div className="research-recognition"><span><Trophy/></span><b>RECOGNITION</b><i/><p>Includes jury roles in industry-led transformation forums and leadership recognition<br className="desktop"/> at national platforms like Mint TechCircle. This platform brings together Rajesh’s perspectives,<br className="desktop"/> frameworks, and experiences—offering a window into how organisations can evolve into systems<br className="desktop"/> that continuously learn, adapt, and improve.</p></div>
-    <Link className="research-showcase-cta" href="/literary-lounge">EXPLORE THE RESEARCH <ArrowRight/></Link>
+    <div className="research-recognition"><span><Trophy/></span><b>RECOGNITION</b><i/><p>Includes jury roles in industry-led transformation forums and leadership recognition at national platforms like Mint TechCircle. This platform brings together Rajesh’s perspectives, frameworks, and experiences—offering a window into how organisations can evolve into systems that continuously learn, adapt, and improve.</p></div>
+    <Link className="research-showcase-cta" href="/blogs">EXPLORE THE RESEARCH <ArrowRight/></Link>
   </section>
   </main><SiteFooter/></>}
 

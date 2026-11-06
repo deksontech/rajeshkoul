@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, BarChart3, BookOpen, ChartNoAxesCombined, CheckCircle2, Lightbulb, Network, UsersRound } from "lucide-react";
 import { LnsHeader } from "@/components/lns-header";
 import { LnsHeroDeck } from "@/components/lns-hero-deck";
@@ -64,6 +65,20 @@ const footerResources = [
   { eyebrow: "EXPLORE", title: "Insights & Resources", text: "Practical tools for diagnosis, alignment, innovation and maturity.", image: "/art/lns-footer-resources.png", href: "/blogs", tone: "light" },
 ];
 
+function RetailerButtons() {
+  return <div className="lns-purchase-links">
+    <a className="purchase-amazon" href="https://amzn.in/d/0iodZYXL" target="_blank" rel="noreferrer" aria-label="Buy The Lean Nervous System on Amazon">
+      <span className="retailer-logo retailer-logo-amazon"><b>amazon</b><svg viewBox="0 0 82 14" aria-hidden="true"><path d="M3 3c18 9 46 10 72 1" /><path d="m67 1 9 3-6 7" /></svg></span>
+    </a>
+    <Link className="purchase-flipkart" href="/contact" aria-label="Buy The Lean Nervous System on Flipkart">
+      <span className="retailer-logo retailer-logo-flipkart"><i aria-hidden="true"><b>F</b></i><strong>Flipkart</strong></span>
+    </Link>
+    <Link className="purchase-kindle" href="/contact" aria-label="Get The Lean Nervous System for Kindle">
+      <span className="retailer-logo retailer-logo-kindle"><small>amazon</small><strong>kindle</strong></span>
+    </Link>
+  </div>;
+}
+
 export default function LeanNervousSystem() {
   return <div className="lns-page">
     <LnsHeader />
@@ -94,11 +109,7 @@ export default function LeanNervousSystem() {
       <div className="lns-purchase-inner">
         <h2 id="lns-purchase-title">Get Your Copy of <span>The Lean Nervous System</span></h2>
         <div className="lns-purchase-rule" aria-hidden="true"><i /><b>◇</b><i /></div>
-        <div className="lns-purchase-links">
-          <Link href="/contact">Amazon</Link>
-          <Link href="/contact">Flipkart</Link>
-          <Link href="/contact">Kindle</Link>
-        </div>
+        <RetailerButtons />
         <p><em>Outside India?</em> <Link href="/contact">Click here for international editions.</Link></p>
       </div>
     </section>
@@ -109,9 +120,13 @@ export default function LeanNervousSystem() {
       </header>
 
       <div className="lns-story-top">
-        <figure className="lns-domain-art-crop">
-          <img src="/art/lns-ten-domains-transparent.png" alt="The ten interconnected domains of the Lean Nervous System" />
-        </figure>
+        <div className="lns-story-media-column">
+          <figure className="lns-domain-art-crop">
+            <video autoPlay muted loop playsInline controls preload="metadata" aria-label="An introduction to The Lean Nervous System">
+              <source src="/media/lns-story.mp4" type="video/mp4" />
+            </video>
+          </figure>
+        </div>
 
         <div className="lns-story-copy">
           <div className="lns-story-narrative">
@@ -124,9 +139,10 @@ export default function LeanNervousSystem() {
             <blockquote><span>“</span><small>At its core is a powerful idea:</small><b>Organisations don’t rise to the level of their strategy.<br />They fall to the level of their system.</b><span>”</span></blockquote>
           </div>
           <p className="lns-story-summary">Drawing from decades of real-world transformation experience, this book introduces the <strong>Lean Nervous System</strong> — an integrated architecture that enables organisations to:</p>
-          <div className="lns-outcome-grid">{outcomes.map(({ icon, title, text }) => <article key={title}><span><img src={icon} alt="" aria-hidden="true" /></span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
         </div>
       </div>
+
+      <div className="lns-outcome-grid">{outcomes.map(({ icon, title, text }) => <article key={title}><span><img src={icon} alt="" aria-hidden="true" /></span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
 
       <p className="lns-story-bridge"><img src="/art/lns-icons/bridge.png" alt="" aria-hidden="true" />It moves beyond fragmented improvements and presents a coherent model of enterprise maturity, built across interconnected domains — <strong>from design and supply chain to operations, people, governance, and sustainability.</strong></p>
 
@@ -164,7 +180,7 @@ export default function LeanNervousSystem() {
         </article>)}
       </div>
       <footer className="lns-curriculum-closing">
-        <p>…and most importantly,<br />Build an organization that</p>
+        <p>…and most importantly, Build an organization that</p>
         <strong>thinks, senses &amp; responds as one.</strong>
       </footer>
     </section>
@@ -172,17 +188,24 @@ export default function LeanNervousSystem() {
       <div className="lns-purchase-inner">
         <h2 id="lns-purchase-dark-title">Get Your Copy of <span>The Lean Nervous System</span></h2>
         <div className="lns-purchase-rule" aria-hidden="true"><i /><b>◇</b><i /></div>
-        <div className="lns-purchase-links">
-          <Link href="/contact">Amazon</Link>
-          <Link href="/contact">Flipkart</Link>
-          <Link href="/contact">Kindle</Link>
-        </div>
+        <RetailerButtons />
         <p><em>Outside India?</em> <Link href="/contact">Click here for international editions.</Link></p>
       </div>
     </section>
     <section className="lns-author" aria-labelledby="lns-author-title">
       <div className="lns-author-inner">
-        <div className="lns-author-feature"><BookOpen aria-hidden="true" /><strong>FEATURED:</strong><span>Pre-order “The Lean Nervous System” (Coming Soon)</span></div>
+        <a
+          className="lns-author-feature"
+          href="https://amzn.in/d/0iodZYXL"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Pre-order The Lean Nervous System on Amazon"
+        >
+          <BookOpen aria-hidden="true" />
+          <strong>FEATURED</strong>
+          <span>Pre-order “The Lean Nervous System”</span>
+          <ArrowRight aria-hidden="true" />
+        </a>
 
         <div className="lns-author-main">
           <div className="lns-author-photo-wrap">
@@ -230,7 +253,7 @@ export default function LeanNervousSystem() {
         </section>
 
         <div className="lns-footer-bottom">
-          <div className="lns-footer-brand"><b>RAJESH KOUL</b><span>HUMAN-CENTRED TRANSFORMATION</span></div>
+          <div className="lns-footer-brand"><Image src="/art/rajesh-koul-wordmark.svg" alt="Rajesh Koul — Building Human-Centered Systems" width={1200} height={420} /></div>
           <nav aria-label="Lean Nervous System footer navigation"><Link href="/">Home</Link><Link href="/about">About</Link><Link href="/lean-nervous-system">The Lean Nervous System</Link><Link href="/blogs">Insights</Link><Link href="/contact">Contact</Link></nav>
           <p>© 2026 Rajesh Koul <i /> <span>Privacy Policy</span> <i /> <span>Terms of Use</span></p>
         </div>

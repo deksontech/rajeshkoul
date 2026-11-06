@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ShieldCheck } from "lucide-react";
 import { useEffect } from "react";
+import { SiteHeader } from "@/components/site-shell";
 
 type ReviewReaderProps = { title:string; author:string; slug:string; pages:number };
 
@@ -21,7 +22,7 @@ export function ReviewReader({title,author,slug,pages}:ReviewReaderProps){
     return()=>{document.removeEventListener("contextmenu",stop);document.removeEventListener("copy",stop);document.removeEventListener("cut",stop);document.removeEventListener("dragstart",stop);document.removeEventListener("keydown",stopKeys)};
   },[]);
 
-  return <main className="protected-reader" onContextMenu={event=>event.preventDefault()}>
+  return <><SiteHeader/><main className="protected-reader" onContextMenu={event=>event.preventDefault()}>
     <header className="protected-reader-header">
       <Link href="/book-review"><ArrowLeft aria-hidden="true"/>Back to Book Reviews</Link>
       <div><p>BOOK REVIEW</p><h1>{title}</h1><span>{author} · {pages} pages</span></div>
@@ -33,5 +34,5 @@ export function ReviewReader({title,author,slug,pages}:ReviewReaderProps){
         <figcaption>Page {index+1} of {pages}</figcaption>
       </figure>)}
     </section>
-  </main>
+  </main></>
 }

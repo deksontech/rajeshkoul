@@ -2,7 +2,8 @@
 
 /* eslint-disable @next/next/no-html-link-for-pages -- Vinext production RSC navigation is incompatible with next/link in this deployment. */
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Search } from "lucide-react";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 export const latest = [
@@ -220,6 +221,7 @@ export default function BlogsPage() {
       <p className="blogs-kicker">IDEAS · PERSPECTIVES · PRACTICE</p>
       <h1>Blogs</h1>
       <p>Practical thinking for leaders building connected, adaptive, and future-ready organisations.</p>
+      <BlogHeroSearch/>
     </section></div>
 
     <div className="blogs-main">
@@ -266,3 +268,25 @@ export function ArticleCard({category,title,excerpt,image,href="/blogs",preserve
 }
 
 function ReadLink({href="/blogs"}:{href?:string}){return <a className="blogs-read" href={href}>Read the article <ArrowRight/></a>}
+
+// Keep discovery controls in the landing hero while the catalogue owns filtering.
+function BlogHeroSearch(){
+  const [query,setQuery]=useState("");
+  const [category,setCategory]=useState("all");
+  const [sort,setSort]=useState("latest");
+  const categories=Array.from(new Set(latest.map(item=>item.category))).sort((a,b)=>a.localeCompare(b));
+  const openCatalogue=(event:React.FormEvent<HTMLFormElement>)=>{
+    event.preventDefault();
+    const params=new URLSearchParams();
+    if(query.trim())params.set("q",query.trim());
+    if(category!=="all")params.set("category",category);
+    if(sort!=="latest")params.set("sort",sort);
+    window.location.href=`/blogs/all/${params.size?`?${params.toString()}`:""}`;
+  };
+  return <form className="blogs-hero-search" onSubmit={openCatalogue}>
+    <label className="blogs-hero-query"><span className="sr-only">Search blogs</span><Search aria-hidden="true"/><input value={query} onChange={event=>setQuery(event.target.value)} placeholder="Search ideas, topics, keywords…"/></label>
+    <label><span>Category</span><select value={category} onChange={event=>setCategory(event.target.value)}><option value="all">All categories</option>{categories.map(item=><option value={item} key={item}>{item}</option>)}</select></label>
+    <label><span>Sort by</span><select value={sort} onChange={event=>setSort(event.target.value)}><option value="latest">Latest first</option><option value="featured">Featured</option><option value="popular">Most read</option><option value="title-asc">Title: A–Z</option></select></label>
+    <button type="submit">Explore articles <ArrowRight/></button>
+  </form>;
+}

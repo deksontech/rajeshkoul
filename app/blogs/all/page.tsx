@@ -50,6 +50,14 @@ export default function AllBlogsPage(){
   },[page,pageCount]);
 
   useEffect(()=>{const saved=window.localStorage.getItem("blogs-view");if(saved==="grid"||saved==="list")setView(saved)},[]);
+  useEffect(()=>{
+    const params=new URLSearchParams(window.location.search);
+    const requestedCategory=params.get("category");
+    const requestedSort=params.get("sort") as BlogSort|null;
+    setQuery(params.get("q")??"");
+    if(requestedCategory&&categories.includes(requestedCategory))setCategory(requestedCategory);
+    if(requestedSort&&["latest","featured","popular","title-asc","title-desc"].includes(requestedSort))setSort(requestedSort);
+  },[categories]);
   useEffect(()=>{setPage(1)},[query,category,author,sort,pageSize]);
   useEffect(()=>{if(page>pageCount)setPage(pageCount)},[page,pageCount]);
 
