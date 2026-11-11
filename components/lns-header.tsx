@@ -4,13 +4,19 @@
 
 import Image from "next/image";
 import { ChevronDown, Menu, Search, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const nav = [["Home", "/"], ["About", "/about"], ["The Lean Nervous System", "/lean-nervous-system"], ["Blog", "/blogs"], ["Contact Me", "/contact"]];
 const literary = [["Book Review", "/book-review"], ["Personal Leadership & Coaching", "/personal-leadership-coaching"], ["Courses & Frameworks", "/courses"], ["Industry & Campus Talks", "/industry-campus-talks"]];
 
 export function LnsHeader() {
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (!open) return;
+    const close = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, [open]);
   return <header className="lns-header">
     <a className="lns-logo" href="/" aria-label="Rajesh Koul home"><Image src="/art/rajesh-koul-wordmark.svg" alt="Rajesh Koul — Building Human-Centered Systems" width={1200} height={420} priority /></a>
     <button className="lns-menu-button" type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>

@@ -3267,6 +3267,8 @@ body.lns-reader-open{overflow:hidden}
     letter-spacing:-.045em;
   }
   .home-page .home-hero h1 b{white-space:normal}
+  .home-page .home-hero h1 b:nth-child(1),
+  .home-page .home-hero h1 b:nth-child(2){display:inline}
   .home-page .home-hero .lead{
     margin:0;
     font-size:17px;
@@ -4109,11 +4111,28 @@ body.lns-reader-open{overflow:hidden}
   .home-page .mission-section .pillar-grid article:nth-child(even),
   .home-page .mission-section .pillar-grid article:first-child,
   .home-page .mission-section .pillar-grid article:last-child{height:auto;min-height:0;padding:25px 24px 24px;border-radius:22px}
-  .home-page .mission-section .pillar-card-top{margin-bottom:28px}
+  /* The generic mission-card rules give every direct child div a desktop
+     min-height. Reset it here so the icon, number and content read as one
+     compact mobile composition. */
+  .home-page .mission-section .pillar-card-top{
+    height:50px;
+    min-height:0;
+    margin-bottom:16px;
+  }
   .home-page .mission-section .pillar-card-top span{width:50px;height:50px;border-radius:15px}
-  .home-page .mission-section .pillar-card-top b{font-size:56px}
-  .home-page .mission-section .pillar-grid h3,.home-page .mission-section .pillar-grid article:nth-child(2) h3{max-width:none;font-size:28px}
-  .home-page .mission-section .pillar-grid p{font-size:14px;line-height:1.62}
+  .home-page .mission-section .pillar-card-top b{font-size:50px;line-height:1}
+  .home-page .mission-section .pillar-grid small{margin-bottom:10px}
+  .home-page .mission-section .pillar-grid h3,
+  .home-page .mission-section .pillar-grid article:nth-child(2) h3{
+    max-width:none;
+    margin-bottom:16px;
+    font-size:28px;
+  }
+  .home-page .mission-section .pillar-grid p{font-size:14px;line-height:1.58}
+  .home-page .mission-section .pillar-grid footer{
+    margin-top:20px;
+    padding-top:16px;
+  }
 }
 
 /* Compact the complete mission story while preserving its hierarchy. */
@@ -4143,7 +4162,13 @@ body.lns-reader-open{overflow:hidden}
   .home-page .mission-section .pillar-grid article:nth-child(even),
   .home-page .mission-section .pillar-grid article:first-child,
   .home-page .mission-section .pillar-grid article:last-child{padding-top:22px;padding-bottom:22px}
-  .home-page .mission-section .pillar-card-top{margin-bottom:22px}
+  .home-page .mission-section .pillar-card-top{
+    height:50px;
+    min-height:0;
+    justify-content:center;
+    margin-bottom:16px;
+  }
+  .home-page .mission-section .pillar-card-top b{display:none}
   .home-page .mission-conclusion{margin-top:30px}
 }
 
@@ -4870,4 +4895,357 @@ body.lns-reader-open{overflow:hidden}
   .blogs-page .blogs-hero{padding-bottom:42px}
   .blogs-hero-search{grid-template-columns:1fr;width:calc(100% - 28px);padding:12px}
   .blogs-hero-query,.blogs-hero-search button{grid-column:auto}
+}
+
+/* Blog editorial imagery — one uncropped 16:9 composition everywhere. */
+.blogs-page .blogs-feature-media,
+.blogs-page .blog-card-media{
+  height:auto;
+  aspect-ratio:16 / 9;
+  background:#0d2026;
+}
+.blogs-page .blogs-feature-media img,
+.blogs-page .blog-card-media img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:none!important;
+  transition:none!important;
+}
+.blogs-page .blog-card-media:hover img{transform:none!important}
+.article-page .article-hero-stage{
+  width:100%;
+  background:#0d2026;
+}
+.article-page .source-article-hero--editorial{
+  width:100%;
+  height:auto;
+  aspect-ratio:16 / 9;
+  max-height:none;
+  background:#0d2026;
+}
+.article-page .source-article-hero--editorial>img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:none!important;
+}
+.blogs-page .blogs-feature-media::before,
+.blogs-page .blog-card-media::before,
+.article-page .source-article-hero--editorial::before{
+  content:"";
+  position:absolute;
+  z-index:1;
+  inset:38% 0 0;
+  background:linear-gradient(180deg,transparent,rgba(4,21,26,.34) 32%,rgba(4,21,26,.94));
+  pointer-events:none;
+}
+.blog-image-label,
+.article-image-label{
+  position:absolute;
+  z-index:2;
+  right:clamp(16px,3vw,34px);
+  bottom:clamp(15px,2.4vw,30px);
+  left:clamp(16px,3vw,34px);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+  color:#fff;
+  text-align:left;
+  pointer-events:none;
+}
+.blog-image-label small,
+.article-image-label p{
+  margin:0;
+  color:#e7bb66;
+  font-family:var(--font-sans),sans-serif;
+  font-size:clamp(9px,.72vw,12px);
+  font-weight:750;
+  line-height:1.2;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.blog-image-label strong,
+.article-image-label strong{
+  display:block;
+  max-width:28ch;
+  color:#fff;
+  font-family:var(--font-sans),sans-serif;
+  font-size:clamp(16px,1.45vw,25px);
+  font-weight:650;
+  line-height:1.14;
+  letter-spacing:-.025em;
+  text-wrap:balance;
+  text-shadow:0 2px 18px rgba(0,0,0,.35);
+}
+.blogs-page .blog-card-media .blog-image-label strong{font-size:clamp(15px,1.15vw,20px)}
+.article-image-label{
+  right:max(40px,calc((100% - 1240px)/2));
+  bottom:84px;
+  left:max(40px,calc((100% - 1240px)/2));
+}
+.article-image-label strong{max-width:34ch;font-size:clamp(24px,3.3vw,58px);line-height:1.03}
+@media(max-width:700px){
+  .article-page .article-hero-stage{height:auto}
+  .article-page .source-article-hero--editorial{
+    width:100%;
+    height:auto;
+    min-height:0;
+    aspect-ratio:4 / 3;
+    transform:none;
+    transform-origin:center;
+  }
+  .article-page .source-article-meta{right:16px;bottom:14px;left:16px;max-width:calc(100% - 32px);overflow:auto}
+  .article-page .source-article-back{top:16px;left:16px}
+  .article-image-label{right:18px;bottom:96px;left:18px}
+  .article-image-label strong{font-size:clamp(17px,5.2vw,22px);line-height:1.04}
+  .blog-image-label{right:14px;bottom:14px;left:14px}
+  .blog-image-label strong{font-size:15px}
+}
+
+/* Mobile QA: legacy stage rules scaled complete desktop compositions down.
+   Restore true responsive flow so content remains legible and touch-friendly. */
+@media(max-width:768px){
+  /* Blogs */
+  .blogs-page .blogs-hero-stage{
+    height:auto;
+    overflow:visible;
+  }
+  .blogs-page .blogs-hero{
+    width:100%;
+    height:auto;
+    min-height:0;
+    margin:0;
+    padding:44px 18px 38px;
+    transform:none;
+  }
+  .blogs-page .blogs-kicker{font-size:10px}
+  .blogs-page .blogs-hero h1{
+    margin:14px 0 8px;
+    font-size:clamp(44px,12vw,54px);
+  }
+  .blogs-page .blogs-hero>p:not(.blogs-kicker){
+    max-width:34rem;
+    font-size:15px;
+    line-height:1.55;
+  }
+  .blogs-page .blogs-hero-search{
+    grid-template-columns:1fr 1fr;
+    width:min(680px,calc(100% - 20px));
+    margin-top:24px;
+    padding:12px;
+  }
+  .blogs-page .blogs-hero-query,
+  .blogs-page .blogs-hero-search button{grid-column:1/-1}
+
+  /* Literary Lounge editorial pages */
+  .editorial-current-palette .editorial-hero-stage,
+  .editorial-hero-stage{
+    height:auto;
+    overflow:visible;
+  }
+  .editorial-current-palette .editorial-hero,
+  .editorial-hero{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:auto;
+    min-height:0;
+    margin:0;
+    padding:38px 18px 34px;
+    transform:none;
+  }
+  .editorial-copy{
+    order:1;
+    padding-top:0;
+  }
+  .editorial-copy h1{font-size:clamp(42px,12vw,54px)}
+  .editorial-art{
+    position:relative;
+    order:2;
+    width:calc(100% + 36px);
+    height:auto;
+    aspect-ratio:16/9;
+    margin:28px 0 0 -18px;
+  }
+  .editorial-features{
+    order:3;
+    grid-template-columns:1fr 1fr;
+    margin-top:0;
+    padding:12px;
+  }
+  .editorial-hero>blockquote{
+    position:relative;
+    right:auto;
+    bottom:auto;
+    order:4;
+    margin:22px 0 0;
+  }
+
+  /* Book reviews */
+  .book-review-page .book-review-hero-stage{
+    height:auto;
+    overflow:visible;
+  }
+  .book-review-page .book-review-hero-section{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:auto;
+    min-height:0;
+    margin:0;
+    padding:44px 5% 130px;
+    transform:none;
+  }
+  .book-review-page .book-review-hero{
+    position:relative;
+    top:auto;
+    left:auto;
+    order:1;
+    width:100%;
+    padding-bottom:20px;
+  }
+  .book-review-page .book-review-hero h1{font-size:clamp(42px,11vw,58px)}
+  .book-review-page .book-review-art{
+    position:relative;
+    inset:auto;
+    order:2;
+    width:100%;
+    height:220px;
+    margin:8px auto 0;
+    background-position:center;
+    background-size:78% auto;
+  }
+  .book-review-page .book-review-dots{display:none}
+  .book-review-page .book-review-cta{
+    width:calc(100% - 36px);
+    height:57px;
+    bottom:42px;
+  }
+  .book-library-view button,
+  .book-library-pagination button,
+  .book-library-clear{
+    min-width:44px;
+    min-height:44px;
+  }
+
+  /* Lean Nervous System */
+  .lns-page .lns-hero-stage{
+    height:auto;
+    overflow:visible;
+  }
+  .lns-page .lns-hero{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:auto;
+    min-height:0;
+    margin:0;
+    padding:38px 18px 0;
+    transform:none;
+    background-position:66% top;
+  }
+  .lns-page .lns-hero-statement,
+  .lns-page .lns-request-wrap,
+  .lns-page .lns-intro,
+  .lns-page .lns-book-product,
+  .lns-page .lns-action-grid,
+  .lns-page .lns-measures{
+    position:relative;
+    inset:auto;
+    width:100%;
+    margin-right:0;
+    margin-left:0;
+  }
+  .lns-page .lns-hero-statement{
+    max-width:34rem;
+    margin:0 auto 24px;
+    font-size:17px;
+    line-height:1.45;
+    white-space:normal;
+    transform:none;
+  }
+  .lns-page .lns-request-wrap{
+    display:flex;
+    justify-content:center;
+    margin-bottom:30px;
+  }
+  .lns-page .lns-request{
+    width:100%;
+    min-width:0;
+    min-height:50px;
+    justify-content:center;
+    padding:12px 16px;
+  }
+  .lns-page .lns-intro{margin:0}
+  .lns-page .lns-intro h1{
+    margin:20px 0 28px;
+    font-size:clamp(48px,14vw,62px);
+    line-height:.94;
+  }
+  .lns-page .lns-deck{
+    min-height:0;
+    padding:2px 0 2px 16px;
+  }
+  .lns-page .lns-book-product{
+    width:min(300px,82vw);
+    margin:34px auto 12px;
+  }
+  .lns-page .lns-action-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+    margin:24px 0 28px;
+  }
+  .lns-page .lns-action-card{
+    min-height:202px;
+    padding:20px;
+  }
+  .lns-page .lns-action-card>a{left:20px}
+  .lns-page .lns-measures{
+    width:calc(100% + 36px);
+    min-height:0;
+    margin-left:-18px;
+    padding:20px 18px 24px;
+  }
+  .lns-page .lns-measures-inner{
+    grid-template-columns:1fr;
+    width:100%;
+    min-height:0;
+    margin:0;
+  }
+  .lns-page .lns-measures article,
+  .lns-page .lns-measures article:first-child,
+  .lns-page .lns-measures article:last-child{
+    min-height:0;
+    padding:14px 0;
+    border-right:0;
+    border-bottom:1px solid rgba(218,164,41,.4);
+    text-align:center;
+  }
+  .lns-page .lns-measures article:last-child{border-bottom:0}
+  .lns-page .lns-measures h2,
+  .lns-page .lns-measures article:first-child h2,
+  .lns-page .lns-measures article:last-child h2{
+    margin:8px auto 0;
+    text-align:center;
+  }
+  .lns-page .lns-mantra{
+    margin:12px 0;
+    font-size:16px;
+    line-height:1.4;
+    white-space:normal;
+  }
+}
+
+@media(max-width:560px){
+  .blogs-page .blogs-hero-search{
+    grid-template-columns:1fr;
+    width:calc(100% - 8px);
+  }
+  .blogs-page .blogs-hero-query,
+  .blogs-page .blogs-hero-search button{grid-column:auto}
+  .editorial-features{grid-template-columns:1fr}
 }

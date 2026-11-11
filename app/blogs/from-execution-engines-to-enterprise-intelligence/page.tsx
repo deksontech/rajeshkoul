@@ -19,7 +19,7 @@ const sections = [
 export default function ExecutionToIntelligenceArticle() {
   return <><SiteHeader/><main className="article-page">
     <div className="article-hero-stage"><section className="article-hero">
-      <Image src="/art/execution-enterprise-hero.png" alt="A path connecting industrial execution with a digitally intelligent enterprise" fill priority sizes="100vw"/>
+      <Image src="/art/blog-editorial/execution-intelligence.png" alt="A path connecting industrial execution with a digitally intelligent enterprise" fill priority sizes="100vw" style={{objectFit:"contain",objectPosition:"center"}}/>
       <div className="article-hero-shade"/>
       <div className="article-hero-inner">
         <a className="article-back" href="/blogs"><ArrowLeft/> Back to Blogs</a>

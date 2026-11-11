@@ -4,7 +4,7 @@
 
 import Image from "next/image";
 import { ArrowRight, ChevronDown, Lightbulb, Mail, Menu, MessageCircle, Sprout, Target, Users, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const nav = [["Home","/"],["About","/about"],["The Lean Nervous System","/lean-nervous-system"],["Blogs","/blogs"],["Literary Lounge",""],["Contact Me","/contact"]];
@@ -12,12 +12,18 @@ const literaryNav = [["Book Review","/book-review"],["Personal Leadership & Coac
 export function SiteHeader(){
   const [open,setOpen]=useState(false);
   const pathname=usePathname();
+  useEffect(()=>{
+    if(!open)return;
+    const close=(event:KeyboardEvent)=>{if(event.key==="Escape")setOpen(false)};
+    window.addEventListener("keydown",close);
+    return()=>window.removeEventListener("keydown",close);
+  },[open]);
   const currentPath=pathname.length>1?pathname.replace(/\/$/,""):pathname;
   const isActive=(href:string)=>href==="/"?currentPath==="/":currentPath===href||currentPath.startsWith(`${href}/`);
   const literaryActive=isActive("/literary-lounge")||literaryNav.some(([,subHref])=>isActive(subHref));
   return <header className="site-header">
     <a className="logo" href="/" aria-label="Rajesh Koul — Home"><Image src="/art/rajesh-koul-wordmark.svg" alt="Rajesh Koul — Building Human-Centered Systems" width={1200} height={420} priority/></a>
-    <button className="menu-button" aria-label={open?"Close navigation":"Open navigation"} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button>
+    <button className="menu-button" type="button" aria-label={open?"Close navigation":"Open navigation"} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button>
     <nav className={open?"open":""} aria-label="Primary navigation">{nav.map(([label,href])=>label==="Literary Lounge"?<div className="nav-dropdown" key={label}><button type="button" className={literaryActive?"active":""} aria-haspopup="true">{label}<ChevronDown aria-hidden="true"/></button><div className="nav-submenu" aria-label="Literary Lounge submenu">{literaryNav.map(([subLabel,subHref])=><a key={subLabel} href={subHref} className={isActive(subHref)?"active":""} aria-current={isActive(subHref)?"page":undefined} onClick={()=>setOpen(false)}>{subLabel}</a>)}</div></div>:<a key={label} href={href} className={`${isActive(href)?"active ":""}${href==="/contact"?"nav-contact":""}`.trim()} aria-current={isActive(href)?"page":undefined} onClick={()=>setOpen(false)}>{label}</a>)}</nav>
   </header>
 }

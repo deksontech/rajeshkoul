@@ -96,7 +96,7 @@ const frameworkSteps = [
 export default function ProjectManagementInnovationArticle() {
   return <><SiteHeader/><main className="article-page pm-article-page">
     <div className="article-hero-stage"><section className="article-hero pm-article-hero">
-      <Image src="/art/project-management-innovation-roadmap.png" alt="A roadmap connecting vision, strategy, programmes, projects, execution and value" fill priority sizes="100vw"/>
+      <Image src="/art/blog-editorial/project-innovation.png" alt="A roadmap connecting vision, strategy, programmes, projects, execution and value" fill priority sizes="100vw" style={{objectFit:"contain",objectPosition:"center"}}/>
       <div className="article-hero-shade"/>
       <div className="article-hero-inner">
         <a className="article-back" href="/blogs"><ArrowLeft/> Back to Blogs</a>

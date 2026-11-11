@@ -18,7 +18,7 @@ export default function Home() {
     <main className="home-page">
       <div className="home-hero-stage"><section className="hero home-hero">
         <div className="hero-copy">
-          <h1><b>Scaling <span>Enterprises</span> Through</b><b><span>Lean, Digital</span> &amp; AI-Led</b><b>Transformation</b></h1>
+          <h1><b>Scaling <span>Enterprises</span> Through</b>{" "}<b><span>Lean, Digital</span> &amp; AI-Led</b><b>Transformation</b></h1>
           <p className="lead">Helping CXOs and enterprise leaders unlock growth,<br className="desktop"/> improve margins, and build scalable operations<br className="desktop"/> through Lean, Industry 4.0, and AI-led transformation.</p>
           <div className="actions"><a className="button" href="https://ehs.rajeshkoul.com/" target="_blank" rel="noopener noreferrer">Enterprise Health Lab <ArrowRight/></a><Link className="button outline" href="#featured-book">Explore My Books <ArrowRight/></Link></div>
           <p className="italic">Bridging strategy and execution through 30 years of transformation leadership across global enterprises.</p>

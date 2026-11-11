@@ -11,7 +11,7 @@ export const latest = [
     category: "GCC Leadership",
     title: "GCCs Reimagined Part II: A Leadership Narrative on Enabling GCC Maturity",
     excerpt: "How leaders enable the journey from earned credibility and local reinvention to enterprise-wide intelligence and strategic influence.",
-    image: "/art/gccs-reimagined-intelligence-conduits-part-2.png",
+    image: "/art/blog-editorial/gcc-maturity.png",
     href: "/blogs/gccs-reimagined-part-ii-enabling-gcc-maturity/",
     topics: ["leadership", "digital", "growth"],
     featured: true,
@@ -22,7 +22,7 @@ export const latest = [
     category: "GCC Strategy",
     title: "GCCs Reimagined: From Extended Enterprise to Intelligence Conduits",
     excerpt: "How Global Capability Centres can evolve from execution engines into intelligence conduits that sense, synthesize, and steer the global enterprise.",
-    image: "/art/gccs-reimagined-intelligence-conduits.png",
+    image: "/art/blog-editorial/gcc-intelligence-conduits.png",
     href: "/blogs/gccs-reimagined-from-extended-enterprise-to-intelligence-conduits/",
     topics: ["leadership", "digital", "growth"],
     featured: true,
@@ -33,7 +33,7 @@ export const latest = [
     category: "Innovation Management",
     title: "Project Management and Innovation: A Synthesis for Success",
     excerpt: "From visionary ideas to purposeful execution: how project and programme management can transform innovation into sustainable value.",
-    image: "/art/project-management-innovation-roadmap.png",
+    image: "/art/blog-editorial/project-innovation.png",
     href: "/blogs/project-management-and-innovation-a-synthesis-for-success",
     featured: true,
     popularity: 97,
@@ -43,7 +43,7 @@ export const latest = [
     category: "Lean Leadership",
     title: "How to Establish a Lean Thinking Mindset in Organizations",
     excerpt: "Building a culture where purpose guides decisions, people solve problems, and continuous improvement becomes part of everyday work.",
-    image: "/art/lean-thinking-in-action.png",
+    image: "/art/blog-editorial/lean-mindset.png",
     href: "/blogs/how-to-establish-a-lean-thinking-mindset-in-organizations",
     featured: true,
     popularity: 95,
@@ -54,7 +54,7 @@ export const latest = [
     category: "Lean Thinking",
     title: "Lean Thinking: Customer Value, People First, A Better Tomorrow",
     excerpt: "Building a purpose-driven organisation through continuous improvement, mutual respect, and a relentless focus on customer value.",
-    image: "/art/lean-thinking.png",
+    image: "/art/blog-editorial/customer-value.png",
     href: "/blogs/lean-thinking-customer-value-people-first-a-better-tomorrow",
     featured: true,
     popularity: 94,
@@ -65,7 +65,7 @@ export const latest = [
     category: "Quality 4.0",
     title: "Evolution of Quality 4.0: From Inspection to Intelligent Quality Management",
     excerpt: "How quality has evolved from detecting defects to designing intelligent, connected, and continuously improving systems.",
-    image: "/art/evolution-of-quality-4.png",
+    image: "/art/blog-editorial/quality-4.png",
     href: "/blogs/evolution-of-quality-4-0",
     featured: true,
     popularity: 93,
@@ -76,7 +76,7 @@ export const latest = [
     category: "Enterprise Lean",
     title: "Enterprise-Level Lean Design: Moving Beyond Silos to End-to-End Value Creation",
     excerpt: "Why sustainable transformation requires organisations to optimise the whole enterprise, rather than individual processes in isolation.",
-    image: "/art/enterprise-level-lean-design.png",
+    image: "/art/blog-editorial/enterprise-lean.png",
     href: "/blogs/enterprise-level-lean-design",
     featured: true,
     popularity: 92,
@@ -87,7 +87,7 @@ export const latest = [
     category: "Lean + Digital",
     title: "Technology and Lean Integration: Setting the Foundation",
     excerpt: "A practical roadmap for SMEs and MSMEs to build stable processes first, then scale with digital technologies and Industry 4.0.",
-    image: "/art/technology-lean-integration.png",
+    image: "/art/blog-editorial/lean-digital.png",
     href: "/blogs/technology-and-lean-integration-setting-the-foundation",
     featured: true,
     popularity: 91,
@@ -98,7 +98,7 @@ export const latest = [
     category: "Sustainable Growth",
     title: "Reimagining Sustainable Growth and Transformation Mindset",
     excerpt: "Four strategic shifts for building a more sustainable, agile, and globally integrated organisation.",
-    image: "/art/sustainable-growth-transformation.png",
+    image: "/art/blog-editorial/sustainable-growth.png",
     href: "/blogs/reimagining-sustainable-growth-and-transformation-mindset",
     featured: true,
     popularity: 90,
@@ -109,7 +109,7 @@ export const latest = [
     category: "GCC Maturity",
     title: "From Execution Engines to Enterprise Intelligence",
     excerpt: "A leadership narrative on how Global Capability Centres evolve from efficient delivery engines into systems that sense, learn and influence enterprise outcomes.",
-    image: "/art/execution-enterprise-hero.png",
+    image: "/art/blog-editorial/execution-intelligence.png",
     href: "/blogs/from-execution-engines-to-enterprise-intelligence",
     featured: true,
     popularity: 98,
@@ -119,7 +119,7 @@ export const latest = [
     category: "Lean Systems",
     title: "Building an Organisation That Learns by Design",
     excerpt: "Resilient organisations do not rely on heroic problem-solving. They create clear feedback loops that help teams sense, respond, and improve.",
-    image: "/art/home-expertise.png",
+    image: "/art/blog-editorial/learning-organisation.png",
     featured: false,
     popularity: 87,
     topics: ["lean", "leadership"],
@@ -128,7 +128,7 @@ export const latest = [
     category: "Digital Leadership",
     title: "The Real Work of AI-Led Transformation",
     excerpt: "Technology creates value only when leaders redesign decisions, capabilities, and ways of working around it.",
-    image: "/art/digilean.jpg",
+    image: "/art/blog-editorial/execution-intelligence.png",
     featured: true,
     popularity: 93,
     topics: ["digital", "leadership"],
@@ -140,7 +140,7 @@ const publications = [
     category: "Featured Framework",
     title: "The Lean Nervous System: Connecting Strategy, People and Performance",
     excerpt: "A practical model for creating an organisation that can sense change, align decisions, learn continuously, and act with speed.",
-    image: "/art/digi-e-lean-book.png",
+    image: "/art/blog-editorial/learning-organisation.png",
     featured: true,
     popularity: 96,
     topics: ["lean", "growth"],
@@ -149,7 +149,7 @@ const publications = [
     category: "Operating Excellence",
     title: "From Isolated Improvements to Enterprise-Wide Excellence",
     excerpt: "Why sustainable results demand more than projects—and how leaders can connect improvement work across the enterprise.",
-    image: "/art/mission-card-2.jpg",
+    image: "/art/blog-editorial/lean-digital.png",
     featured: false,
     popularity: 82,
     topics: ["lean", "growth"],
@@ -158,7 +158,7 @@ const publications = [
     category: "Growth Systems",
     title: "Why Mid-Sized Organisations Need an Operating System for Growth",
     excerpt: "Growth becomes repeatable when purpose, process, capability, and technology reinforce one another.",
-    image: "/art/mission-card-3.jpg",
+    image: "/art/blog-editorial/sustainable-growth.png",
     featured: true,
     popularity: 91,
     topics: ["growth", "leadership"],
@@ -170,7 +170,7 @@ const newsletters = [
     category: "Transformation Notes",
     title: "The Discipline Behind Sustainable Change",
     excerpt: "A concise monthly reflection on the leadership choices and management systems that make transformation stick.",
-    image: "/art/coaching-hero.jpg",
+    image: "/art/blog-editorial/customer-value.png",
     featured: false,
     popularity: 79,
     topics: ["leadership", "growth"],
@@ -179,7 +179,7 @@ const newsletters = [
     category: "Lean + Digital Perspective",
     title: "Where Lean Thinking Meets Digital Possibility",
     excerpt: "Ideas for combining proven operational discipline with new digital capabilities—without losing sight of people.",
-    image: "/art/podcast-hero.jpg",
+    image: "/art/blog-editorial/quality-4.png",
     featured: true,
     popularity: 89,
     topics: ["lean", "digital"],
@@ -188,7 +188,7 @@ const newsletters = [
     category: "Leadership Briefing",
     title: "Leading Through Complexity with Clarity",
     excerpt: "Field-tested questions for leaders shaping adaptive, accountable, and future-ready organisations.",
-    image: "/art/literary-hero.jpg",
+    image: "/art/blog-editorial/execution-intelligence.png",
     featured: false,
     popularity: 84,
     topics: ["leadership"],
@@ -229,7 +229,7 @@ export default function BlogsPage() {
         <SectionHeading eyebrow="LATEST THINKING" title="Latest Insights" actionHref="/blogs/all/" actionLabel={`View all ${latest.length}`}/>
         <article className="blogs-feature">
           <div className="blogs-feature-copy"><p className="blogs-category">{latest[0].category}</p><h2>{latest[0].title}</h2><p>{latest[0].excerpt}</p><ReadLink href={latest[0].href}/></div>
-          <a href={latest[0].href??"/blogs"} className="blogs-feature-media" aria-label={`Read ${latest[0].title}`}><Image src={latest[0].image} alt={latest[0].title} fill sizes="(max-width: 900px) 100vw, 42vw" style={{objectFit:"fill",objectPosition:"center",transform:"none",transition:"none"}} priority/></a>
+          <a href={latest[0].href??"/blogs"} className="blogs-feature-media" aria-label={`Read ${latest[0].title}`}><Image src={latest[0].image} alt={latest[0].title} fill sizes="(max-width: 900px) 100vw, 42vw" style={{objectFit:"contain",objectPosition:"center",transform:"none",transition:"none"}} priority/><EditorialImageLabel category={latest[0].category} title={latest[0].title}/></a>
         </article>
         <div className="blogs-grid-with-news">
           <div className="blogs-card-grid">{latest.slice(1,3).map((item)=><ArticleCard key={item.title} {...item}/>)}</div>
@@ -263,8 +263,12 @@ function SectionHeading({eyebrow,title,actionHref="/blogs",actionLabel="View all
   return <div className="blogs-section-heading"><div><p>{eyebrow}</p><h2>{title}</h2></div><a href={actionHref}>{actionLabel} <ArrowRight/></a></div>;
 }
 
-export function ArticleCard({category,title,excerpt,image,href="/blogs",preserveFullImage=false}:{category:string,title:string,excerpt:string,image:string,href?:string,preserveFullImage?:boolean}) {
-  return <article className="blog-card"><a className="blog-card-media" href={href} aria-label={`Read ${title}`}><Image src={image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw" style={preserveFullImage?{objectFit:"fill",transform:"none",transition:"none"}:undefined}/></a><div><p className="blogs-category">{category}</p><h3>{title}</h3><p>{excerpt}</p><ReadLink href={href}/></div></article>;
+export function ArticleCard({category,title,excerpt,image,href="/blogs"}:{category:string,title:string,excerpt:string,image:string,href?:string,preserveFullImage?:boolean}) {
+  return <article className="blog-card"><a className="blog-card-media" href={href} aria-label={`Read ${title}`}><Image src={image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw" style={{objectFit:"contain",objectPosition:"center",transform:"none",transition:"none"}}/><EditorialImageLabel category={category} title={title}/></a><div><p className="blogs-category">{category}</p><h3>{title}</h3><p>{excerpt}</p><ReadLink href={href}/></div></article>;
+}
+
+function EditorialImageLabel({category,title}:{category:string,title:string}){
+  return <span className="blog-image-label" aria-hidden="true"><small>{category}</small><strong>{title}</strong></span>;
 }
 
 function ReadLink({href="/blogs"}:{href?:string}){return <a className="blogs-read" href={href}>Read the article <ArrowRight/></a>}
