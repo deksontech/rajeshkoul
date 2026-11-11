@@ -401,9 +401,10 @@
   .footer-dark{height:auto;min-height:587px;padding-left:34px;padding-right:34px}.footer-columns{grid-template-columns:1fr 1fr 1fr;height:auto}.about-footer{grid-column:1/-1;height:315px;padding:34px 34% 0 30px}.about-footer img{right:-34px!important;top:0!important;height:315px!important}.about-footer::after{top:0;height:315px}.values{height:auto;min-height:140px}.value{padding:18px 28px}.copyright{height:74px}
 }
 @media(max-width:768px){
-  .intent-row{height:auto;min-height:0;padding:35px 22px 78px;grid-template-columns:1fr}.intent-row::after{height:66px;background-size:auto 66px}
+  .intent-row{height:auto;min-height:0;padding:35px 22px 20px;grid-template-columns:1fr}.intent-row::after{height:66px;background-size:auto 66px}
   .signature{padding:0 0 24px;text-align:center}.signature img{margin:auto;object-position:center}.signature p{white-space:normal}.intent,.connect{min-height:0;padding:25px 0 0;border-left:0;border-top:1px solid #cbd7ea}.intent h2{font-size:28px}.intent p,.connect>p{font-size:16px}
-  .footer-dark{height:auto;min-height:0;padding:34px 22px 18px}.footer-columns{display:block;height:auto}.footer-list{height:auto;padding:20px 5px}.about-footer{height:315px;padding:25px 38% 25px 5px}.about-footer p{font-size:14px}.about-footer img{right:-22px!important;height:315px!important}.values{height:auto;grid-template-columns:1fr 1fr;padding:8px 0}.value{height:auto;min-height:112px;padding:16px}.value>svg{width:58px;height:58px;min-width:58px;padding:14px}.copyright{height:auto;min-height:118px;padding:20px 0}
+  .intent-break{display:none}
+  .footer-dark{height:auto;min-height:0;padding:12px 22px 18px}.footer-columns{display:block;height:auto}.footer-list{height:auto;padding:8px 5px 20px}.about-footer{height:315px;padding:25px 38% 25px 5px}.about-footer p{font-size:14px}.about-footer img{right:-22px!important;height:315px!important}.values{height:auto;grid-template-columns:1fr 1fr;padding:8px 0}.value{height:auto;min-height:112px;padding:16px}.value>svg{width:58px;height:58px;min-width:58px;padding:14px}.copyright{height:auto;min-height:118px;padding:20px 0}
 }
 @media(max-width:430px){.about-footer{height:auto;min-height:300px;padding-right:5px}.about-footer img{width:100%!important;right:0!important;opacity:.18}.about-footer::after{display:none}.values{grid-template-columns:1fr}.value{min-height:100px}.copyright em{font-size:21px}}
 
